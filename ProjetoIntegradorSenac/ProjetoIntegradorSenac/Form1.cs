@@ -6,5 +6,10 @@ namespace ProjetoIntegradorSenac
         {
             InitializeComponent();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
