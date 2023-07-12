@@ -28,68 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             BtnLogin = new FontAwesome.Sharp.IconButton();
             BtnCadastro = new FontAwesome.Sharp.IconButton();
             PainelLateralLogin = new Panel();
-            PainelLogin = new Panel();
             label7 = new Label();
+            PainelCadastro = new Panel();
+            label8 = new Label();
+            textBoxLoginEmail = new TextBox();
+            labelEmail = new Label();
+            labelSenha = new Label();
+            textBoxSenhaLogin = new TextBox();
+            BtnEfetuarLogin = new FontAwesome.Sharp.IconButton();
+            linkLabel1 = new LinkLabel();
+            BtnMostrarSenha = new FontAwesome.Sharp.IconButton();
             PainelLateralLogin.SuspendLayout();
-            PainelLogin.SuspendLayout();
+            PainelCadastro.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(356, 95);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 15);
-            label1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(358, 143);
-            label2.Name = "label2";
-            label2.Size = new Size(0, 15);
-            label2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(358, 199);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 15);
-            label3.TabIndex = 2;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(358, 243);
-            label4.Name = "label4";
-            label4.Size = new Size(0, 15);
-            label4.TabIndex = 3;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(356, 330);
-            label5.Name = "label5";
-            label5.Size = new Size(0, 15);
-            label5.TabIndex = 4;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(356, 281);
-            label6.Name = "label6";
-            label6.Size = new Size(0, 15);
-            label6.TabIndex = 5;
             // 
             // BtnLogin
             // 
@@ -128,7 +82,7 @@
             BtnCadastro.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             BtnCadastro.IconColor = Color.FromArgb(18, 13, 66);
             BtnCadastro.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BtnCadastro.IconSize = 64;
+            BtnCadastro.IconSize = 80;
             BtnCadastro.Location = new Point(0, 225);
             BtnCadastro.Name = "BtnCadastro";
             BtnCadastro.Size = new Size(200, 225);
@@ -149,25 +103,129 @@
             PainelLateralLogin.Size = new Size(200, 450);
             PainelLateralLogin.TabIndex = 8;
             // 
-            // PainelLogin
-            // 
-            PainelLogin.Controls.Add(label7);
-            PainelLogin.Dock = DockStyle.Fill;
-            PainelLogin.Location = new Point(200, 0);
-            PainelLogin.Name = "PainelLogin";
-            PainelLogin.Size = new Size(600, 450);
-            PainelLogin.TabIndex = 9;
-            // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Malgun Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.Gainsboro;
-            label7.Location = new Point(204, 193);
+            label7.Location = new Point(423, 30);
             label7.Name = "label7";
             label7.Size = new Size(155, 65);
-            label7.TabIndex = 0;
+            label7.TabIndex = 11;
             label7.Text = "Login";
+            // 
+            // PainelCadastro
+            // 
+            PainelCadastro.Anchor = AnchorStyles.None;
+            PainelCadastro.Controls.Add(label8);
+            PainelCadastro.Location = new Point(780, 431);
+            PainelCadastro.Name = "PainelCadastro";
+            PainelCadastro.Size = new Size(600, 450);
+            PainelCadastro.TabIndex = 12;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Malgun Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.Control;
+            label8.Location = new Point(187, 30);
+            label8.Name = "label8";
+            label8.Size = new Size(221, 65);
+            label8.TabIndex = 11;
+            label8.Text = "Cadastro";
+            // 
+            // textBoxLoginEmail
+            // 
+            textBoxLoginEmail.Anchor = AnchorStyles.None;
+            textBoxLoginEmail.BackColor = Color.Gainsboro;
+            textBoxLoginEmail.Location = new Point(494, 154);
+            textBoxLoginEmail.Name = "textBoxLoginEmail";
+            textBoxLoginEmail.Size = new Size(150, 23);
+            textBoxLoginEmail.TabIndex = 13;
+            // 
+            // labelEmail
+            // 
+            labelEmail.Anchor = AnchorStyles.None;
+            labelEmail.Font = new Font("Malgun Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelEmail.ForeColor = Color.Gainsboro;
+            labelEmail.Location = new Point(396, 154);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(100, 23);
+            labelEmail.TabIndex = 14;
+            labelEmail.Text = "Email";
+            // 
+            // labelSenha
+            // 
+            labelSenha.Anchor = AnchorStyles.None;
+            labelSenha.Font = new Font("Malgun Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelSenha.ForeColor = Color.Gainsboro;
+            labelSenha.Location = new Point(396, 225);
+            labelSenha.Name = "labelSenha";
+            labelSenha.Size = new Size(100, 25);
+            labelSenha.TabIndex = 15;
+            labelSenha.Text = "Senha";
+            // 
+            // textBoxSenhaLogin
+            // 
+            textBoxSenhaLogin.Anchor = AnchorStyles.None;
+            textBoxSenhaLogin.BackColor = Color.Gainsboro;
+            textBoxSenhaLogin.Location = new Point(494, 225);
+            textBoxSenhaLogin.Name = "textBoxSenhaLogin";
+            textBoxSenhaLogin.Size = new Size(150, 23);
+            textBoxSenhaLogin.TabIndex = 16;
+            textBoxSenhaLogin.UseSystemPasswordChar = true;
+            // 
+            // BtnEfetuarLogin
+            // 
+            BtnEfetuarLogin.Anchor = AnchorStyles.None;
+            BtnEfetuarLogin.FlatAppearance.BorderSize = 3;
+            BtnEfetuarLogin.FlatStyle = FlatStyle.Flat;
+            BtnEfetuarLogin.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnEfetuarLogin.ForeColor = Color.Gainsboro;
+            BtnEfetuarLogin.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            BtnEfetuarLogin.IconColor = Color.Gainsboro;
+            BtnEfetuarLogin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnEfetuarLogin.IconSize = 36;
+            BtnEfetuarLogin.Location = new Point(402, 298);
+            BtnEfetuarLogin.Name = "BtnEfetuarLogin";
+            BtnEfetuarLogin.Size = new Size(200, 50);
+            BtnEfetuarLogin.TabIndex = 17;
+            BtnEfetuarLogin.Text = "Logar";
+            BtnEfetuarLogin.TextAlign = ContentAlignment.MiddleRight;
+            BtnEfetuarLogin.TextImageRelation = TextImageRelation.TextBeforeImage;
+            BtnEfetuarLogin.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.Anchor = AnchorStyles.None;
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Malgun Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLabel1.LinkColor = Color.Gainsboro;
+            linkLabel1.Location = new Point(416, 376);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(171, 21);
+            linkLabel1.TabIndex = 18;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "esqueceu sua senha ?";
+            // 
+            // BtnMostrarSenha
+            // 
+            BtnMostrarSenha.Anchor = AnchorStyles.None;
+            BtnMostrarSenha.AutoSize = true;
+            BtnMostrarSenha.FlatAppearance.BorderSize = 0;
+            BtnMostrarSenha.FlatStyle = FlatStyle.Flat;
+            BtnMostrarSenha.ForeColor = Color.Gainsboro;
+            BtnMostrarSenha.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            BtnMostrarSenha.IconColor = Color.Gainsboro;
+            BtnMostrarSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnMostrarSenha.IconSize = 24;
+            BtnMostrarSenha.Location = new Point(650, 223);
+            BtnMostrarSenha.Name = "BtnMostrarSenha";
+            BtnMostrarSenha.Size = new Size(34, 34);
+            BtnMostrarSenha.TabIndex = 19;
+            BtnMostrarSenha.UseVisualStyleBackColor = true;
+            BtnMostrarSenha.Click += BtnMostrarSenha_Click;
             // 
             // TelaLogin
             // 
@@ -175,35 +233,38 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(18, 13, 66);
             ClientSize = new Size(800, 450);
-            Controls.Add(PainelLogin);
+            Controls.Add(BtnMostrarSenha);
+            Controls.Add(linkLabel1);
+            Controls.Add(BtnEfetuarLogin);
+            Controls.Add(textBoxSenhaLogin);
+            Controls.Add(labelSenha);
+            Controls.Add(labelEmail);
+            Controls.Add(textBoxLoginEmail);
+            Controls.Add(PainelCadastro);
+            Controls.Add(label7);
             Controls.Add(PainelLateralLogin);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Name = "TelaLogin";
             Text = "Form1";
             PainelLateralLogin.ResumeLayout(false);
-            PainelLogin.ResumeLayout(false);
-            PainelLogin.PerformLayout();
+            PainelCadastro.ResumeLayout(false);
+            PainelCadastro.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
         private FontAwesome.Sharp.IconButton BtnLogin;
         private FontAwesome.Sharp.IconButton BtnCadastro;
         private Panel PainelLateralLogin;
-        private Panel PainelLogin;
         private Label label7;
+        private Panel PainelCadastro;
+        private Label label8;
+        private TextBox textBoxLoginEmail;
+        private Label labelEmail;
+        private Label labelSenha;
+        private TextBox textBoxSenhaLogin;
+        private FontAwesome.Sharp.IconButton BtnEfetuarLogin;
+        private LinkLabel linkLabel1;
+        private FontAwesome.Sharp.IconButton BtnMostrarSenha;
     }
 }

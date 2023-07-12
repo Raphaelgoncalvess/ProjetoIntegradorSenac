@@ -25,8 +25,8 @@ namespace ProjetoIntegradorSenac
             /* btnBordaEsquerda = new Panel();
              btnBordaEsquerda.Size = new Size(7, 60);*/
             //PainelLateralLogin.Controls.Add(btnBordaEsquerda);
-            AtivarBotao(BtnLogin,CoresRGB.cor1);
-
+            AtivarBotao(BtnLogin, CoresRGB.cor1);
+            PainelCadastro.Visible = false;
         }
         //Structs
         public struct CoresRGB
@@ -76,8 +76,8 @@ namespace ProjetoIntegradorSenac
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             AtivarBotao(sender, CoresRGB.cor1);
-            PainelLogin.Visible = true;
-            
+            PainelCadastro.Visible = false;
+
 
 
 
@@ -86,10 +86,15 @@ namespace ProjetoIntegradorSenac
         private void BtnCadastro_Click(object sender, EventArgs e)
         {
             AtivarBotao(sender, CoresRGB.cor1);
-            PainelLogin.Visible = false;
-            
+            PainelCadastro.Visible = true;
 
 
+
+        }
+
+        private void BtnMostrarSenha_Click(object sender, EventArgs e)
+        {
+            textBoxSenhaLogin.UseSystemPasswordChar = false;
         }
     }
 }
