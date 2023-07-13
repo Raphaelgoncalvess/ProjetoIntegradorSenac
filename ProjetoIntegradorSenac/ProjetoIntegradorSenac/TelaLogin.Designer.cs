@@ -32,8 +32,6 @@
             BtnCadastro = new FontAwesome.Sharp.IconButton();
             PainelLateralLogin = new Panel();
             label7 = new Label();
-            PainelCadastro = new Panel();
-            label8 = new Label();
             textBoxLoginEmail = new TextBox();
             labelEmail = new Label();
             labelSenha = new Label();
@@ -42,7 +40,6 @@
             linkLabel1 = new LinkLabel();
             BtnMostrarSenha = new FontAwesome.Sharp.IconButton();
             PainelLateralLogin.SuspendLayout();
-            PainelCadastro.SuspendLayout();
             SuspendLayout();
             // 
             // BtnLogin
@@ -115,26 +112,6 @@
             label7.TabIndex = 11;
             label7.Text = "Login";
             // 
-            // PainelCadastro
-            // 
-            PainelCadastro.Anchor = AnchorStyles.None;
-            PainelCadastro.Controls.Add(label8);
-            PainelCadastro.Location = new Point(780, 431);
-            PainelCadastro.Name = "PainelCadastro";
-            PainelCadastro.Size = new Size(600, 450);
-            PainelCadastro.TabIndex = 12;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Malgun Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = SystemColors.Control;
-            label8.Location = new Point(187, 30);
-            label8.Name = "label8";
-            label8.Size = new Size(221, 65);
-            label8.TabIndex = 11;
-            label8.Text = "Cadastro";
-            // 
             // textBoxLoginEmail
             // 
             textBoxLoginEmail.Anchor = AnchorStyles.None;
@@ -195,6 +172,7 @@
             BtnEfetuarLogin.TextAlign = ContentAlignment.MiddleRight;
             BtnEfetuarLogin.TextImageRelation = TextImageRelation.TextBeforeImage;
             BtnEfetuarLogin.UseVisualStyleBackColor = true;
+            BtnEfetuarLogin.Click += BtnEfetuarLogin_Click;
             // 
             // linkLabel1
             // 
@@ -240,14 +218,12 @@
             Controls.Add(labelSenha);
             Controls.Add(labelEmail);
             Controls.Add(textBoxLoginEmail);
-            Controls.Add(PainelCadastro);
             Controls.Add(label7);
             Controls.Add(PainelLateralLogin);
             Name = "TelaLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             PainelLateralLogin.ResumeLayout(false);
-            PainelCadastro.ResumeLayout(false);
-            PainelCadastro.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -257,8 +233,6 @@
         private FontAwesome.Sharp.IconButton BtnCadastro;
         private Panel PainelLateralLogin;
         private Label label7;
-        private Panel PainelCadastro;
-        private Label label8;
         private TextBox textBoxLoginEmail;
         private Label labelEmail;
         private Label labelSenha;

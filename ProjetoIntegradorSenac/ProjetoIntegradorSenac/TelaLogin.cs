@@ -1,14 +1,4 @@
-using System.Security.Cryptography.X509Certificates;
 using FontAwesome.Sharp;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ProjetoIntegradorSenac
 {
@@ -26,7 +16,6 @@ namespace ProjetoIntegradorSenac
              btnBordaEsquerda.Size = new Size(7, 60);*/
             //PainelLateralLogin.Controls.Add(btnBordaEsquerda);
             AtivarBotao(BtnLogin, CoresRGB.cor1);
-            PainelCadastro.Visible = false;
         }
         //Structs
         public struct CoresRGB
@@ -76,25 +65,38 @@ namespace ProjetoIntegradorSenac
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             AtivarBotao(sender, CoresRGB.cor1);
-            PainelCadastro.Visible = false;
-
-
-
-
         }
 
         private void BtnCadastro_Click(object sender, EventArgs e)
         {
             AtivarBotao(sender, CoresRGB.cor1);
-            PainelCadastro.Visible = true;
-
-
-
         }
 
         private void BtnMostrarSenha_Click(object sender, EventArgs e)
         {
             textBoxSenhaLogin.UseSystemPasswordChar = false;
+        }
+
+        private void BtnEfetuarLogin_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            db.Conectar();
+
+            Usuario usuario = new Usuario();
+
+            usuario.Email = textBoxLoginEmail.Text;
+            usuario.Senha = textBoxSenhaLogin.Text;
+
+            var retorno = db.BuscarUsuario(usuario.Email, usuario.Senha, true);
+
+            if (!retorno)
+            {
+                MessageBox.Show("Usuário não encontrado");
+            }
+            else
+            {
+                MessageBox.Show("Usuário encontrado");
+            }
         }
     }
 }
