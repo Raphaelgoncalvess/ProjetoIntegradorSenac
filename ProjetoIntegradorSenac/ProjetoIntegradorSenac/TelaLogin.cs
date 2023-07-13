@@ -7,14 +7,10 @@ namespace ProjetoIntegradorSenac
 
         //Campos
         public IconButton btnAtual; //Botão atual
-        //public Panel btnBordaEsquerda; //Borda esquerda do botão atual
 
         public TelaLogin()
         {
             InitializeComponent();
-            /* btnBordaEsquerda = new Panel();
-             btnBordaEsquerda.Size = new Size(7, 60);*/
-            //PainelLateralLogin.Controls.Add(btnBordaEsquerda);
             AtivarBotao(BtnLogin, CoresRGB.cor1);
         }
         //Structs
@@ -36,27 +32,23 @@ namespace ProjetoIntegradorSenac
             {
                 //Botão
                 btnAtual = (IconButton)senderBtn;
-                btnAtual.BackColor = Color.FromArgb(18, 13, 66);
-                btnAtual.ForeColor = Color.Gainsboro;
+                btnAtual.BackColor = Color.FromArgb(6, 7, 33);
+                btnAtual.ForeColor = Color.FromArgb(242, 242, 242);
                 btnAtual.TextAlign = ContentAlignment.BottomCenter;
-                btnAtual.IconColor = Color.Gainsboro;
+                btnAtual.IconColor = Color.FromArgb(242, 242, 242);
                 btnAtual.TextImageRelation = TextImageRelation.ImageAboveText;
                 btnAtual.ImageAlign = ContentAlignment.MiddleCenter;
-                //Borda esquerda do botão
-                /*btnBordaEsquerda.BackColor = cor;
-                btnBordaEsquerda.Location = new Point(0, btnAtual.Location.Y);
-                btnBordaEsquerda.Visible = true;
-                btnBordaEsquerda.BringToFront();*/
+
             }
         }
         public void DesativarBotao()
         {
             if (btnAtual != null)
             {
-                btnAtual.BackColor = Color.Gainsboro;
-                btnAtual.ForeColor = Color.FromArgb(18, 13, 66);
+                btnAtual.BackColor = Color.FromArgb(242, 242, 242);
+                btnAtual.ForeColor = Color.FromArgb(6, 7, 33);
                 btnAtual.TextAlign = ContentAlignment.BottomCenter;
-                btnAtual.IconColor = Color.FromArgb(18, 13, 66);
+                btnAtual.IconColor = Color.FromArgb(6, 7, 33);
                 btnAtual.TextImageRelation = TextImageRelation.ImageAboveText;
                 btnAtual.ImageAlign = ContentAlignment.MiddleCenter;
             }
