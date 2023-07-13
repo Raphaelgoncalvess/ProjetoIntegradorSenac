@@ -41,6 +41,7 @@
             BtnEfetuarLogin = new FontAwesome.Sharp.IconButton();
             linkResetarSenha = new LinkLabel();
             BtnMostrarSenha = new FontAwesome.Sharp.IconButton();
+            PainelFormFilho = new Panel();
             PainelLateral.SuspendLayout();
             PainelLateralCadastro.SuspendLayout();
             PainelLateralLogin.SuspendLayout();
@@ -54,7 +55,7 @@
             BtnLogin.FlatAppearance.BorderColor = Color.Gainsboro;
             BtnLogin.FlatAppearance.BorderSize = 0;
             BtnLogin.FlatStyle = FlatStyle.Flat;
-            BtnLogin.Font = new Font("Malgun Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnLogin.Font = new Font("Candara", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             BtnLogin.ForeColor = Color.FromArgb(6, 7, 33);
             BtnLogin.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
             BtnLogin.IconColor = Color.FromArgb(6, 7, 33);
@@ -78,7 +79,7 @@
             BtnCadastro.FlatAppearance.BorderColor = Color.Gainsboro;
             BtnCadastro.FlatAppearance.BorderSize = 0;
             BtnCadastro.FlatStyle = FlatStyle.Flat;
-            BtnCadastro.Font = new Font("Malgun Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnCadastro.Font = new Font("Candara", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             BtnCadastro.ForeColor = Color.FromArgb(6, 7, 33);
             BtnCadastro.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             BtnCadastro.IconColor = Color.FromArgb(6, 7, 33);
@@ -128,7 +129,7 @@
             LabelLogin.AutoSize = true;
             LabelLogin.Font = new Font("Candara", 36F, FontStyle.Regular, GraphicsUnit.Point);
             LabelLogin.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelLogin.Location = new Point(402, 22);
+            LabelLogin.Location = new Point(427, 21);
             LabelLogin.Name = "LabelLogin";
             LabelLogin.Size = new Size(138, 59);
             LabelLogin.TabIndex = 11;
@@ -139,7 +140,7 @@
             textBoxLoginEmail.Anchor = AnchorStyles.None;
             textBoxLoginEmail.BackColor = Color.FromArgb(242, 242, 242);
             textBoxLoginEmail.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLoginEmail.Location = new Point(390, 124);
+            textBoxLoginEmail.Location = new Point(402, 124);
             textBoxLoginEmail.Name = "textBoxLoginEmail";
             textBoxLoginEmail.Size = new Size(212, 33);
             textBoxLoginEmail.TabIndex = 13;
@@ -149,7 +150,7 @@
             labelEmail.Anchor = AnchorStyles.None;
             labelEmail.Font = new Font("Candara", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelEmail.ForeColor = Color.FromArgb(242, 242, 242);
-            labelEmail.Location = new Point(286, 124);
+            labelEmail.Location = new Point(298, 124);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(86, 35);
             labelEmail.TabIndex = 14;
@@ -160,7 +161,7 @@
             labelSenha.Anchor = AnchorStyles.None;
             labelSenha.Font = new Font("Candara", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelSenha.ForeColor = Color.FromArgb(242, 242, 242);
-            labelSenha.Location = new Point(286, 191);
+            labelSenha.Location = new Point(298, 191);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new Size(86, 34);
             labelSenha.TabIndex = 15;
@@ -171,7 +172,7 @@
             textBoxSenhaLogin.Anchor = AnchorStyles.None;
             textBoxSenhaLogin.BackColor = Color.FromArgb(242, 242, 242);
             textBoxSenhaLogin.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSenhaLogin.Location = new Point(390, 191);
+            textBoxSenhaLogin.Location = new Point(402, 191);
             textBoxSenhaLogin.Name = "textBoxSenhaLogin";
             textBoxSenhaLogin.Size = new Size(212, 33);
             textBoxSenhaLogin.TabIndex = 16;
@@ -188,7 +189,7 @@
             BtnEfetuarLogin.IconColor = Color.FromArgb(242, 242, 242);
             BtnEfetuarLogin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnEfetuarLogin.IconSize = 36;
-            BtnEfetuarLogin.Location = new Point(402, 298);
+            BtnEfetuarLogin.Location = new Point(414, 296);
             BtnEfetuarLogin.Name = "BtnEfetuarLogin";
             BtnEfetuarLogin.Size = new Size(200, 50);
             BtnEfetuarLogin.TabIndex = 17;
@@ -204,7 +205,7 @@
             linkResetarSenha.AutoSize = true;
             linkResetarSenha.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             linkResetarSenha.LinkColor = Color.FromArgb(242, 242, 242);
-            linkResetarSenha.Location = new Point(427, 373);
+            linkResetarSenha.Location = new Point(439, 366);
             linkResetarSenha.Name = "linkResetarSenha";
             linkResetarSenha.Size = new Size(154, 19);
             linkResetarSenha.TabIndex = 18;
@@ -222,12 +223,20 @@
             BtnMostrarSenha.IconColor = Color.FromArgb(242, 242, 242);
             BtnMostrarSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnMostrarSenha.IconSize = 24;
-            BtnMostrarSenha.Location = new Point(600, 191);
+            BtnMostrarSenha.Location = new Point(620, 191);
             BtnMostrarSenha.Name = "BtnMostrarSenha";
             BtnMostrarSenha.Size = new Size(34, 34);
             BtnMostrarSenha.TabIndex = 19;
             BtnMostrarSenha.UseVisualStyleBackColor = true;
             BtnMostrarSenha.Click += BtnMostrarSenha_Click;
+            // 
+            // PainelFormFilho
+            // 
+            PainelFormFilho.Dock = DockStyle.Fill;
+            PainelFormFilho.Location = new Point(188, 0);
+            PainelFormFilho.Name = "PainelFormFilho";
+            PainelFormFilho.Size = new Size(612, 450);
+            PainelFormFilho.TabIndex = 20;
             // 
             // TelaLogin
             // 
@@ -235,6 +244,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(6, 7, 33);
             ClientSize = new Size(800, 450);
+            Controls.Add(PainelFormFilho);
             Controls.Add(BtnMostrarSenha);
             Controls.Add(linkResetarSenha);
             Controls.Add(BtnEfetuarLogin);
@@ -269,5 +279,6 @@
         private FontAwesome.Sharp.IconButton BtnMostrarSenha;
         private Panel PainelLateralCadastro;
         private Panel PainelLateralLogin;
+        private Panel PainelFormFilho;
     }
 }

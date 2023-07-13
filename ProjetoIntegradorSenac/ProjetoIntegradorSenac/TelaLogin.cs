@@ -1,4 +1,5 @@
 using FontAwesome.Sharp;
+using System.Security.Cryptography;
 
 namespace ProjetoIntegradorSenac
 {
@@ -7,11 +8,13 @@ namespace ProjetoIntegradorSenac
 
         //Campos
         public IconButton btnAtual; //Botão atual
+        public Form formFilho; //Formulário filho
 
         public TelaLogin()
         {
             InitializeComponent();
             AtivarBotao(BtnLogin, CoresRGB.cor1);
+            PainelFormFilho.Visible = false;
         }
         //Structs
         public struct CoresRGB
@@ -62,12 +65,31 @@ namespace ProjetoIntegradorSenac
         private void BtnCadastro_Click(object sender, EventArgs e)
         {
             AtivarBotao(sender, CoresRGB.cor1);
+           // AbrirFormFilho(new TelaCadastro());
         }
 
         private void BtnMostrarSenha_Click(object sender, EventArgs e)
         {
             textBoxSenhaLogin.UseSystemPasswordChar = false;
         }
+
+        private void AbrirFormFilho(Form formFilho)
+        {
+            if (this.formFilho != null)
+            {
+                this.formFilho.Close();
+            }
+            this.formFilho = formFilho;
+            formFilho.TopLevel = false;
+            formFilho.FormBorderStyle = FormBorderStyle.None;
+            formFilho.Dock = DockStyle.Fill;
+            PainelFormFilho.Controls.Add(formFilho);
+            PainelFormFilho.Tag = formFilho;
+            formFilho.BringToFront();
+            formFilho.Show();
+
+        }
+
 
         private void BtnEfetuarLogin_Click(object sender, EventArgs e)
         {
