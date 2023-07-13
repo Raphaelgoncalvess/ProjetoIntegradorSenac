@@ -44,9 +44,9 @@
             // 
             // BtnLogin
             // 
+            BtnLogin.Anchor = AnchorStyles.None;
             BtnLogin.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BtnLogin.BackColor = Color.Gainsboro;
-            BtnLogin.Dock = DockStyle.Top;
             BtnLogin.FlatAppearance.BorderColor = Color.Gainsboro;
             BtnLogin.FlatAppearance.BorderSize = 0;
             BtnLogin.FlatStyle = FlatStyle.Flat;
@@ -68,9 +68,9 @@
             // 
             // BtnCadastro
             // 
+            BtnCadastro.Anchor = AnchorStyles.None;
             BtnCadastro.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BtnCadastro.BackColor = Color.Gainsboro;
-            BtnCadastro.Dock = DockStyle.Bottom;
             BtnCadastro.FlatAppearance.BorderColor = Color.Gainsboro;
             BtnCadastro.FlatAppearance.BorderSize = 0;
             BtnCadastro.FlatStyle = FlatStyle.Flat;
