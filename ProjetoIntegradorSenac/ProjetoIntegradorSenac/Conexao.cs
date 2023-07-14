@@ -31,5 +31,12 @@ namespace ProjetoIntegradorSenac
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
         }
+        public int BuscarIdTitular(Usuario usuario)
+        {
+            string sql = $"SELECT id FROM UsuarioPI WHERE cpf = '{usuario.Cpf}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            usuario.IdUsuario = Convert.ToInt32(comando.ExecuteScalar());
+            return usuario.IdUsuario;
+        }
     }
 }

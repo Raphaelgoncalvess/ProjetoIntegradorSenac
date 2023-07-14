@@ -17,7 +17,7 @@ namespace ProjetoIntegradorSenac
         public FormFilhoCadastro()
         {
             InitializeComponent();
-            PainelFormFilho.Visible = false;
+            PainelCadastroEndereco.Visible = false;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -45,14 +45,24 @@ namespace ProjetoIntegradorSenac
             formFilho.TopLevel = false;
             formFilho.FormBorderStyle = FormBorderStyle.None;
             formFilho.Dock = DockStyle.Fill;
-            PainelFormFilho.Controls.Add(formFilho);
-            PainelFormFilho.Tag = formFilho;
+            PainelCadastroEndereco.Controls.Add(formFilho);
+            PainelCadastroEndereco.Tag = formFilho;
             formFilho.BringToFront();
             formFilho.Show();
 
         }
 
         private void BtnContinuar_Click(object sender, EventArgs e)
+        {
+            PainelCadastroEndereco.Visible = true;
+        }
+
+        private void PainelFormFilho_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnCadastrar_Click(object sender, EventArgs e)
         {
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
@@ -69,10 +79,7 @@ namespace ProjetoIntegradorSenac
             usuario.EhTitular = true;
 
             db.CadastrarUsuario(usuario);
-
-            PainelFormFilho.Visible = true;
-            AbrirFormFilho(new FormFilhoCadastroEndereco());
-
+            usuario.IdUsuario = db.BuscarIdTitular(usuario);
         }
     }
 }
