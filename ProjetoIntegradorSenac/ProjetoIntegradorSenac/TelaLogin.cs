@@ -60,12 +60,14 @@ namespace ProjetoIntegradorSenac
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             AtivarBotao(sender, CoresRGB.cor1);
+            PainelFormFilho.Visible = false;
         }
 
         private void BtnCadastro_Click(object sender, EventArgs e)
         {
             AtivarBotao(sender, CoresRGB.cor1);
-           // AbrirFormFilho(new TelaCadastro());
+            PainelFormFilho.Visible = true;
+            AbrirFormFilho(new FormFilhoCadastro());
         }
 
         private void BtnMostrarSenha_Click(object sender, EventArgs e)
@@ -73,12 +75,8 @@ namespace ProjetoIntegradorSenac
             textBoxSenhaLogin.UseSystemPasswordChar = false;
         }
 
-        private void AbrirFormFilho(Form formFilho)
+        public void AbrirFormFilho(Form formFilho)
         {
-            if (this.formFilho != null)
-            {
-                this.formFilho.Close();
-            }
             this.formFilho = formFilho;
             formFilho.TopLevel = false;
             formFilho.FormBorderStyle = FormBorderStyle.None;
@@ -89,7 +87,6 @@ namespace ProjetoIntegradorSenac
             formFilho.Show();
 
         }
-
 
         private void BtnEfetuarLogin_Click(object sender, EventArgs e)
         {

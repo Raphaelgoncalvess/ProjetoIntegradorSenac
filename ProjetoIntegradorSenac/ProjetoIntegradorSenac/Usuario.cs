@@ -7,8 +7,8 @@
         public string Email { get; set; }
         public string Cpf { get; set; }
         public string Genero { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public string DataNascimento { get; set; }
         public bool EhTitular { get; set; }
-
+        public int IdUsuario { get; set; }
     }
 }
