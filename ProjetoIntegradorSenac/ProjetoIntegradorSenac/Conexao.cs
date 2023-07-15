@@ -37,6 +37,14 @@ namespace ProjetoIntegradorSenac
             SqlCommand comando = new SqlCommand(sql, conn);
             usuario.IdUsuario = Convert.ToInt32(comando.ExecuteScalar());
             return usuario.IdUsuario;
+
         }
+        public void CadastrarEnderecoUsuario(Endereco endereco,Usuario usuario) {
+            string sql = $"INSERT INTO EnderecoPI ( cep, bairro, rua, numero, complemento, idUsuario) " +
+                $"VALUES ('{endereco.Cep}', '{endereco.Bairro}', '{endereco.Rua}', '{endereco.Numero}', '{endereco.Complemento}', '{usuario.IdUsuario}')";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
+
     }
 }

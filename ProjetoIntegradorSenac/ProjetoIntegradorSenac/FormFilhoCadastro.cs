@@ -80,6 +80,17 @@ namespace ProjetoIntegradorSenac
 
             db.CadastrarUsuario(usuario);
             usuario.IdUsuario = db.BuscarIdTitular(usuario);
+            Endereco endereco = new Endereco();
+
+            endereco.Rua= textBoxRua.Text;
+            endereco.Numero = int.Parse(textBoxNumero.Text);
+            endereco.Bairro = textBoxBairro.Text;
+            endereco.Cep = textBoxCep.Text;
+            endereco.Complemento = textBoxComplemento.Text;
+
+            db.CadastrarEnderecoUsuario(endereco, usuario);
+
+
         }
     }
 }
