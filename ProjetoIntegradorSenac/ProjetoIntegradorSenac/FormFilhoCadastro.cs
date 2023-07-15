@@ -39,6 +39,7 @@ namespace ProjetoIntegradorSenac
         {
 
         }
+        //Método pra chamaer o formulário filho dentro do formulário pai
         public void AbrirFormFilho(Form formFilho)
         {
             this.formFilho = formFilho;
@@ -64,11 +65,13 @@ namespace ProjetoIntegradorSenac
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
+            //Abre a conexão com o banco de dados
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
 
             db.Conectar();
 
+            //Cadastra o usuário conforme os dados nas entradas do forms
             usuario.Nome = textBoxNome.Text;
             usuario.Cpf = textBoxCpf.Text;
             usuario.Genero = comboBoxGenero.SelectedItem.ToString();
@@ -78,18 +81,23 @@ namespace ProjetoIntegradorSenac
             usuario.Senha = textBoxSenha.Text;
             usuario.EhTitular = true;
 
+            //Chama o método que realiza o INSERT no banco de dados  na tabela de Usuario e faz um SELECT no ID do usuário que foi cadastrado
             db.CadastrarUsuario(usuario);
             usuario.IdUsuario = db.BuscarIdTitular(usuario);
             Endereco endereco = new Endereco();
 
+            //Cadastra o endereço conforme os dados nas entradas do forms
             endereco.Rua= textBoxRua.Text;
             endereco.Numero = int.Parse(textBoxNumero.Text);
             endereco.Bairro = textBoxBairro.Text;
             endereco.Cep = textBoxCep.Text;
             endereco.Complemento = textBoxComplemento.Text;
 
+            //Chama o método que realiza o INSERT no banco de dados na tabela de Endereço
             db.CadastrarEnderecoUsuario(endereco, usuario);
 
+            MessageBox.Show("Cadastro realizado com sucesso!");
+            this.Close();
 
         }
     }

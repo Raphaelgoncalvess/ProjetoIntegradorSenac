@@ -13,9 +13,9 @@ namespace ProjetoIntegradorSenac
         {
             conn.Close();
         }
-        public bool BuscarUsuario(string Email, string Senha, bool EhTitular)
+        public bool ValidarLogin(string Email, string Senha, bool EhTitular)
         {
-            string sql = $"SELECT * FROM UsuarioPI WHERE email = '{Email}' and senha = '{Senha}' and ehTitular = '{EhTitular}'";
+            string sql = $"SELECT * FROM UsuarioPI WHERE email = '{Email}' and senha = '{Senha}'";
             SqlCommand comando = new SqlCommand(sql, conn);
 
             var retorno = comando.ExecuteReader();
@@ -31,6 +31,13 @@ namespace ProjetoIntegradorSenac
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
         }
+        public void CadastrarEnderecoUsuario(Endereco endereco, Usuario usuario)
+        {
+            string sql = $"INSERT INTO EnderecoPI ( cep, bairro, rua, numero, complemento, idUsuario) " +
+                $"VALUES ('{endereco.Cep}', '{endereco.Bairro}', '{endereco.Rua}', '{endereco.Numero}', '{endereco.Complemento}', '{usuario.IdUsuario}')";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
         public int BuscarIdTitular(Usuario usuario)
         {
             string sql = $"SELECT id FROM UsuarioPI WHERE cpf = '{usuario.Cpf}'";
@@ -39,12 +46,23 @@ namespace ProjetoIntegradorSenac
             return usuario.IdUsuario;
 
         }
-        public void CadastrarEnderecoUsuario(Endereco endereco,Usuario usuario) {
-            string sql = $"INSERT INTO EnderecoPI ( cep, bairro, rua, numero, complemento, idUsuario) " +
-                $"VALUES ('{endereco.Cep}', '{endereco.Bairro}', '{endereco.Rua}', '{endereco.Numero}', '{endereco.Complemento}', '{usuario.IdUsuario}')";
+        public string BuscarNomeUsuarioLogado(Usuario usuario) {  
+                    string sql = $"SELECT nome FROM UsuarioPI WHERE email = '{usuario.Email}' and senha = '{usuario.Senha}'";
+                   SqlCommand comando = new SqlCommand(sql, conn);
+                   usuario.Nome = comando.ExecuteScalar().ToString();
+                   return usuario.Nome;
+               }
+        public bool BuscarUsuarioLogadoEhTitular(Usuario usuario)
+        {
+            string sql = $"SELECT ehTitular FROM UsuarioPI WHERE email = '{usuario.Email}' and senha = '{usuario.Senha}'";
             SqlCommand comando = new SqlCommand(sql, conn);
-            comando.ExecuteNonQuery();
+            usuario.EhTitular = Convert.ToBoolean(comando.ExecuteScalar());
+            return usuario.EhTitular;
         }
+
+        //CRIAR MÉTODO QUE INSERE O ID NA TABELA TITULAR
+        //CRIAR MÉTODO QUE INSERE DADOS NA TABELA MENSALIDADE
+        //CRIAR MÉTODO QUE INSERE DADOS NA TABELA EXAMES
 
     }
 }

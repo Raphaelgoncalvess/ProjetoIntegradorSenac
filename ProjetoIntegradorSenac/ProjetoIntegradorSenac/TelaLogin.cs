@@ -90,6 +90,7 @@ namespace ProjetoIntegradorSenac
 
         private void BtnEfetuarLogin_Click(object sender, EventArgs e)
         {
+            //Abre a conexão com o banco de dados e valida o login
             Conexao db = new Conexao();
             db.Conectar();
 
@@ -98,15 +99,32 @@ namespace ProjetoIntegradorSenac
             usuario.Email = textBoxLoginEmail.Text;
             usuario.Senha = textBoxSenhaLogin.Text;
 
-            var retorno = db.BuscarUsuario(usuario.Email, usuario.Senha, true);
+            var retorno = db.ValidarLogin(usuario.Email, usuario.Senha, true);
+            db.Desconectar();
+            //Fim da validação do login - necessário fechar o reader pra poder abrir um novo se não dá erro
+
+
+            //Início da validação do usuário logado (Busca o nome e se é titular)
+            db.Conectar(); 
+
+            usuario.EhTitular = db.BuscarUsuarioLogadoEhTitular(usuario);
+            usuario.Nome = db.BuscarNomeUsuarioLogado(usuario);
+
+            string nomeUsuarioLogado = usuario.Nome;
+            bool usuarioEhTitular = usuario.EhTitular;
 
             if (!retorno)
             {
-                MessageBox.Show("Usuário não encontrado");
+                MessageBox.Show("Usuário ou senha inválidos. Tente novamente!");
             }
             else
             {
-                MessageBox.Show("Usuário encontrado");
+                MessageBox.Show("Login efetuado com sucesso!");
+                //Instancia a próxima tela e passa o nome do usuário logado e se é titular para ela
+                var telaPrincipal = new TelaPrincipal(nomeUsuarioLogado, usuarioEhTitular);
+                telaPrincipal.Show();
+                this.Hide();
+
             }
         }
     }
