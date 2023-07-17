@@ -42,6 +42,7 @@
             comboBoxGenero = new ComboBox();
             BtnContinuar = new FontAwesome.Sharp.IconButton();
             PainelCadastroEndereco = new Panel();
+            BtnVoltar = new FontAwesome.Sharp.IconButton();
             BtnCadastrar = new FontAwesome.Sharp.IconButton();
             textBoxCep = new TextBox();
             textBoxBairro = new TextBox();
@@ -55,7 +56,6 @@
             LabelRua = new Label();
             labelEndereco = new Label();
             dateTimePicker1 = new DateTimePicker();
-            BtnVoltar = new FontAwesome.Sharp.IconButton();
             PainelCadastroEndereco.SuspendLayout();
             SuspendLayout();
             // 
@@ -226,6 +226,25 @@
             PainelCadastroEndereco.TabIndex = 14;
             PainelCadastroEndereco.Paint += PainelFormFilho_Paint;
             // 
+            // BtnVoltar
+            // 
+            BtnVoltar.FlatStyle = FlatStyle.Flat;
+            BtnVoltar.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnVoltar.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnVoltar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateBackward;
+            BtnVoltar.IconColor = Color.FromArgb(242, 242, 242);
+            BtnVoltar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnVoltar.IconSize = 32;
+            BtnVoltar.Location = new Point(127, 344);
+            BtnVoltar.Name = "BtnVoltar";
+            BtnVoltar.Size = new Size(153, 47);
+            BtnVoltar.TabIndex = 27;
+            BtnVoltar.Text = "Voltar";
+            BtnVoltar.TextAlign = ContentAlignment.MiddleRight;
+            BtnVoltar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnVoltar.UseVisualStyleBackColor = true;
+            BtnVoltar.Click += BtnVoltar_Click;
+            // 
             // BtnCadastrar
             // 
             BtnCadastrar.FlatStyle = FlatStyle.Flat;
@@ -235,7 +254,7 @@
             BtnCadastrar.IconColor = Color.FromArgb(242, 242, 242);
             BtnCadastrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnCadastrar.IconSize = 32;
-            BtnCadastrar.Location = new Point(213, 344);
+            BtnCadastrar.Location = new Point(300, 344);
             BtnCadastrar.Name = "BtnCadastrar";
             BtnCadastrar.Size = new Size(153, 47);
             BtnCadastrar.TabIndex = 26;
@@ -363,25 +382,6 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(183, 23);
             dateTimePicker1.TabIndex = 15;
-            // 
-            // BtnVoltar
-            // 
-            BtnVoltar.FlatStyle = FlatStyle.Flat;
-            BtnVoltar.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnVoltar.ForeColor = Color.FromArgb(242, 242, 242);
-            BtnVoltar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateBackward;
-            BtnVoltar.IconColor = Color.FromArgb(242, 242, 242);
-            BtnVoltar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BtnVoltar.IconSize = 32;
-            BtnVoltar.Location = new Point(54, 344);
-            BtnVoltar.Name = "BtnVoltar";
-            BtnVoltar.Size = new Size(153, 47);
-            BtnVoltar.TabIndex = 27;
-            BtnVoltar.Text = "Voltar";
-            BtnVoltar.TextAlign = ContentAlignment.MiddleRight;
-            BtnVoltar.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BtnVoltar.UseVisualStyleBackColor = true;
-            BtnVoltar.Click += BtnVoltar_Click;
             // 
             // FormFilhoCadastro
             // 
