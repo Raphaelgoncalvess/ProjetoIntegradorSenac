@@ -89,9 +89,9 @@ namespace ProjetoIntegradorSenac
             usuario.EhTitular = true;
 
             //Chama o método que realiza o INSERT no banco de dados  na tabela de Usuario
-            db.CadastrarUsuario(usuario);
+            //db.CadastrarUsuario(usuario);
             /*Faz um SELECT no ID do usuário que foi cadastrado*/
-            usuario.IdUsuario = db.BuscarIdTitular(usuario);
+            //usuario.IdUsuario = db.BuscarIdUsuario(usuario);
 
             Endereco endereco = new Endereco();
 
@@ -103,7 +103,9 @@ namespace ProjetoIntegradorSenac
             endereco.Complemento = textBoxComplemento.Text;
 
             //Chama o método que realiza o INSERT no banco de dados na tabela de Endereço
-            db.CadastrarEnderecoUsuario(endereco, usuario);
+            //db.CadastrarEnderecoUsuario(endereco, usuario);
+
+            db.CadastroTitular(usuario, endereco);
 
             MessageBox.Show("Cadastro realizado com sucesso!");
             this.Close();

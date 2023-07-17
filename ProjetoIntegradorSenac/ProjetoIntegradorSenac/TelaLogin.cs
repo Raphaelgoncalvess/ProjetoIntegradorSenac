@@ -104,15 +104,7 @@ namespace ProjetoIntegradorSenac
             //Fim da validação do login - necessário fechar o reader pra poder abrir um novo se não dá erro
 
 
-            //Início da validação do usuário logado (Busca o nome e se é titular)
-            db.Conectar(); 
-
-            usuario.EhTitular = db.BuscarUsuarioLogadoEhTitular(usuario);
-            usuario.Nome = db.BuscarNomeUsuarioLogado(usuario);
-
-            string nomeUsuarioLogado = usuario.Nome;
-            bool usuarioEhTitular = usuario.EhTitular;
-
+           
             /*Se não validar o login, retorna mensagem de erro*/
             if (!retorno)
             {
@@ -121,6 +113,16 @@ namespace ProjetoIntegradorSenac
             /*Se validar o login, passa para a próxima tela*/
             else
             {
+                //Início da validação do usuário logado (Busca o nome e se é titular)
+                db.Conectar();
+
+                usuario.EhTitular = db.BuscarUsuarioLogadoEhTitular(usuario);
+                usuario.Nome = db.BuscarNomeUsuarioLogado(usuario);
+
+                string nomeUsuarioLogado = usuario.Nome;
+                bool usuarioEhTitular = usuario.EhTitular;
+
+
                 MessageBox.Show("Login efetuado com sucesso!");
                 //Instancia a próxima tela e passa o nome do usuário logado e se é titular para ela
                 var telaPrincipal = new TelaPrincipal(nomeUsuarioLogado, usuarioEhTitular);
