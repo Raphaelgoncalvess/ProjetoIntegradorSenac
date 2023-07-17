@@ -55,6 +55,7 @@
             LabelRua = new Label();
             labelEndereco = new Label();
             dateTimePicker1 = new DateTimePicker();
+            BtnVoltar = new FontAwesome.Sharp.IconButton();
             PainelCadastroEndereco.SuspendLayout();
             SuspendLayout();
             // 
@@ -205,6 +206,7 @@
             // 
             // PainelCadastroEndereco
             // 
+            PainelCadastroEndereco.Controls.Add(BtnVoltar);
             PainelCadastroEndereco.Controls.Add(BtnCadastrar);
             PainelCadastroEndereco.Controls.Add(textBoxCep);
             PainelCadastroEndereco.Controls.Add(textBoxBairro);
@@ -362,6 +364,25 @@
             dateTimePicker1.Size = new Size(183, 23);
             dateTimePicker1.TabIndex = 15;
             // 
+            // BtnVoltar
+            // 
+            BtnVoltar.FlatStyle = FlatStyle.Flat;
+            BtnVoltar.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnVoltar.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnVoltar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateBackward;
+            BtnVoltar.IconColor = Color.FromArgb(242, 242, 242);
+            BtnVoltar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnVoltar.IconSize = 32;
+            BtnVoltar.Location = new Point(54, 344);
+            BtnVoltar.Name = "BtnVoltar";
+            BtnVoltar.Size = new Size(153, 47);
+            BtnVoltar.TabIndex = 27;
+            BtnVoltar.Text = "Voltar";
+            BtnVoltar.TextAlign = ContentAlignment.MiddleRight;
+            BtnVoltar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnVoltar.UseVisualStyleBackColor = true;
+            BtnVoltar.Click += BtnVoltar_Click;
+            // 
             // FormFilhoCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -421,5 +442,6 @@
         private Label LabelBairro;
         private Label LabelRua;
         private Label labelEndereco;
+        private FontAwesome.Sharp.IconButton BtnVoltar;
     }
 }

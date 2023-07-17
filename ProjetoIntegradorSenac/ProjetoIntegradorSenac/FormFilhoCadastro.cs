@@ -39,7 +39,7 @@ namespace ProjetoIntegradorSenac
         {
 
         }
-        //Método pra chamaer o formulário filho dentro do formulário pai
+        //Método pra chamar o formulário filho dentro do formulário pai
         public void AbrirFormFilho(Form formFilho)
         {
             this.formFilho = formFilho;
@@ -53,14 +53,21 @@ namespace ProjetoIntegradorSenac
 
         }
 
+        private void PainelFormFilho_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /*Se clicar no botão continuar o painel fica visível*/
         private void BtnContinuar_Click(object sender, EventArgs e)
         {
             PainelCadastroEndereco.Visible = true;
         }
 
-        private void PainelFormFilho_Paint(object sender, PaintEventArgs e)
+        /*Se clicar no botão voltar o painel fica invisível*/
+        private void BtnVoltar_Click(object sender, EventArgs e)
         {
-
+            PainelCadastroEndereco.Visible = false;
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
@@ -81,13 +88,15 @@ namespace ProjetoIntegradorSenac
             usuario.Senha = textBoxSenha.Text;
             usuario.EhTitular = true;
 
-            //Chama o método que realiza o INSERT no banco de dados  na tabela de Usuario e faz um SELECT no ID do usuário que foi cadastrado
+            //Chama o método que realiza o INSERT no banco de dados  na tabela de Usuario
             db.CadastrarUsuario(usuario);
+            /*Faz um SELECT no ID do usuário que foi cadastrado*/
             usuario.IdUsuario = db.BuscarIdTitular(usuario);
+
             Endereco endereco = new Endereco();
 
             //Cadastra o endereço conforme os dados nas entradas do forms
-            endereco.Rua= textBoxRua.Text;
+            endereco.Rua = textBoxRua.Text;
             endereco.Numero = int.Parse(textBoxNumero.Text);
             endereco.Bairro = textBoxBairro.Text;
             endereco.Cep = textBoxCep.Text;
@@ -100,5 +109,6 @@ namespace ProjetoIntegradorSenac
             this.Close();
 
         }
+
     }
 }

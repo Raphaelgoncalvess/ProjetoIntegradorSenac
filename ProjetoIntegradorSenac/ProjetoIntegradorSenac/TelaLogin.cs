@@ -74,7 +74,7 @@ namespace ProjetoIntegradorSenac
         {
             textBoxSenhaLogin.UseSystemPasswordChar = false;
         }
-
+        /*Método para chamar um form dentro de um painel*/
         public void AbrirFormFilho(Form formFilho)
         {
             this.formFilho = formFilho;
@@ -113,10 +113,12 @@ namespace ProjetoIntegradorSenac
             string nomeUsuarioLogado = usuario.Nome;
             bool usuarioEhTitular = usuario.EhTitular;
 
+            /*Se não validar o login, retorna mensagem de erro*/
             if (!retorno)
             {
                 MessageBox.Show("Usuário ou senha inválidos. Tente novamente!");
             }
+            /*Se validar o login, passa para a próxima tela*/
             else
             {
                 MessageBox.Show("Login efetuado com sucesso!");
