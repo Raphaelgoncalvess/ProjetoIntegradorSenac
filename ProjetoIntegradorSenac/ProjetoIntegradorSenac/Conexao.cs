@@ -58,6 +58,16 @@ namespace ProjetoIntegradorSenac
             return usuario.IdUsuario;
 
         }
+        //BUSCA O ID DO USUARIO QUE ACABOU DE FAZER LOGIN
+        public int BuscarIdUsuarioLogado(Usuario usuario)
+        {
+            /*Faz um SELECT para buscar o Id do Usuario*/
+            string sql = $"SELECT id FROM UsuarioPI WHERE email = '{usuario.Email}' and senha = '{usuario.Senha}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            usuario.IdUsuario = Convert.ToInt32(comando.ExecuteScalar());
+            return usuario.IdUsuario;
+
+        }
         /*Método para cadastrar o endereço do usuário*/
         public void CadastrarEnderecoUsuario(Endereco endereco, Usuario usuario)
         {
@@ -129,5 +139,39 @@ namespace ProjetoIntegradorSenac
             /*Retorna esse dado*/
             return usuario.EhTitular;
         }
+
+        #region BUSCAR DADOS DO USUÁRIO E INSERIR NAS LABELS DA TELA PRINCIPAL
+        public string BuscarUsuario(int idUsuario)
+        {
+            string sql = $"SELECT nome FROM UsuarioPI WHERE id = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string nomeUsuario = comando.ExecuteScalar().ToString();
+            return nomeUsuario;
+        }
+        public string BuscarCpf(int idUsuario)
+        {
+            string sql = $"SELECT cpf FROM UsuarioPI WHERE id = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string cpfUsuario = comando.ExecuteScalar().ToString();
+            return cpfUsuario;
+        }
+
+        public string BuscarGenero(int idUsuario)
+        {
+            string sql = $"SELECT genero FROM UsuarioPI WHERE id = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string generoUsuario = comando.ExecuteScalar().ToString();
+            return generoUsuario;
+        }
+
+        public string BuscarDataNascimento(int idUsuario)
+        {
+            string sql = $"SELECT dataNascimento FROM UsuarioPI WHERE id = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string dataNascimentoUsuario = comando.ExecuteScalar().ToString();
+            return dataNascimentoUsuario;
+        }
+
+        #endregion
     }
 }

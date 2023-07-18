@@ -118,14 +118,16 @@ namespace ProjetoIntegradorSenac
 
                 usuario.EhTitular = db.BuscarUsuarioLogadoEhTitular(usuario);
                 usuario.Nome = db.BuscarNomeUsuarioLogado(usuario);
+                usuario.IdUsuario = db.BuscarIdUsuarioLogado(usuario);
 
                 string nomeUsuarioLogado = usuario.Nome;
                 bool usuarioEhTitular = usuario.EhTitular;
-
+                int idUsuarioLogado = usuario.IdUsuario;
+                
 
                 MessageBox.Show("Login efetuado com sucesso!");
                 //Instancia a próxima tela e passa o nome do usuário logado e se é titular para ela
-                var telaPrincipal = new TelaPrincipal(nomeUsuarioLogado, usuarioEhTitular);
+                var telaPrincipal = new TelaPrincipal(nomeUsuarioLogado, usuarioEhTitular, idUsuarioLogado);
                 telaPrincipal.Show();
                 this.Hide();
 
