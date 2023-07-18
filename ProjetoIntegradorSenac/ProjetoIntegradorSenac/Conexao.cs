@@ -205,5 +205,11 @@ namespace ProjetoIntegradorSenac
             }
             #endregion
         }
+        public void ResetarSenha(Usuario usuario)
+        { 
+            string sql = $"UPDATE UsuarioPI SET senha = '{usuario.Senha}' WHERE cpf = '{usuario.Cpf}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteReader();
+        }
     }
 }

@@ -40,6 +40,7 @@ namespace ProjetoIntegradorSenac
             LabelCpf.Text = usuario.Cpf;
             LabelDataNascimento.Text = usuario.DataNascimento;
             LabelGenero.Text = usuario.Genero;
+            LabelIdUsuario.Text = idUsuario.ToString();
 
             db.Desconectar();
             db.Conectar();
@@ -78,6 +79,22 @@ namespace ProjetoIntegradorSenac
         private void BtnFatura_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LabelIdUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnRedefinirSenha_Click(object sender, EventArgs e)
+        {
+            TelaResetarSenha telaResetarSenha = new TelaResetarSenha();
+            telaResetarSenha.ShowDialog();
         }
     }
 }

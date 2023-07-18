@@ -211,6 +211,7 @@
             linkResetarSenha.TabIndex = 18;
             linkResetarSenha.TabStop = true;
             linkResetarSenha.Text = "esqueceu sua senha ?";
+            linkResetarSenha.Click += linkResetarSenha_Click;
             // 
             // BtnMostrarSenha
             // 

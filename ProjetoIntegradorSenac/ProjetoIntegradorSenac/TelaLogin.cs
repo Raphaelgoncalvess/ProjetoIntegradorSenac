@@ -104,7 +104,7 @@ namespace ProjetoIntegradorSenac
             //Fim da validação do login - necessário fechar o reader pra poder abrir um novo se não dá erro
 
 
-           
+
             /*Se não validar o login, retorna mensagem de erro*/
             if (!retorno)
             {
@@ -123,7 +123,7 @@ namespace ProjetoIntegradorSenac
                 string nomeUsuarioLogado = usuario.Nome;
                 bool usuarioEhTitular = usuario.EhTitular;
                 int idUsuarioLogado = usuario.IdUsuario;
-                
+
 
                 MessageBox.Show("Login efetuado com sucesso!");
                 //Instancia a próxima tela e passa o nome do usuário logado e se é titular para ela
@@ -132,6 +132,12 @@ namespace ProjetoIntegradorSenac
                 this.Hide();
 
             }
+        }
+
+        private void linkResetarSenha_Click(object sender, EventArgs e)
+        {
+            TelaResetarSenha telaResetarSenha = new TelaResetarSenha();
+            telaResetarSenha.ShowDialog();
         }
     }
 }

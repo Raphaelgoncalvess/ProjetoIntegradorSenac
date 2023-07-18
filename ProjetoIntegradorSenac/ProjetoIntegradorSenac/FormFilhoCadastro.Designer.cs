@@ -44,7 +44,6 @@
             PainelCadastroEndereco = new Panel();
             BtnVoltar = new FontAwesome.Sharp.IconButton();
             BtnCadastrar = new FontAwesome.Sharp.IconButton();
-            textBoxCep = new TextBox();
             textBoxBairro = new TextBox();
             textBoxNumero = new TextBox();
             textBoxComplemento = new TextBox();
@@ -56,6 +55,7 @@
             LabelRua = new Label();
             labelEndereco = new Label();
             dateTimePicker1 = new DateTimePicker();
+            textBoxCep = new MaskedTextBox();
             PainelCadastroEndereco.SuspendLayout();
             SuspendLayout();
             // 
@@ -206,9 +206,9 @@
             // 
             // PainelCadastroEndereco
             // 
+            PainelCadastroEndereco.Controls.Add(textBoxCep);
             PainelCadastroEndereco.Controls.Add(BtnVoltar);
             PainelCadastroEndereco.Controls.Add(BtnCadastrar);
-            PainelCadastroEndereco.Controls.Add(textBoxCep);
             PainelCadastroEndereco.Controls.Add(textBoxBairro);
             PainelCadastroEndereco.Controls.Add(textBoxNumero);
             PainelCadastroEndereco.Controls.Add(textBoxComplemento);
@@ -263,15 +263,6 @@
             BtnCadastrar.TextImageRelation = TextImageRelation.TextBeforeImage;
             BtnCadastrar.UseVisualStyleBackColor = true;
             BtnCadastrar.Click += BtnCadastrar_Click;
-            // 
-            // textBoxCep
-            // 
-            textBoxCep.BackColor = Color.FromArgb(242, 242, 242);
-            textBoxCep.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCep.Location = new Point(193, 245);
-            textBoxCep.Name = "textBoxCep";
-            textBoxCep.Size = new Size(195, 27);
-            textBoxCep.TabIndex = 25;
             // 
             // textBoxBairro
             // 
@@ -383,6 +374,16 @@
             dateTimePicker1.Size = new Size(183, 23);
             dateTimePicker1.TabIndex = 15;
             // 
+            // textBoxCep
+            // 
+            textBoxCep.BackColor = Color.FromArgb(242, 242, 242);
+            textBoxCep.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxCep.Location = new Point(193, 245);
+            textBoxCep.Mask = "00000-000";
+            textBoxCep.Name = "textBoxCep";
+            textBoxCep.Size = new Size(194, 27);
+            textBoxCep.TabIndex = 28;
+            // 
             // FormFilhoCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -431,7 +432,6 @@
         private Panel PainelCadastroEndereco;
         private DateTimePicker dateTimePicker1;
         private FontAwesome.Sharp.IconButton BtnCadastrar;
-        private TextBox textBoxCep;
         private TextBox textBoxBairro;
         private TextBox textBoxNumero;
         private TextBox textBoxComplemento;
@@ -443,5 +443,6 @@
         private Label LabelRua;
         private Label labelEndereco;
         private FontAwesome.Sharp.IconButton BtnVoltar;
+        private MaskedTextBox textBoxCep;
     }
 }
