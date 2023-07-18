@@ -30,14 +30,22 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
 
             usuario.Nome = db.BuscarUsuario(idUsuario);
+            usuario.Email = db.BuscarEmail(idUsuario);
             usuario.Cpf = db.BuscarCpf(idUsuario);
             usuario.DataNascimento = db.BuscarDataNascimento(idUsuario);
             usuario.Genero = db.BuscarGenero(idUsuario);
 
-            LabelId.Text = usuario.Nome;
-            LabelDataNascimento.Text = usuario.Cpf;
-            LabelGenero.Text = usuario.DataNascimento;
+            LabelNomeUsuario.Text = usuario.Nome;
+            LabelEmail.Text = usuario.Email;
+            LabelCpf.Text = usuario.Cpf;
+            LabelDataNascimento.Text = usuario.DataNascimento;
+            LabelGenero.Text = usuario.Genero;
 
+            db.Desconectar();
+            db.Conectar();
+
+            var listaDependentes = db.BuscarDependentes(idUsuario);
+            dataGridView1.DataSource = listaDependentes;
         }
 
         private void label1_Click(object sender, EventArgs e)

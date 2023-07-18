@@ -77,7 +77,7 @@ namespace ProjetoIntegradorSenac
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
         }
-       
+
 
         //CRIAR MÉTODO QUE INSERE O ID NA TABELA TITULAR
         public void InserirTitular(Usuario usuario)
@@ -98,12 +98,12 @@ namespace ProjetoIntegradorSenac
         }
 
         //CRIAR MÉTODO QUE INSERE DADOS NA TABELA MENSALIDADE
-        public void InserirMensalidade(Usuario usuario) 
+        public void InserirMensalidade(Usuario usuario)
         {
             string sql = $"INSERT MensalidadePI (descricao, valor, dataEmissao, dataVencimento, taPaga, idTitular)\r\n"
-                       + $"VALUES ('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-08-15', 0, '{usuario.IdTitular}'),\r\n" 
-                       + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-09-15', 0, '{usuario.IdTitular}'),\r\n" 
-                       + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-10-15', 0, '{usuario.IdTitular}'),\r\n" 
+                       + $"VALUES ('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-08-15', 0, '{usuario.IdTitular}'),\r\n"
+                       + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-09-15', 0, '{usuario.IdTitular}'),\r\n"
+                       + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-10-15', 0, '{usuario.IdTitular}'),\r\n"
                        + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-11-15', 0, '{usuario.IdTitular}');";
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
@@ -111,7 +111,7 @@ namespace ProjetoIntegradorSenac
         //CRIAR MÉTODO QUE INSERE DADOS NA TABELA EXAMES
         public void InserirExame(Usuario usuario)
         {
-            string sql = $"INSERT INTO ExamePI (nome, descricao, estaApto, situacao, IdUsuario) " 
+            string sql = $"INSERT INTO ExamePI (nome, descricao, estaApto, situacao, IdUsuario) "
                        + $"VALUES ('Exame Dermatológico', 'Exame para entrar na piscina do clube',0,'Pendente','{usuario.IdUsuario}')";
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
@@ -168,10 +168,42 @@ namespace ProjetoIntegradorSenac
         {
             string sql = $"SELECT dataNascimento FROM UsuarioPI WHERE id = '{idUsuario}'";
             SqlCommand comando = new SqlCommand(sql, conn);
+            string dataNascimentoUsuario = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy");
+            return dataNascimentoUsuario;
+        }
+        public string BuscarEmail(int idUsuario)
+        {
+            string sql = $"SELECT email FROM UsuarioPI WHERE id = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
             string dataNascimentoUsuario = comando.ExecuteScalar().ToString();
             return dataNascimentoUsuario;
         }
 
-        #endregion
+        public List<Dependente> BuscarDependentes(int idTitular)
+        {
+            string sql = $"SELECT nome, descricao FROM DependentePI\r\nINNER JOIN UsuarioPI ON DependentePI.idUsuario = UsuarioPI.id\r\n INNER JOIN TitularPI ON DependentePI.idTitular = TitularPI.id\r\n WHERE TitularPI.idUsuario = '{idTitular}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+
+            List<Dependente> dependente = new List<Dependente>();
+
+            using (var reader = comando.ExecuteReader())
+            { 
+                while (reader.Read())
+                { 
+                    var nomeDependenteDb = reader.GetString(reader.GetOrdinal("nome"));
+                    var descricaoDependenteDb = reader.GetString(reader.GetOrdinal("descricao"));
+
+
+                    dependente.Add(new Dependente()
+                    {
+                        Nome = nomeDependenteDb,
+                        Parentesco = descricaoDependenteDb
+
+                    }); ;
+                }
+                return dependente;
+            }
+            #endregion
+        }
     }
 }

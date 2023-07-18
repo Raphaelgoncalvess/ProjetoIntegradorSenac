@@ -40,19 +40,29 @@
             LabelNomeUsuario = new Label();
             BtnHome = new FontAwesome.Sharp.IconButton();
             PainelUsuario = new Panel();
+            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             LabelEmail = new Label();
             LabelCpf = new Label();
             LabelGenero = new Label();
             LabelDataNascimento = new Label();
-            LabelId = new Label();
             BtnExcluirDependente = new FontAwesome.Sharp.IconButton();
             BtnCadastrarDependente = new FontAwesome.Sharp.IconButton();
             BtnRedefinirSenha = new FontAwesome.Sharp.IconButton();
             usuarioBindingSource = new BindingSource(components);
+            dataGridView1 = new DataGridView();
+            LblDependentes = new Label();
             PainelMenuLateral.SuspendLayout();
             PainelBarraTitulo.SuspendLayout();
             PainelUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // PainelMenuLateral
@@ -225,11 +235,16 @@
             // PainelUsuario
             // 
             PainelUsuario.BackColor = Color.FromArgb(6, 7, 45);
+            PainelUsuario.Controls.Add(LblDependentes);
+            PainelUsuario.Controls.Add(dataGridView1);
+            PainelUsuario.Controls.Add(iconPictureBox4);
+            PainelUsuario.Controls.Add(iconPictureBox3);
+            PainelUsuario.Controls.Add(iconPictureBox2);
+            PainelUsuario.Controls.Add(iconPictureBox1);
             PainelUsuario.Controls.Add(LabelEmail);
             PainelUsuario.Controls.Add(LabelCpf);
             PainelUsuario.Controls.Add(LabelGenero);
             PainelUsuario.Controls.Add(LabelDataNascimento);
-            PainelUsuario.Controls.Add(LabelId);
             PainelUsuario.Controls.Add(BtnExcluirDependente);
             PainelUsuario.Controls.Add(BtnCadastrarDependente);
             PainelUsuario.Controls.Add(BtnRedefinirSenha);
@@ -239,12 +254,68 @@
             PainelUsuario.Size = new Size(612, 360);
             PainelUsuario.TabIndex = 2;
             // 
+            // iconPictureBox4
+            // 
+            iconPictureBox4.BackColor = Color.FromArgb(6, 7, 45);
+            iconPictureBox4.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.MarsAndVenus;
+            iconPictureBox4.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox4.IconSize = 44;
+            iconPictureBox4.Location = new Point(15, 168);
+            iconPictureBox4.Name = "iconPictureBox4";
+            iconPictureBox4.Size = new Size(44, 45);
+            iconPictureBox4.TabIndex = 11;
+            iconPictureBox4.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.FromArgb(6, 7, 45);
+            iconPictureBox3.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.CakeCandles;
+            iconPictureBox3.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 44;
+            iconPictureBox3.Location = new Point(15, 117);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(44, 45);
+            iconPictureBox3.TabIndex = 10;
+            iconPictureBox3.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.FromArgb(6, 7, 45);
+            iconPictureBox2.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.ChartGantt;
+            iconPictureBox2.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 44;
+            iconPictureBox2.Location = new Point(15, 66);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(44, 45);
+            iconPictureBox2.TabIndex = 9;
+            iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.FromArgb(6, 7, 45);
+            iconPictureBox1.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MailBulk;
+            iconPictureBox1.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 44;
+            iconPictureBox1.Location = new Point(15, 15);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(44, 45);
+            iconPictureBox1.TabIndex = 8;
+            iconPictureBox1.TabStop = false;
+            // 
             // LabelEmail
             // 
             LabelEmail.AutoSize = true;
             LabelEmail.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LabelEmail.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelEmail.Location = new Point(36, 180);
+            LabelEmail.Location = new Point(65, 31);
             LabelEmail.Name = "LabelEmail";
             LabelEmail.Size = new Size(50, 19);
             LabelEmail.TabIndex = 7;
@@ -255,7 +326,7 @@
             LabelCpf.AutoSize = true;
             LabelCpf.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LabelCpf.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelCpf.Location = new Point(33, 142);
+            LabelCpf.Location = new Point(65, 82);
             LabelCpf.Name = "LabelCpf";
             LabelCpf.Size = new Size(50, 19);
             LabelCpf.TabIndex = 6;
@@ -266,7 +337,7 @@
             LabelGenero.AutoSize = true;
             LabelGenero.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LabelGenero.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelGenero.Location = new Point(158, 161);
+            LabelGenero.Location = new Point(66, 180);
             LabelGenero.Name = "LabelGenero";
             LabelGenero.Size = new Size(50, 19);
             LabelGenero.TabIndex = 5;
@@ -277,22 +348,11 @@
             LabelDataNascimento.AutoSize = true;
             LabelDataNascimento.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LabelDataNascimento.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelDataNascimento.Location = new Point(320, 180);
+            LabelDataNascimento.Location = new Point(66, 130);
             LabelDataNascimento.Name = "LabelDataNascimento";
             LabelDataNascimento.Size = new Size(49, 19);
             LabelDataNascimento.TabIndex = 4;
             LabelDataNascimento.Text = "label2";
-            // 
-            // LabelId
-            // 
-            LabelId.AutoSize = true;
-            LabelId.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LabelId.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelId.Location = new Point(309, 120);
-            LabelId.Name = "LabelId";
-            LabelId.Size = new Size(48, 19);
-            LabelId.TabIndex = 3;
-            LabelId.Text = "label1";
             // 
             // BtnExcluirDependente
             // 
@@ -303,7 +363,7 @@
             BtnExcluirDependente.IconColor = Color.FromArgb(242, 242, 242);
             BtnExcluirDependente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnExcluirDependente.IconSize = 40;
-            BtnExcluirDependente.Location = new Point(236, 310);
+            BtnExcluirDependente.Location = new Point(389, 310);
             BtnExcluirDependente.Name = "BtnExcluirDependente";
             BtnExcluirDependente.Size = new Size(147, 47);
             BtnExcluirDependente.TabIndex = 2;
@@ -320,7 +380,7 @@
             BtnCadastrarDependente.IconColor = Color.FromArgb(242, 242, 242);
             BtnCadastrarDependente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnCadastrarDependente.IconSize = 40;
-            BtnCadastrarDependente.Location = new Point(83, 310);
+            BtnCadastrarDependente.Location = new Point(236, 310);
             BtnCadastrarDependente.Name = "BtnCadastrarDependente";
             BtnCadastrarDependente.Size = new Size(147, 47);
             BtnCadastrarDependente.TabIndex = 1;
@@ -337,7 +397,7 @@
             BtnRedefinirSenha.IconColor = Color.FromArgb(242, 242, 242);
             BtnRedefinirSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnRedefinirSenha.IconSize = 40;
-            BtnRedefinirSenha.Location = new Point(389, 310);
+            BtnRedefinirSenha.Location = new Point(83, 310);
             BtnRedefinirSenha.Name = "BtnRedefinirSenha";
             BtnRedefinirSenha.Size = new Size(147, 47);
             BtnRedefinirSenha.TabIndex = 0;
@@ -348,6 +408,27 @@
             // usuarioBindingSource
             // 
             usuarioBindingSource.DataSource = typeof(Usuario);
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.FromArgb(6, 7, 45);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(236, 60);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(300, 244);
+            dataGridView1.TabIndex = 12;
+            // 
+            // LblDependentes
+            // 
+            LblDependentes.AutoSize = true;
+            LblDependentes.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            LblDependentes.ForeColor = Color.FromArgb(242, 242, 242);
+            LblDependentes.Location = new Point(274, 19);
+            LblDependentes.Name = "LblDependentes";
+            LblDependentes.Size = new Size(218, 23);
+            LblDependentes.TabIndex = 13;
+            LblDependentes.Text = "Dependentes cadastrados";
             // 
             // TelaPrincipal
             // 
@@ -365,7 +446,12 @@
             PainelBarraTitulo.PerformLayout();
             PainelUsuario.ResumeLayout(false);
             PainelUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -388,8 +474,13 @@
         private BindingSource usuarioBindingSource;
         private Label LabelGenero;
         private Label LabelDataNascimento;
-        private Label LabelId;
         private Label LabelCpf;
         private Label LabelEmail;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private Label LblDependentes;
+        private DataGridView dataGridView1;
     }
 }
