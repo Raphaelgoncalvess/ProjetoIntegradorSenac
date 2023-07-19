@@ -218,17 +218,17 @@ namespace ProjetoIntegradorSenac
             BuscarIdUsuario(usuario);
             InserirDependente(usuario);
         }
-        public void InserirDependente(Usuario usuario)
-        {
-            string sql = $"INSERT INTO DependentePI (descricao, idUsuario, idTitular) VALUES ('{usuario.Descricao}',{usuario.IdUsuario},{usuario.IdTitular})";
-            SqlCommand comando = new SqlCommand( sql, conn);
-            comando.ExecuteNonQuery();
-        }
         public void DeletarDependente(Usuario usuario)
         {
             BuscarIdUsuario(usuario);
             DeletarTabelaDependente(usuario);
             DeletarTabelaUsuario(usuario);
+        }
+        public void InserirDependente(Usuario usuario)
+        {
+            string sql = $"INSERT INTO DependentePI (descricao, idUsuario, idTitular) VALUES ('{usuario.Descricao}',{usuario.IdUsuario},{usuario.IdTitular})";
+            SqlCommand comando = new SqlCommand( sql, conn);
+            comando.ExecuteNonQuery();
         }
         public void DeletarTabelaDependente(Usuario usuario)
         {
