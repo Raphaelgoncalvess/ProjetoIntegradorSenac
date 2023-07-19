@@ -17,5 +17,6 @@
 
         /*Dados tabela Dependente*/
         public int IdDependente { get; set; }
+        public string Descricao { get; set; }
     }
 }

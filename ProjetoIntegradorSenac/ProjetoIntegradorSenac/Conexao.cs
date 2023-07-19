@@ -211,5 +211,38 @@ namespace ProjetoIntegradorSenac
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteReader();
         }
+        #region MÉTODOS RELACIONADOS AO DEPENDENTE
+        public void CadastroDependente(Usuario usuario)
+        {
+            CadastrarUsuario(usuario);
+            BuscarIdUsuario(usuario);
+            InserirDependente(usuario);
+        }
+        public void InserirDependente(Usuario usuario)
+        {
+            string sql = $"INSERT INTO DependentePI (descricao, idUsuario, idTitular) VALUES ('{usuario.Descricao}',{usuario.IdUsuario},{usuario.IdTitular})";
+            SqlCommand comando = new SqlCommand( sql, conn);
+            comando.ExecuteNonQuery();
+        }
+        public void DeletarDependente(Usuario usuario)
+        {
+            BuscarIdUsuario(usuario);
+            DeletarTabelaDependente(usuario);
+            DeletarTabelaUsuario(usuario);
+        }
+        public void DeletarTabelaDependente(Usuario usuario)
+        {
+            string sql = $"DELETE FROM DependentePI WHERE idUsuario = '{usuario.IdUsuario}'";
+            SqlCommand comando = new SqlCommand(sql , conn);
+            comando.ExecuteNonQuery();
+            
+        }
+        public void DeletarTabelaUsuario(Usuario usuario)
+        {
+            string sql = $"DELETE FROM UsuarioPI WHERE id = '{usuario.IdUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
+        #endregion    
     }
 }

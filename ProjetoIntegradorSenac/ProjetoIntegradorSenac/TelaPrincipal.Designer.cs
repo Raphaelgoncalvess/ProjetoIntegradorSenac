@@ -313,7 +313,7 @@
             dataGridView1.Location = new Point(265, 60);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(300, 244);
+            dataGridView1.Size = new Size(335, 244);
             dataGridView1.TabIndex = 12;
             // 
             // iconPictureBox4
@@ -425,13 +425,14 @@
             BtnExcluirDependente.IconColor = Color.FromArgb(242, 242, 242);
             BtnExcluirDependente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnExcluirDependente.IconSize = 40;
-            BtnExcluirDependente.Location = new Point(418, 310);
+            BtnExcluirDependente.Location = new Point(453, 310);
             BtnExcluirDependente.Name = "BtnExcluirDependente";
             BtnExcluirDependente.Size = new Size(147, 47);
             BtnExcluirDependente.TabIndex = 2;
             BtnExcluirDependente.Text = "Excluir Dependente";
             BtnExcluirDependente.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnExcluirDependente.UseVisualStyleBackColor = true;
+            BtnExcluirDependente.Click += BtnExcluirDependente_Click;
             // 
             // BtnCadastrarDependente
             // 
@@ -449,6 +450,7 @@
             BtnCadastrarDependente.Text = "Cadastrar Dependente";
             BtnCadastrarDependente.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnCadastrarDependente.UseVisualStyleBackColor = true;
+            BtnCadastrarDependente.Click += BtnCadastrarDependente_Click;
             // 
             // BtnRedefinirSenha
             // 
@@ -511,9 +513,7 @@
         private FontAwesome.Sharp.IconButton BtnHome;
         private Label LabelNomeUsuario;
         private Panel PainelUsuario;
-        private FontAwesome.Sharp.IconButton BtnCadastrarDependente;
         private FontAwesome.Sharp.IconButton BtnRedefinirSenha;
-        private FontAwesome.Sharp.IconButton BtnExcluirDependente;
         private BindingSource usuarioBindingSource;
         private Label LabelGenero;
         private Label LabelDataNascimento;
@@ -524,9 +524,11 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private Label LblDependentes;
-        private DataGridView dataGridView1;
         private Label LabelIdUsuario;
         private Label label2;
         private Label label1;
+        private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton BtnExcluirDependente;
+        private FontAwesome.Sharp.IconButton BtnCadastrarDependente;
     }
 }

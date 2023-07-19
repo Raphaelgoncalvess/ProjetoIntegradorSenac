@@ -96,5 +96,20 @@ namespace ProjetoIntegradorSenac
             TelaResetarSenha telaResetarSenha = new TelaResetarSenha();
             telaResetarSenha.ShowDialog();
         }
+
+        private void BtnCadastrarDependente_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = idUsuarioLogado;
+            CadastrarDependente telaCadastrarDependente = new CadastrarDependente(idUsuarioLogado);
+            telaCadastrarDependente.ShowDialog();
+
+        }
+
+        private void BtnExcluirDependente_Click(object sender, EventArgs e)
+        {
+            DeletarDependente telaDeletarDependente = new DeletarDependente();
+            telaDeletarDependente.ShowDialog();
+        }
     }
 }
