@@ -15,6 +15,8 @@ namespace ProjetoIntegradorSenac
             InitializeComponent();
             AtivarBotao(BtnLogin, CoresRGB.cor1);
             PainelFormFilho.Visible = false;
+            FormBorderStyle = FormBorderStyle.None;
+            BtnFechar.Visible = true;
         }
         //Structs
         public struct CoresRGB
@@ -138,6 +140,11 @@ namespace ProjetoIntegradorSenac
         {
             TelaResetarSenha telaResetarSenha = new TelaResetarSenha();
             telaResetarSenha.ShowDialog();
+        }
+
+        private void BtnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

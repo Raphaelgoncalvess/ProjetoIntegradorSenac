@@ -15,6 +15,7 @@ namespace ProjetoIntegradorSenac
         public TelaResetarSenha()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.None;
         }
 
         private void TextBoxCPF_TextChanged(object sender, EventArgs e)

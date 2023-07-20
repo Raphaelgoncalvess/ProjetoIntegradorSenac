@@ -80,6 +80,9 @@
             BtnCadastrarDependente = new FontAwesome.Sharp.IconButton();
             BtnRedefinirSenha = new FontAwesome.Sharp.IconButton();
             PainelBarraTitulo = new Panel();
+            LabelHome = new Label();
+            BtnFechar = new FontAwesome.Sharp.IconButton();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             label2 = new Label();
             label1 = new Label();
             LabelIdUsuario = new Label();
@@ -101,25 +104,30 @@
             label11 = new Label();
             label8 = new Label();
             PainelFatura = new Panel();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            descFatura1 = new Label();
-            valorFatura1 = new Label();
-            dataVencFatura1 = new Label();
-            situacaoFatura1 = new Label();
-            situacaoFatura2 = new Label();
-            dataVencFatura2 = new Label();
-            valorFatura2 = new Label();
-            descFatura2 = new Label();
+            confirmarPgto3 = new FontAwesome.Sharp.IconButton();
+            confirmarPgto2 = new FontAwesome.Sharp.IconButton();
+            confirmarPgto1 = new FontAwesome.Sharp.IconButton();
+            imprimirFatura3 = new FontAwesome.Sharp.IconButton();
+            imprimirFatura2 = new FontAwesome.Sharp.IconButton();
+            imprimirFatura1 = new FontAwesome.Sharp.IconButton();
             situacaoFatura3 = new Label();
             dataVencFatura3 = new Label();
             valorFatura3 = new Label();
             descFatura3 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            situacaoFatura2 = new Label();
+            dataVencFatura2 = new Label();
+            valorFatura2 = new Label();
+            descFatura2 = new Label();
+            situacaoFatura1 = new Label();
+            dataVencFatura1 = new Label();
+            valorFatura1 = new Label();
+            descFatura1 = new Label();
+            label17 = new Label();
+            label16 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            label18 = new Label();
             PainelMenuLateral.SuspendLayout();
             PainelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -134,10 +142,12 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             PainelBarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             PainelExame.SuspendLayout();
             PainelFatura.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             SuspendLayout();
             // 
             // PainelMenuLateral
@@ -843,6 +853,9 @@
             // PainelBarraTitulo
             // 
             PainelBarraTitulo.BackColor = Color.FromArgb(6, 7, 33);
+            PainelBarraTitulo.Controls.Add(LabelHome);
+            PainelBarraTitulo.Controls.Add(BtnFechar);
+            PainelBarraTitulo.Controls.Add(iconPictureBox5);
             PainelBarraTitulo.Controls.Add(label2);
             PainelBarraTitulo.Controls.Add(label1);
             PainelBarraTitulo.Controls.Add(LabelIdUsuario);
@@ -853,13 +866,56 @@
             PainelBarraTitulo.Name = "PainelBarraTitulo";
             PainelBarraTitulo.Size = new Size(612, 90);
             PainelBarraTitulo.TabIndex = 1;
+            PainelBarraTitulo.MouseDown += PainelBarraTitulo_MouseDown;
+            // 
+            // LabelHome
+            // 
+            LabelHome.AutoSize = true;
+            LabelHome.Font = new Font("Candara", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            LabelHome.ForeColor = Color.FromArgb(242, 242, 242);
+            LabelHome.Location = new Point(55, 39);
+            LabelHome.Name = "LabelHome";
+            LabelHome.Size = new Size(40, 15);
+            LabelHome.TabIndex = 7;
+            LabelHome.Text = "Home";
+            // 
+            // BtnFechar
+            // 
+            BtnFechar.FlatAppearance.BorderSize = 0;
+            BtnFechar.FlatStyle = FlatStyle.Flat;
+            BtnFechar.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnFechar.IconChar = FontAwesome.Sharp.IconChar.X;
+            BtnFechar.IconColor = Color.FromArgb(242, 242, 242);
+            BtnFechar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            BtnFechar.IconSize = 25;
+            BtnFechar.Location = new Point(566, 3);
+            BtnFechar.Name = "BtnFechar";
+            BtnFechar.Size = new Size(43, 32);
+            BtnFechar.TabIndex = 6;
+            BtnFechar.UseVisualStyleBackColor = true;
+            BtnFechar.Click += BtnFechar_Click;
+            // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.FromArgb(6, 7, 33);
+            iconPictureBox5.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            iconPictureBox5.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 44;
+            iconPictureBox5.Location = new Point(372, 18);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(44, 48);
+            iconPictureBox5.TabIndex = 5;
+            iconPictureBox5.TabStop = false;
+            iconPictureBox5.Click += iconPictureBox5_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Candara", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(242, 242, 242);
-            label2.Location = new Point(449, 53);
+            label2.Location = new Point(497, 53);
             label2.Name = "label2";
             label2.Size = new Size(13, 13);
             label2.TabIndex = 4;
@@ -870,7 +926,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(242, 242, 242);
-            label1.Location = new Point(375, 35);
+            label1.Location = new Point(422, 35);
             label1.Name = "label1";
             label1.Size = new Size(78, 18);
             label1.TabIndex = 3;
@@ -881,7 +937,7 @@
             LabelIdUsuario.AutoSize = true;
             LabelIdUsuario.Font = new Font("Candara", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             LabelIdUsuario.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelIdUsuario.Location = new Point(459, 53);
+            LabelIdUsuario.Location = new Point(506, 53);
             LabelIdUsuario.Name = "LabelIdUsuario";
             LabelIdUsuario.Size = new Size(34, 13);
             LabelIdUsuario.TabIndex = 2;
@@ -893,7 +949,7 @@
             LabelNomeUsuario.AutoSize = true;
             LabelNomeUsuario.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             LabelNomeUsuario.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelNomeUsuario.Location = new Point(450, 35);
+            LabelNomeUsuario.Location = new Point(497, 35);
             LabelNomeUsuario.Name = "LabelNomeUsuario";
             LabelNomeUsuario.Size = new Size(42, 18);
             LabelNomeUsuario.TabIndex = 1;
@@ -911,9 +967,8 @@
             BtnHome.IconSize = 40;
             BtnHome.Location = new Point(6, 24);
             BtnHome.Name = "BtnHome";
-            BtnHome.Size = new Size(105, 40);
+            BtnHome.Size = new Size(43, 40);
             BtnHome.TabIndex = 0;
-            BtnHome.Text = "Home";
             BtnHome.TextAlign = ContentAlignment.MiddleRight;
             BtnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnHome.UseVisualStyleBackColor = true;
@@ -961,6 +1016,8 @@
             // 
             // PainelExame
             // 
+            PainelExame.Controls.Add(label18);
+            PainelExame.Controls.Add(iconPictureBox6);
             PainelExame.Controls.Add(BtnCadastrarExame);
             PainelExame.Controls.Add(LabelSituacao);
             PainelExame.Controls.Add(LabelDataVencimento);
@@ -970,20 +1027,22 @@
             PainelExame.Controls.Add(label12);
             PainelExame.Controls.Add(label11);
             PainelExame.Controls.Add(label8);
-            PainelExame.Location = new Point(740, 383);
+            PainelExame.Location = new Point(552, 329);
             PainelExame.Name = "PainelExame";
             PainelExame.Size = new Size(612, 360);
             PainelExame.TabIndex = 6;
             // 
             // BtnCadastrarExame
             // 
+            BtnCadastrarExame.FlatStyle = FlatStyle.Flat;
             BtnCadastrarExame.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnCadastrarExame.ForeColor = Color.FromArgb(242, 242, 242);
             BtnCadastrarExame.IconChar = FontAwesome.Sharp.IconChar.None;
-            BtnCadastrarExame.IconColor = Color.Black;
+            BtnCadastrarExame.IconColor = Color.FromArgb(242, 242, 242);
             BtnCadastrarExame.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BtnCadastrarExame.Location = new Point(413, 286);
+            BtnCadastrarExame.Location = new Point(364, 286);
             BtnCadastrarExame.Name = "BtnCadastrarExame";
-            BtnCadastrarExame.Size = new Size(153, 34);
+            BtnCadastrarExame.Size = new Size(166, 34);
             BtnCadastrarExame.TabIndex = 8;
             BtnCadastrarExame.Text = "Cadastrar Exame";
             BtnCadastrarExame.UseVisualStyleBackColor = true;
@@ -1080,9 +1139,13 @@
             // 
             // PainelFatura
             // 
-            PainelFatura.Controls.Add(iconButton3);
-            PainelFatura.Controls.Add(iconButton2);
-            PainelFatura.Controls.Add(iconButton1);
+            PainelFatura.Controls.Add(confirmarPgto3);
+            PainelFatura.Controls.Add(PainelExame);
+            PainelFatura.Controls.Add(confirmarPgto2);
+            PainelFatura.Controls.Add(confirmarPgto1);
+            PainelFatura.Controls.Add(imprimirFatura3);
+            PainelFatura.Controls.Add(imprimirFatura2);
+            PainelFatura.Controls.Add(imprimirFatura1);
             PainelFatura.Controls.Add(situacaoFatura3);
             PainelFatura.Controls.Add(dataVencFatura3);
             PainelFatura.Controls.Add(valorFatura3);
@@ -1100,232 +1163,303 @@
             PainelFatura.Controls.Add(label15);
             PainelFatura.Controls.Add(label14);
             PainelFatura.Dock = DockStyle.Fill;
+            PainelFatura.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             PainelFatura.Location = new Point(188, 90);
             PainelFatura.Name = "PainelFatura";
             PainelFatura.Size = new Size(612, 360);
             PainelFatura.TabIndex = 7;
             PainelFatura.Paint += PainelFatura_Paint;
             // 
-            // label14
+            // confirmarPgto3
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = Color.FromArgb(242, 242, 242);
-            label14.Location = new Point(22, 37);
-            label14.Name = "label14";
-            label14.Size = new Size(89, 23);
-            label14.TabIndex = 0;
-            label14.Text = "Descrição";
+            confirmarPgto3.FlatStyle = FlatStyle.Flat;
+            confirmarPgto3.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            confirmarPgto3.ForeColor = Color.FromArgb(242, 242, 242);
+            confirmarPgto3.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            confirmarPgto3.IconColor = Color.FromArgb(242, 242, 242);
+            confirmarPgto3.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            confirmarPgto3.IconSize = 36;
+            confirmarPgto3.Location = new Point(553, 192);
+            confirmarPgto3.Name = "confirmarPgto3";
+            confirmarPgto3.Size = new Size(48, 43);
+            confirmarPgto3.TabIndex = 21;
+            confirmarPgto3.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // confirmarPgto2
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.ForeColor = Color.FromArgb(242, 242, 242);
-            label15.Location = new Point(161, 37);
-            label15.Name = "label15";
-            label15.Size = new Size(52, 23);
-            label15.TabIndex = 1;
-            label15.Text = "Valor";
+            confirmarPgto2.FlatStyle = FlatStyle.Flat;
+            confirmarPgto2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            confirmarPgto2.ForeColor = Color.FromArgb(242, 242, 242);
+            confirmarPgto2.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            confirmarPgto2.IconColor = Color.FromArgb(242, 242, 242);
+            confirmarPgto2.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            confirmarPgto2.IconSize = 36;
+            confirmarPgto2.Location = new Point(553, 137);
+            confirmarPgto2.Name = "confirmarPgto2";
+            confirmarPgto2.Size = new Size(48, 43);
+            confirmarPgto2.TabIndex = 20;
+            confirmarPgto2.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // confirmarPgto1
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.ForeColor = Color.FromArgb(242, 242, 242);
-            label16.Location = new Point(242, 37);
-            label16.Name = "label16";
-            label16.Size = new Size(149, 23);
-            label16.TabIndex = 2;
-            label16.Text = "Data/Vencimento";
+            confirmarPgto1.FlatStyle = FlatStyle.Flat;
+            confirmarPgto1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            confirmarPgto1.ForeColor = Color.FromArgb(242, 242, 242);
+            confirmarPgto1.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            confirmarPgto1.IconColor = Color.FromArgb(242, 242, 242);
+            confirmarPgto1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            confirmarPgto1.IconSize = 36;
+            confirmarPgto1.Location = new Point(552, 77);
+            confirmarPgto1.Name = "confirmarPgto1";
+            confirmarPgto1.Size = new Size(48, 43);
+            confirmarPgto1.TabIndex = 19;
+            confirmarPgto1.UseVisualStyleBackColor = true;
             // 
-            // label17
+            // imprimirFatura3
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.ForeColor = Color.FromArgb(242, 242, 242);
-            label17.Location = new Point(415, 37);
-            label17.Name = "label17";
-            label17.Size = new Size(79, 23);
-            label17.TabIndex = 3;
-            label17.Text = "Situação";
+            imprimirFatura3.FlatStyle = FlatStyle.Flat;
+            imprimirFatura3.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            imprimirFatura3.ForeColor = Color.FromArgb(242, 242, 242);
+            imprimirFatura3.IconChar = FontAwesome.Sharp.IconChar.Print;
+            imprimirFatura3.IconColor = Color.FromArgb(242, 242, 242);
+            imprimirFatura3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            imprimirFatura3.IconSize = 36;
+            imprimirFatura3.Location = new Point(499, 192);
+            imprimirFatura3.Name = "imprimirFatura3";
+            imprimirFatura3.Size = new Size(48, 43);
+            imprimirFatura3.TabIndex = 18;
+            imprimirFatura3.UseVisualStyleBackColor = true;
             // 
-            // descFatura1
+            // imprimirFatura2
             // 
-            descFatura1.AutoSize = true;
-            descFatura1.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            descFatura1.ForeColor = Color.FromArgb(242, 242, 242);
-            descFatura1.Location = new Point(22, 97);
-            descFatura1.Name = "descFatura1";
-            descFatura1.Size = new Size(89, 23);
-            descFatura1.TabIndex = 4;
-            descFatura1.Text = "Descrição";
+            imprimirFatura2.FlatStyle = FlatStyle.Flat;
+            imprimirFatura2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            imprimirFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            imprimirFatura2.IconChar = FontAwesome.Sharp.IconChar.Print;
+            imprimirFatura2.IconColor = Color.FromArgb(242, 242, 242);
+            imprimirFatura2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            imprimirFatura2.IconSize = 36;
+            imprimirFatura2.Location = new Point(499, 137);
+            imprimirFatura2.Name = "imprimirFatura2";
+            imprimirFatura2.Size = new Size(48, 43);
+            imprimirFatura2.TabIndex = 17;
+            imprimirFatura2.UseVisualStyleBackColor = true;
             // 
-            // valorFatura1
+            // imprimirFatura1
             // 
-            valorFatura1.AutoSize = true;
-            valorFatura1.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            valorFatura1.ForeColor = Color.FromArgb(242, 242, 242);
-            valorFatura1.Location = new Point(161, 97);
-            valorFatura1.Name = "valorFatura1";
-            valorFatura1.Size = new Size(89, 23);
-            valorFatura1.TabIndex = 5;
-            valorFatura1.Text = "Descrição";
-            // 
-            // dataVencFatura1
-            // 
-            dataVencFatura1.AutoSize = true;
-            dataVencFatura1.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataVencFatura1.ForeColor = Color.FromArgb(242, 242, 242);
-            dataVencFatura1.Location = new Point(242, 97);
-            dataVencFatura1.Name = "dataVencFatura1";
-            dataVencFatura1.Size = new Size(89, 23);
-            dataVencFatura1.TabIndex = 6;
-            dataVencFatura1.Text = "Descrição";
-            // 
-            // situacaoFatura1
-            // 
-            situacaoFatura1.AutoSize = true;
-            situacaoFatura1.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            situacaoFatura1.ForeColor = Color.FromArgb(242, 242, 242);
-            situacaoFatura1.Location = new Point(415, 97);
-            situacaoFatura1.Name = "situacaoFatura1";
-            situacaoFatura1.Size = new Size(89, 23);
-            situacaoFatura1.TabIndex = 7;
-            situacaoFatura1.Text = "Descrição";
-            // 
-            // situacaoFatura2
-            // 
-            situacaoFatura2.AutoSize = true;
-            situacaoFatura2.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            situacaoFatura2.ForeColor = Color.FromArgb(242, 242, 242);
-            situacaoFatura2.Location = new Point(415, 157);
-            situacaoFatura2.Name = "situacaoFatura2";
-            situacaoFatura2.Size = new Size(89, 23);
-            situacaoFatura2.TabIndex = 11;
-            situacaoFatura2.Text = "Descrição";
-            // 
-            // dataVencFatura2
-            // 
-            dataVencFatura2.AutoSize = true;
-            dataVencFatura2.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataVencFatura2.ForeColor = Color.FromArgb(242, 242, 242);
-            dataVencFatura2.Location = new Point(242, 157);
-            dataVencFatura2.Name = "dataVencFatura2";
-            dataVencFatura2.Size = new Size(89, 23);
-            dataVencFatura2.TabIndex = 10;
-            dataVencFatura2.Text = "Descrição";
-            // 
-            // valorFatura2
-            // 
-            valorFatura2.AutoSize = true;
-            valorFatura2.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            valorFatura2.ForeColor = Color.FromArgb(242, 242, 242);
-            valorFatura2.Location = new Point(161, 157);
-            valorFatura2.Name = "valorFatura2";
-            valorFatura2.Size = new Size(89, 23);
-            valorFatura2.TabIndex = 9;
-            valorFatura2.Text = "Descrição";
-            // 
-            // descFatura2
-            // 
-            descFatura2.AutoSize = true;
-            descFatura2.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            descFatura2.ForeColor = Color.FromArgb(242, 242, 242);
-            descFatura2.Location = new Point(22, 157);
-            descFatura2.Name = "descFatura2";
-            descFatura2.Size = new Size(89, 23);
-            descFatura2.TabIndex = 8;
-            descFatura2.Text = "Descrição";
+            imprimirFatura1.FlatStyle = FlatStyle.Flat;
+            imprimirFatura1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            imprimirFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            imprimirFatura1.IconChar = FontAwesome.Sharp.IconChar.Print;
+            imprimirFatura1.IconColor = Color.FromArgb(242, 242, 242);
+            imprimirFatura1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            imprimirFatura1.IconSize = 36;
+            imprimirFatura1.Location = new Point(499, 77);
+            imprimirFatura1.Name = "imprimirFatura1";
+            imprimirFatura1.Size = new Size(48, 43);
+            imprimirFatura1.TabIndex = 16;
+            imprimirFatura1.UseVisualStyleBackColor = true;
             // 
             // situacaoFatura3
             // 
             situacaoFatura3.AutoSize = true;
-            situacaoFatura3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            situacaoFatura3.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             situacaoFatura3.ForeColor = Color.FromArgb(242, 242, 242);
-            situacaoFatura3.Location = new Point(415, 217);
+            situacaoFatura3.Location = new Point(399, 217);
             situacaoFatura3.Name = "situacaoFatura3";
-            situacaoFatura3.Size = new Size(89, 23);
+            situacaoFatura3.Size = new Size(69, 18);
             situacaoFatura3.TabIndex = 15;
             situacaoFatura3.Text = "Descrição";
             // 
             // dataVencFatura3
             // 
             dataVencFatura3.AutoSize = true;
-            dataVencFatura3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataVencFatura3.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataVencFatura3.ForeColor = Color.FromArgb(242, 242, 242);
-            dataVencFatura3.Location = new Point(242, 217);
+            dataVencFatura3.Location = new Point(226, 217);
             dataVencFatura3.Name = "dataVencFatura3";
-            dataVencFatura3.Size = new Size(89, 23);
+            dataVencFatura3.Size = new Size(69, 18);
             dataVencFatura3.TabIndex = 14;
             dataVencFatura3.Text = "Descrição";
             // 
             // valorFatura3
             // 
             valorFatura3.AutoSize = true;
-            valorFatura3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            valorFatura3.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             valorFatura3.ForeColor = Color.FromArgb(242, 242, 242);
-            valorFatura3.Location = new Point(161, 217);
+            valorFatura3.Location = new Point(145, 217);
             valorFatura3.Name = "valorFatura3";
-            valorFatura3.Size = new Size(89, 23);
+            valorFatura3.Size = new Size(69, 18);
             valorFatura3.TabIndex = 13;
             valorFatura3.Text = "Descrição";
             // 
             // descFatura3
             // 
             descFatura3.AutoSize = true;
-            descFatura3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            descFatura3.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             descFatura3.ForeColor = Color.FromArgb(242, 242, 242);
-            descFatura3.Location = new Point(22, 217);
+            descFatura3.Location = new Point(6, 217);
             descFatura3.Name = "descFatura3";
-            descFatura3.Size = new Size(89, 23);
+            descFatura3.Size = new Size(69, 18);
             descFatura3.TabIndex = 12;
             descFatura3.Text = "Descrição";
             // 
-            // iconButton1
+            // situacaoFatura2
             // 
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton1.ForeColor = Color.FromArgb(242, 242, 242);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Print;
-            iconButton1.IconColor = Color.FromArgb(242, 242, 242);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 36;
-            iconButton1.Location = new Point(540, 88);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(60, 42);
-            iconButton1.TabIndex = 16;
-            iconButton1.UseVisualStyleBackColor = true;
+            situacaoFatura2.AutoSize = true;
+            situacaoFatura2.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            situacaoFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            situacaoFatura2.Location = new Point(399, 157);
+            situacaoFatura2.Name = "situacaoFatura2";
+            situacaoFatura2.Size = new Size(69, 18);
+            situacaoFatura2.TabIndex = 11;
+            situacaoFatura2.Text = "Descrição";
             // 
-            // iconButton2
+            // dataVencFatura2
             // 
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton2.ForeColor = Color.FromArgb(242, 242, 242);
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Print;
-            iconButton2.IconColor = Color.FromArgb(242, 242, 242);
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 36;
-            iconButton2.Location = new Point(540, 148);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(60, 42);
-            iconButton2.TabIndex = 17;
-            iconButton2.UseVisualStyleBackColor = true;
+            dataVencFatura2.AutoSize = true;
+            dataVencFatura2.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataVencFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            dataVencFatura2.Location = new Point(226, 157);
+            dataVencFatura2.Name = "dataVencFatura2";
+            dataVencFatura2.Size = new Size(69, 18);
+            dataVencFatura2.TabIndex = 10;
+            dataVencFatura2.Text = "Descrição";
             // 
-            // iconButton3
+            // valorFatura2
             // 
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton3.ForeColor = Color.FromArgb(242, 242, 242);
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Print;
-            iconButton3.IconColor = Color.FromArgb(242, 242, 242);
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 36;
-            iconButton3.Location = new Point(540, 208);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(60, 42);
-            iconButton3.TabIndex = 18;
-            iconButton3.UseVisualStyleBackColor = true;
+            valorFatura2.AutoSize = true;
+            valorFatura2.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            valorFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            valorFatura2.Location = new Point(145, 157);
+            valorFatura2.Name = "valorFatura2";
+            valorFatura2.Size = new Size(69, 18);
+            valorFatura2.TabIndex = 9;
+            valorFatura2.Text = "Descrição";
+            // 
+            // descFatura2
+            // 
+            descFatura2.AutoSize = true;
+            descFatura2.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            descFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            descFatura2.Location = new Point(6, 157);
+            descFatura2.Name = "descFatura2";
+            descFatura2.Size = new Size(69, 18);
+            descFatura2.TabIndex = 8;
+            descFatura2.Text = "Descrição";
+            // 
+            // situacaoFatura1
+            // 
+            situacaoFatura1.AutoSize = true;
+            situacaoFatura1.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            situacaoFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            situacaoFatura1.Location = new Point(399, 97);
+            situacaoFatura1.Name = "situacaoFatura1";
+            situacaoFatura1.Size = new Size(69, 18);
+            situacaoFatura1.TabIndex = 7;
+            situacaoFatura1.Text = "Descrição";
+            // 
+            // dataVencFatura1
+            // 
+            dataVencFatura1.AutoSize = true;
+            dataVencFatura1.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataVencFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            dataVencFatura1.Location = new Point(226, 97);
+            dataVencFatura1.Name = "dataVencFatura1";
+            dataVencFatura1.Size = new Size(69, 18);
+            dataVencFatura1.TabIndex = 6;
+            dataVencFatura1.Text = "Descrição";
+            // 
+            // valorFatura1
+            // 
+            valorFatura1.AutoSize = true;
+            valorFatura1.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            valorFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            valorFatura1.Location = new Point(145, 97);
+            valorFatura1.Name = "valorFatura1";
+            valorFatura1.Size = new Size(69, 18);
+            valorFatura1.TabIndex = 5;
+            valorFatura1.Text = "Descrição";
+            // 
+            // descFatura1
+            // 
+            descFatura1.AutoSize = true;
+            descFatura1.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            descFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            descFatura1.Location = new Point(6, 97);
+            descFatura1.Name = "descFatura1";
+            descFatura1.Size = new Size(69, 18);
+            descFatura1.TabIndex = 4;
+            descFatura1.Text = "Descrição";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.ForeColor = Color.FromArgb(242, 242, 242);
+            label17.Location = new Point(399, 37);
+            label17.Name = "label17";
+            label17.Size = new Size(79, 23);
+            label17.TabIndex = 3;
+            label17.Text = "Situação";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.ForeColor = Color.FromArgb(242, 242, 242);
+            label16.Location = new Point(226, 37);
+            label16.Name = "label16";
+            label16.Size = new Size(149, 23);
+            label16.TabIndex = 2;
+            label16.Text = "Data/Vencimento";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.FromArgb(242, 242, 242);
+            label15.Location = new Point(145, 37);
+            label15.Name = "label15";
+            label15.Size = new Size(52, 23);
+            label15.TabIndex = 1;
+            label15.Text = "Valor";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.FromArgb(242, 242, 242);
+            label14.Location = new Point(6, 37);
+            label14.Name = "label14";
+            label14.Size = new Size(89, 23);
+            label14.TabIndex = 0;
+            label14.Text = "Descrição";
+            // 
+            // iconPictureBox6
+            // 
+            iconPictureBox6.BackColor = Color.FromArgb(6, 7, 45);
+            iconPictureBox6.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+            iconPictureBox6.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox6.IconSize = 53;
+            iconPictureBox6.Location = new Point(46, 18);
+            iconPictureBox6.Name = "iconPictureBox6";
+            iconPictureBox6.Size = new Size(60, 53);
+            iconPictureBox6.TabIndex = 9;
+            iconPictureBox6.TabStop = false;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.ForeColor = Color.FromArgb(242, 242, 242);
+            label18.Location = new Point(117, 35);
+            label18.Name = "label18";
+            label18.Size = new Size(146, 23);
+            label18.TabIndex = 10;
+            label18.Text = "Exame Periódico";
             // 
             // TelaPrincipal
             // 
@@ -1334,7 +1468,6 @@
             BackColor = Color.FromArgb(6, 7, 45);
             ClientSize = new Size(800, 450);
             Controls.Add(PainelFatura);
-            Controls.Add(PainelExame);
             Controls.Add(pictureBox5);
             Controls.Add(label7);
             Controls.Add(PainelUsuario);
@@ -1362,12 +1495,14 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             PainelBarraTitulo.ResumeLayout(false);
             PainelBarraTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             PainelExame.ResumeLayout(false);
             PainelExame.PerformLayout();
             PainelFatura.ResumeLayout(false);
             PainelFatura.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1462,8 +1597,16 @@
         private Label dataVencFatura2;
         private Label valorFatura2;
         private Label descFatura2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton imprimirFatura1;
+        private FontAwesome.Sharp.IconButton confirmarPgto1;
+        private FontAwesome.Sharp.IconButton imprimirFatura3;
+        private FontAwesome.Sharp.IconButton imprimirFatura2;
+        private FontAwesome.Sharp.IconButton confirmarPgto3;
+        private FontAwesome.Sharp.IconButton confirmarPgto2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private FontAwesome.Sharp.IconButton BtnFechar;
+        private Label LabelHome;
+        private Label label18;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
     }
 }

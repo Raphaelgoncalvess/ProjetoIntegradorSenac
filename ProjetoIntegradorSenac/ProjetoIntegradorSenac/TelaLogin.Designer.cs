@@ -42,6 +42,7 @@
             linkResetarSenha = new LinkLabel();
             BtnMostrarSenha = new FontAwesome.Sharp.IconButton();
             PainelFormFilho = new Panel();
+            BtnFechar = new FontAwesome.Sharp.IconButton();
             PainelLateral.SuspendLayout();
             PainelLateralCadastro.SuspendLayout();
             PainelLateralLogin.SuspendLayout();
@@ -239,12 +240,29 @@
             PainelFormFilho.Size = new Size(612, 450);
             PainelFormFilho.TabIndex = 20;
             // 
+            // BtnFechar
+            // 
+            BtnFechar.FlatAppearance.BorderSize = 0;
+            BtnFechar.FlatStyle = FlatStyle.Flat;
+            BtnFechar.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnFechar.IconChar = FontAwesome.Sharp.IconChar.X;
+            BtnFechar.IconColor = Color.FromArgb(242, 242, 242);
+            BtnFechar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            BtnFechar.IconSize = 25;
+            BtnFechar.Location = new Point(756, 0);
+            BtnFechar.Name = "BtnFechar";
+            BtnFechar.Size = new Size(43, 32);
+            BtnFechar.TabIndex = 7;
+            BtnFechar.UseVisualStyleBackColor = true;
+            BtnFechar.Click += BtnFechar_Click;
+            // 
             // TelaLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(6, 7, 33);
             ClientSize = new Size(800, 450);
+            Controls.Add(BtnFechar);
             Controls.Add(PainelFormFilho);
             Controls.Add(BtnMostrarSenha);
             Controls.Add(linkResetarSenha);
@@ -281,5 +299,6 @@
         private Panel PainelLateralCadastro;
         private Panel PainelLateralLogin;
         private Panel PainelFormFilho;
+        private FontAwesome.Sharp.IconButton BtnFechar;
     }
 }

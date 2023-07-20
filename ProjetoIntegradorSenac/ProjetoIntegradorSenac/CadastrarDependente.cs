@@ -16,6 +16,7 @@ namespace ProjetoIntegradorSenac
         public CadastrarDependente(int IdUsuario)
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.None;
             Conexao db = new Conexao();
             db.Conectar();
             Usuario usuario = new Usuario();
@@ -57,7 +58,7 @@ namespace ProjetoIntegradorSenac
 
             MessageBox.Show("Usuario Cadastrado com sucesso!");
             this.Close();
-            
+
         }
 
         private void CadastrarDependente_Load(object sender, EventArgs e)

@@ -259,6 +259,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "CadastrarDependente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastrarDependente";
             Load += CadastrarDependente_Load;
             ResumeLayout(false);

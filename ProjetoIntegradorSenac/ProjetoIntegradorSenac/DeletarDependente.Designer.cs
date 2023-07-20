@@ -33,6 +33,7 @@
             textBoxCpf = new MaskedTextBox();
             iconButtonDeletar = new FontAwesome.Sharp.IconButton();
             iconButtonVoltar = new FontAwesome.Sharp.IconButton();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -53,9 +54,9 @@
             label2.ForeColor = Color.FromArgb(242, 242, 242);
             label2.Location = new Point(39, 95);
             label2.Name = "label2";
-            label2.Size = new Size(310, 19);
+            label2.Size = new Size(318, 19);
             label2.TabIndex = 1;
-            label2.Text = "Informe o CPF do dependente a ser deletado";
+            label2.Text = "Informe o CPF do DEPENDENTE a ser deletado";
             label2.Click += label2_Click;
             // 
             // textBoxCpf
@@ -102,18 +103,31 @@
             iconButtonVoltar.UseVisualStyleBackColor = true;
             iconButtonVoltar.Click += iconButtonVoltar_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(242, 242, 242);
+            label3.Location = new Point(92, 165);
+            label3.Name = "label3";
+            label3.Size = new Size(35, 19);
+            label3.TabIndex = 5;
+            label3.Text = "CPF";
+            // 
             // DeletarDependente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(6, 7, 33);
             ClientSize = new Size(378, 451);
+            Controls.Add(label3);
             Controls.Add(iconButtonVoltar);
             Controls.Add(iconButtonDeletar);
             Controls.Add(textBoxCpf);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "DeletarDependente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DeletarDependente";
             ResumeLayout(false);
             PerformLayout();
@@ -126,5 +140,6 @@
         private MaskedTextBox textBoxCpf;
         private FontAwesome.Sharp.IconButton iconButtonDeletar;
         private FontAwesome.Sharp.IconButton iconButtonVoltar;
+        private Label label3;
     }
 }
