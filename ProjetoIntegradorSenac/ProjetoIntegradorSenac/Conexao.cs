@@ -1,4 +1,6 @@
 ﻿using System.Data.SqlClient;
+using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace ProjetoIntegradorSenac
 {
@@ -323,31 +325,31 @@ namespace ProjetoIntegradorSenac
             var IdTitular = Convert.ToInt32(comando.ExecuteScalar());
             return IdTitular;
         }
-
-        public string BuscarNomeFatura(Usuario usuario)
+        //PRIMEIRA FATURA
+        public string BuscarNomePrimeiraFatura(Usuario usuario)
         {
-            string sql = $"SELECT TOP 1 descricao FROM MensalidadePI WHERE idTitular = '{usuario.IdTitular}'";
+            string sql = $"SELECT descricao FROM(SELECT descricao, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 1;";
             SqlCommand comando = new SqlCommand(sql, conn);
             string nomeFatura = comando.ExecuteScalar().ToString();
             return nomeFatura;
         }
-        public string BuscarValorFatura(Usuario usuario)
+        public string BuscarValorPrimeiraFatura(Usuario usuario)
         {
-            string sql = $"SELECT TOP 1 valor FROM MensalidadePI WHERE idTitular = '{usuario.IdTitular}'";
+            string sql = $"SELECT valor FROM(SELECT valor, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 1;";
             SqlCommand comando = new SqlCommand(sql, conn);
             string valorFatura = comando.ExecuteScalar().ToString();
             return valorFatura;
         }
-        public string BuscarDataVencimentoFatura(Usuario usuario)
+        public string BuscarDataVencimentoPrimeiraFatura(Usuario usuario)
         {
-            string sql = $"SELECT TOP 1 dataVencimento FROM MensalidadePI WHERE idTitular = '{usuario.IdTitular}'";
+            string sql = $"SELECT dataVencimento FROM(SELECT dataVencimento, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 1;";
             SqlCommand comando = new SqlCommand(sql, conn);
             string dataVencimentoFatura = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy");
-            return dataVencimentoFatura;
+            return dataVencimentoFatura;      
         }
-        public string BuscarSituacaoFatura(Usuario usuario)
+        public string BuscarSituacaoPrimeiraFatura(Usuario usuario)
         {
-            string sql = $"SELECT TOP 1 taPaga FROM MensalidadePI WHERE idTitular = '{usuario.IdTitular}'";
+            string sql = $"SELECT taPaga FROM(SELECT taPaga, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 1;";
             SqlCommand comando = new SqlCommand(sql, conn);
             string situacaoFatura = comando.ExecuteScalar().ToString();
             if(situacaoFatura == "False")
@@ -361,6 +363,100 @@ namespace ProjetoIntegradorSenac
             return situacaoFatura;
         }
 
+        //SEGUNDA FATURA
+        public string BuscarNomeSegundaFatura(Usuario usuario)
+        {
+            string sql = $"SELECT descricao FROM(SELECT descricao, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 2;";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string nomeFatura = comando.ExecuteScalar().ToString();
+            return nomeFatura;
+        }
+        public string BuscarValorSegundaFatura(Usuario usuario)
+        {
+            string sql = $"SELECT valor FROM(SELECT valor, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 2;";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string valorFatura = comando.ExecuteScalar().ToString();
+            return valorFatura;
+        }
+        public string BuscarDataVencimentoSegundaFatura(Usuario usuario)
+        {
+            string sql = $"SELECT dataVencimento FROM(SELECT dataVencimento, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 2;";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string dataVencimentoFatura = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy");
+            return dataVencimentoFatura;
+        }
+        public string BuscarSituacaoSegundaFatura(Usuario usuario)
+        {
+            string sql = $"SELECT taPaga FROM(SELECT taPaga, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 2;";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string situacaoFatura = comando.ExecuteScalar().ToString();
+            if (situacaoFatura == "False")
+            {
+                situacaoFatura = "Pendente";
+            }
+            else
+            {
+                situacaoFatura = "Pago";
+            }
+            return situacaoFatura;
+        }
+
+        //TERCEIRA FATURA
+        public string BuscarNomeTerceiraFatura(Usuario usuario)
+        {
+            string sql = $"SELECT descricao FROM(SELECT descricao, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 3;";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string nomeFatura = comando.ExecuteScalar().ToString();
+            return nomeFatura;
+        }
+        public string BuscarValorTerceiraFatura(Usuario usuario)
+        {
+            string sql = $"SELECT valor FROM(SELECT valor, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 3;";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string valorFatura = comando.ExecuteScalar().ToString();
+            return valorFatura;
+        }
+        public string BuscarDataVencimentoTerceiraFatura(Usuario usuario)
+        {
+            string sql = $"SELECT dataVencimento FROM(SELECT dataVencimento, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 3;";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string dataVencimentoFatura = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy");
+            return dataVencimentoFatura;
+        }
+        public string BuscarSituacaoTerceiraFatura(Usuario usuario)
+        {
+            string sql = $"SELECT taPaga FROM(SELECT taPaga, ROW_NUMBER() OVER(ORDER BY id) AS row_num FROM MensalidadePI WHERE idTitular ={usuario.IdTitular}) AS subquery WHERE row_num = 3;";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string situacaoFatura = comando.ExecuteScalar().ToString();
+            if (situacaoFatura == "False")
+            {
+                situacaoFatura = "Pendente";
+            }
+            else
+            {
+                situacaoFatura = "Pago";
+            }
+            return situacaoFatura;
+        }
+
+        public void PagarPrimeiraFatura(int idTitular)
+        {
+            string sql = $"UPDATE MensalidadePI SET taPaga = 1 WHERE idTitular = {idTitular} and dataVencimento = '2023-08-15';";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
+        public void PagarSegundaFatura(int idTitular)
+        {
+            string sql = $"UPDATE MensalidadePI SET taPaga = 1 WHERE idTitular = {idTitular} and dataVencimento = '2023-09-15';";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
+        public void PagarTerceiraFatura(int idTitular)
+        {
+            string sql = $"UPDATE MensalidadePI SET taPaga = 1 WHERE idTitular = {idTitular} and dataVencimento = '2023-10-15';";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
         #endregion
     }
 }

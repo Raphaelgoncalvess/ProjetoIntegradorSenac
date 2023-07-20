@@ -39,6 +39,18 @@
             pictureBox4 = new PictureBox();
             PainelUsuario = new Panel();
             LblDependentes = new Label();
+            dataGridView1 = new DataGridView();
+            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            LabelEmail = new Label();
+            LabelCpf = new Label();
+            LabelGenero = new Label();
+            LabelDataNascimento = new Label();
+            BtnExcluirDependente = new FontAwesome.Sharp.IconButton();
+            BtnCadastrarDependente = new FontAwesome.Sharp.IconButton();
+            BtnRedefinirSenha = new FontAwesome.Sharp.IconButton();
             PainelEventos = new Panel();
             label9 = new Label();
             label10 = new Label();
@@ -67,18 +79,6 @@
             BtnRetirarPresenca1 = new FontAwesome.Sharp.IconButton();
             pictureBox1 = new PictureBox();
             BtnConfirmarPresenca1 = new FontAwesome.Sharp.IconButton();
-            dataGridView1 = new DataGridView();
-            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            LabelEmail = new Label();
-            LabelCpf = new Label();
-            LabelGenero = new Label();
-            LabelDataNascimento = new Label();
-            BtnExcluirDependente = new FontAwesome.Sharp.IconButton();
-            BtnCadastrarDependente = new FontAwesome.Sharp.IconButton();
-            BtnRedefinirSenha = new FontAwesome.Sharp.IconButton();
             PainelBarraTitulo = new Panel();
             LabelHome = new Label();
             BtnFechar = new FontAwesome.Sharp.IconButton();
@@ -94,6 +94,8 @@
             label7 = new Label();
             pictureBox5 = new PictureBox();
             PainelExame = new Panel();
+            label18 = new Label();
+            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             BtnCadastrarExame = new FontAwesome.Sharp.IconButton();
             LabelSituacao = new Label();
             LabelDataVencimento = new Label();
@@ -104,6 +106,9 @@
             label11 = new Label();
             label8 = new Label();
             PainelFatura = new Panel();
+            iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             confirmarPgto3 = new FontAwesome.Sharp.IconButton();
             confirmarPgto2 = new FontAwesome.Sharp.IconButton();
             confirmarPgto1 = new FontAwesome.Sharp.IconButton();
@@ -126,28 +131,30 @@
             label16 = new Label();
             label15 = new Label();
             label14 = new Label();
-            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            label18 = new Label();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
             PainelMenuLateral.SuspendLayout();
             PainelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             PainelUsuario.SuspendLayout();
-            PainelEventos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            PainelEventos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PainelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             PainelExame.SuspendLayout();
-            PainelFatura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
+            PainelFatura.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             SuspendLayout();
             // 
             // PainelMenuLateral
@@ -287,12 +294,12 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // PainelUsuario
             // 
-            PainelUsuario.BackColor = Color.FromArgb(6, 7, 45);
+            PainelUsuario.BackColor = Color.FromArgb(6, 7, 55);
             PainelUsuario.Controls.Add(LblDependentes);
-            PainelUsuario.Controls.Add(PainelEventos);
             PainelUsuario.Controls.Add(dataGridView1);
             PainelUsuario.Controls.Add(iconPictureBox4);
             PainelUsuario.Controls.Add(iconPictureBox3);
@@ -305,7 +312,7 @@
             PainelUsuario.Controls.Add(BtnExcluirDependente);
             PainelUsuario.Controls.Add(BtnCadastrarDependente);
             PainelUsuario.Controls.Add(BtnRedefinirSenha);
-            PainelUsuario.Location = new Point(754, 416);
+            PainelUsuario.Location = new Point(786, 233);
             PainelUsuario.Name = "PainelUsuario";
             PainelUsuario.Size = new Size(612, 360);
             PainelUsuario.TabIndex = 2;
@@ -320,371 +327,6 @@
             LblDependentes.Size = new Size(218, 23);
             LblDependentes.TabIndex = 13;
             LblDependentes.Text = "Dependentes cadastrados";
-            // 
-            // PainelEventos
-            // 
-            PainelEventos.BackColor = Color.FromArgb(6, 7, 45);
-            PainelEventos.Controls.Add(label9);
-            PainelEventos.Controls.Add(label10);
-            PainelEventos.Controls.Add(DataFim3);
-            PainelEventos.Controls.Add(DataInicio3);
-            PainelEventos.Controls.Add(label5);
-            PainelEventos.Controls.Add(label6);
-            PainelEventos.Controls.Add(DataFim2);
-            PainelEventos.Controls.Add(DataInicio2);
-            PainelEventos.Controls.Add(label4);
-            PainelEventos.Controls.Add(label3);
-            PainelEventos.Controls.Add(DataFim1);
-            PainelEventos.Controls.Add(DataInicio1);
-            PainelEventos.Controls.Add(Evento3);
-            PainelEventos.Controls.Add(Evento2);
-            PainelEventos.Controls.Add(Evento1);
-            PainelEventos.Controls.Add(LabelEvento3);
-            PainelEventos.Controls.Add(BtnRetirarPresenca3);
-            PainelEventos.Controls.Add(BtnConfirmarPresenca3);
-            PainelEventos.Controls.Add(LabelEvento2);
-            PainelEventos.Controls.Add(BtnRetirarPresenca2);
-            PainelEventos.Controls.Add(BtnConfirmarPresenca2);
-            PainelEventos.Controls.Add(pictureBox3);
-            PainelEventos.Controls.Add(LabelEvento1);
-            PainelEventos.Controls.Add(pictureBox2);
-            PainelEventos.Controls.Add(BtnRetirarPresenca1);
-            PainelEventos.Controls.Add(pictureBox1);
-            PainelEventos.Controls.Add(BtnConfirmarPresenca1);
-            PainelEventos.Location = new Point(16, 19);
-            PainelEventos.Name = "PainelEventos";
-            PainelEventos.Size = new Size(612, 360);
-            PainelEventos.TabIndex = 14;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.ForeColor = Color.FromArgb(242, 242, 242);
-            label9.Location = new Point(415, 219);
-            label9.Name = "label9";
-            label9.Size = new Size(56, 14);
-            label9.TabIndex = 28;
-            label9.Text = "Data Fim:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.ForeColor = Color.FromArgb(242, 242, 242);
-            label10.Location = new Point(406, 195);
-            label10.Name = "label10";
-            label10.Size = new Size(65, 14);
-            label10.TabIndex = 27;
-            label10.Text = "Data Inicio:";
-            // 
-            // DataFim3
-            // 
-            DataFim3.AutoSize = true;
-            DataFim3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DataFim3.ForeColor = Color.FromArgb(242, 242, 242);
-            DataFim3.Location = new Point(477, 219);
-            DataFim3.Name = "DataFim3";
-            DataFim3.Size = new Size(38, 14);
-            DataFim3.TabIndex = 26;
-            DataFim3.Text = "label3";
-            // 
-            // DataInicio3
-            // 
-            DataInicio3.AutoSize = true;
-            DataInicio3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DataInicio3.ForeColor = Color.FromArgb(242, 242, 242);
-            DataInicio3.Location = new Point(477, 195);
-            DataInicio3.Name = "DataInicio3";
-            DataInicio3.Size = new Size(38, 14);
-            DataInicio3.TabIndex = 25;
-            DataInicio3.Text = "label3";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(242, 242, 242);
-            label5.Location = new Point(223, 219);
-            label5.Name = "label5";
-            label5.Size = new Size(56, 14);
-            label5.TabIndex = 24;
-            label5.Text = "Data Fim:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.FromArgb(242, 242, 242);
-            label6.Location = new Point(214, 195);
-            label6.Name = "label6";
-            label6.Size = new Size(65, 14);
-            label6.TabIndex = 23;
-            label6.Text = "Data Inicio:";
-            // 
-            // DataFim2
-            // 
-            DataFim2.AutoSize = true;
-            DataFim2.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DataFim2.ForeColor = Color.FromArgb(242, 242, 242);
-            DataFim2.Location = new Point(285, 219);
-            DataFim2.Name = "DataFim2";
-            DataFim2.Size = new Size(38, 14);
-            DataFim2.TabIndex = 22;
-            DataFim2.Text = "label3";
-            // 
-            // DataInicio2
-            // 
-            DataInicio2.AutoSize = true;
-            DataInicio2.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DataInicio2.ForeColor = Color.FromArgb(242, 242, 242);
-            DataInicio2.Location = new Point(285, 195);
-            DataInicio2.Name = "DataInicio2";
-            DataInicio2.Size = new Size(38, 14);
-            DataInicio2.TabIndex = 21;
-            DataInicio2.Text = "label3";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.FromArgb(242, 242, 242);
-            label4.Location = new Point(33, 219);
-            label4.Name = "label4";
-            label4.Size = new Size(56, 14);
-            label4.TabIndex = 20;
-            label4.Text = "Data Fim:";
-            label4.Click += label4_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(242, 242, 242);
-            label3.Location = new Point(24, 195);
-            label3.Name = "label3";
-            label3.Size = new Size(65, 14);
-            label3.TabIndex = 19;
-            label3.Text = "Data Inicio:";
-            label3.Click += label3_Click_1;
-            // 
-            // DataFim1
-            // 
-            DataFim1.AutoSize = true;
-            DataFim1.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DataFim1.ForeColor = Color.FromArgb(242, 242, 242);
-            DataFim1.Location = new Point(95, 219);
-            DataFim1.Name = "DataFim1";
-            DataFim1.Size = new Size(38, 14);
-            DataFim1.TabIndex = 17;
-            DataFim1.Text = "label3";
-            // 
-            // DataInicio1
-            // 
-            DataInicio1.AutoSize = true;
-            DataInicio1.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DataInicio1.ForeColor = Color.FromArgb(242, 242, 242);
-            DataInicio1.Location = new Point(95, 195);
-            DataInicio1.Name = "DataInicio1";
-            DataInicio1.Size = new Size(38, 14);
-            DataInicio1.TabIndex = 16;
-            DataInicio1.Text = "label3";
-            DataInicio1.Click += DataInicio1_Click;
-            // 
-            // Evento3
-            // 
-            Evento3.AutoSize = true;
-            Evento3.Location = new Point(475, 30);
-            Evento3.Name = "Evento3";
-            Evento3.Size = new Size(38, 15);
-            Evento3.TabIndex = 15;
-            Evento3.Text = "label3";
-            // 
-            // Evento2
-            // 
-            Evento2.AutoSize = true;
-            Evento2.Location = new Point(283, 30);
-            Evento2.Name = "Evento2";
-            Evento2.Size = new Size(38, 15);
-            Evento2.TabIndex = 13;
-            Evento2.Text = "label3";
-            Evento2.Click += label3_Click;
-            // 
-            // Evento1
-            // 
-            Evento1.AutoSize = true;
-            Evento1.Location = new Point(94, 30);
-            Evento1.Name = "Evento1";
-            Evento1.Size = new Size(38, 15);
-            Evento1.TabIndex = 12;
-            Evento1.Text = "label3";
-            // 
-            // LabelEvento3
-            // 
-            LabelEvento3.AutoSize = true;
-            LabelEvento3.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LabelEvento3.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelEvento3.Location = new Point(415, 30);
-            LabelEvento3.Name = "LabelEvento3";
-            LabelEvento3.Size = new Size(159, 19);
-            LabelEvento3.TabIndex = 11;
-            LabelEvento3.Text = "Campeonato de bilhar";
-            // 
-            // BtnRetirarPresenca3
-            // 
-            BtnRetirarPresenca3.FlatStyle = FlatStyle.Flat;
-            BtnRetirarPresenca3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnRetirarPresenca3.ForeColor = Color.FromArgb(242, 242, 242);
-            BtnRetirarPresenca3.IconChar = FontAwesome.Sharp.IconChar.X;
-            BtnRetirarPresenca3.IconColor = Color.FromArgb(242, 242, 242);
-            BtnRetirarPresenca3.IconFont = FontAwesome.Sharp.IconFont.Brands;
-            BtnRetirarPresenca3.IconSize = 35;
-            BtnRetirarPresenca3.Location = new Point(502, 264);
-            BtnRetirarPresenca3.Name = "BtnRetirarPresenca3";
-            BtnRetirarPresenca3.Size = new Size(49, 44);
-            BtnRetirarPresenca3.TabIndex = 10;
-            BtnRetirarPresenca3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BtnRetirarPresenca3.UseVisualStyleBackColor = true;
-            BtnRetirarPresenca3.Click += BtnRetirarPresenca3_Click;
-            // 
-            // BtnConfirmarPresenca3
-            // 
-            BtnConfirmarPresenca3.FlatStyle = FlatStyle.Flat;
-            BtnConfirmarPresenca3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnConfirmarPresenca3.ForeColor = Color.FromArgb(242, 242, 242);
-            BtnConfirmarPresenca3.IconChar = FontAwesome.Sharp.IconChar.Check;
-            BtnConfirmarPresenca3.IconColor = Color.FromArgb(242, 242, 242);
-            BtnConfirmarPresenca3.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            BtnConfirmarPresenca3.IconSize = 40;
-            BtnConfirmarPresenca3.Location = new Point(447, 264);
-            BtnConfirmarPresenca3.Name = "BtnConfirmarPresenca3";
-            BtnConfirmarPresenca3.Size = new Size(49, 44);
-            BtnConfirmarPresenca3.TabIndex = 9;
-            BtnConfirmarPresenca3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BtnConfirmarPresenca3.UseVisualStyleBackColor = true;
-            BtnConfirmarPresenca3.Click += BtnConfirmarPresenca3_Click;
-            // 
-            // LabelEvento2
-            // 
-            LabelEvento2.AutoSize = true;
-            LabelEvento2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LabelEvento2.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelEvento2.Location = new Point(224, 30);
-            LabelEvento2.Name = "LabelEvento2";
-            LabelEvento2.Size = new Size(153, 19);
-            LabelEvento2.TabIndex = 8;
-            LabelEvento2.Text = "Campeonato de tenis";
-            // 
-            // BtnRetirarPresenca2
-            // 
-            BtnRetirarPresenca2.FlatStyle = FlatStyle.Flat;
-            BtnRetirarPresenca2.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnRetirarPresenca2.ForeColor = Color.FromArgb(242, 242, 242);
-            BtnRetirarPresenca2.IconChar = FontAwesome.Sharp.IconChar.X;
-            BtnRetirarPresenca2.IconColor = Color.FromArgb(242, 242, 242);
-            BtnRetirarPresenca2.IconFont = FontAwesome.Sharp.IconFont.Brands;
-            BtnRetirarPresenca2.IconSize = 35;
-            BtnRetirarPresenca2.Location = new Point(309, 264);
-            BtnRetirarPresenca2.Name = "BtnRetirarPresenca2";
-            BtnRetirarPresenca2.Size = new Size(49, 44);
-            BtnRetirarPresenca2.TabIndex = 7;
-            BtnRetirarPresenca2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BtnRetirarPresenca2.UseVisualStyleBackColor = true;
-            BtnRetirarPresenca2.Click += BtnRetirarPresenca2_Click;
-            // 
-            // BtnConfirmarPresenca2
-            // 
-            BtnConfirmarPresenca2.FlatStyle = FlatStyle.Flat;
-            BtnConfirmarPresenca2.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnConfirmarPresenca2.ForeColor = Color.FromArgb(242, 242, 242);
-            BtnConfirmarPresenca2.IconChar = FontAwesome.Sharp.IconChar.Check;
-            BtnConfirmarPresenca2.IconColor = Color.FromArgb(242, 242, 242);
-            BtnConfirmarPresenca2.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            BtnConfirmarPresenca2.IconSize = 40;
-            BtnConfirmarPresenca2.Location = new Point(254, 264);
-            BtnConfirmarPresenca2.Name = "BtnConfirmarPresenca2";
-            BtnConfirmarPresenca2.Size = new Size(49, 44);
-            BtnConfirmarPresenca2.TabIndex = 6;
-            BtnConfirmarPresenca2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BtnConfirmarPresenca2.UseVisualStyleBackColor = true;
-            BtnConfirmarPresenca2.Click += BtnConfirmarPresenca2_Click;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources._1ae784973b4ce9f015821247252870d3_00_4;
-            pictureBox3.Location = new Point(417, 61);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(165, 119);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 5;
-            pictureBox3.TabStop = false;
-            // 
-            // LabelEvento1
-            // 
-            LabelEvento1.AutoSize = true;
-            LabelEvento1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LabelEvento1.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelEvento1.Location = new Point(24, 30);
-            LabelEvento1.Name = "LabelEvento1";
-            LabelEvento1.Size = new Size(169, 19);
-            LabelEvento1.TabIndex = 4;
-            LabelEvento1.Text = "Campeonato futebol JP";
-            LabelEvento1.TextAlign = ContentAlignment.TopCenter;
-            LabelEvento1.Click += LabelEvento1_Click;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.download__1_;
-            pictureBox2.Location = new Point(224, 61);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(165, 119);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            // 
-            // BtnRetirarPresenca1
-            // 
-            BtnRetirarPresenca1.FlatStyle = FlatStyle.Flat;
-            BtnRetirarPresenca1.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnRetirarPresenca1.ForeColor = Color.FromArgb(242, 242, 242);
-            BtnRetirarPresenca1.IconChar = FontAwesome.Sharp.IconChar.X;
-            BtnRetirarPresenca1.IconColor = Color.FromArgb(242, 242, 242);
-            BtnRetirarPresenca1.IconFont = FontAwesome.Sharp.IconFont.Brands;
-            BtnRetirarPresenca1.IconSize = 35;
-            BtnRetirarPresenca1.Location = new Point(112, 264);
-            BtnRetirarPresenca1.Name = "BtnRetirarPresenca1";
-            BtnRetirarPresenca1.Size = new Size(49, 44);
-            BtnRetirarPresenca1.TabIndex = 2;
-            BtnRetirarPresenca1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BtnRetirarPresenca1.UseVisualStyleBackColor = true;
-            BtnRetirarPresenca1.Click += BtnRetirarPresenca1_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.futebolPI;
-            pictureBox1.Location = new Point(28, 61);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(165, 119);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // BtnConfirmarPresenca1
-            // 
-            BtnConfirmarPresenca1.FlatStyle = FlatStyle.Flat;
-            BtnConfirmarPresenca1.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnConfirmarPresenca1.ForeColor = Color.FromArgb(242, 242, 242);
-            BtnConfirmarPresenca1.IconChar = FontAwesome.Sharp.IconChar.Check;
-            BtnConfirmarPresenca1.IconColor = Color.FromArgb(242, 242, 242);
-            BtnConfirmarPresenca1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            BtnConfirmarPresenca1.IconSize = 40;
-            BtnConfirmarPresenca1.Location = new Point(57, 264);
-            BtnConfirmarPresenca1.Name = "BtnConfirmarPresenca1";
-            BtnConfirmarPresenca1.Size = new Size(49, 44);
-            BtnConfirmarPresenca1.TabIndex = 0;
-            BtnConfirmarPresenca1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BtnConfirmarPresenca1.UseVisualStyleBackColor = true;
-            BtnConfirmarPresenca1.Click += BtnConfirmarPresenca1_Click;
             // 
             // dataGridView1
             // 
@@ -850,6 +492,366 @@
             BtnRedefinirSenha.UseVisualStyleBackColor = true;
             BtnRedefinirSenha.Click += BtnRedefinirSenha_Click;
             // 
+            // PainelEventos
+            // 
+            PainelEventos.BackColor = Color.FromArgb(6, 7, 55);
+            PainelEventos.Controls.Add(label9);
+            PainelEventos.Controls.Add(label10);
+            PainelEventos.Controls.Add(DataFim3);
+            PainelEventos.Controls.Add(DataInicio3);
+            PainelEventos.Controls.Add(label5);
+            PainelEventos.Controls.Add(label6);
+            PainelEventos.Controls.Add(DataFim2);
+            PainelEventos.Controls.Add(DataInicio2);
+            PainelEventos.Controls.Add(label4);
+            PainelEventos.Controls.Add(label3);
+            PainelEventos.Controls.Add(DataFim1);
+            PainelEventos.Controls.Add(DataInicio1);
+            PainelEventos.Controls.Add(Evento3);
+            PainelEventos.Controls.Add(Evento2);
+            PainelEventos.Controls.Add(Evento1);
+            PainelEventos.Controls.Add(LabelEvento3);
+            PainelEventos.Controls.Add(BtnRetirarPresenca3);
+            PainelEventos.Controls.Add(BtnConfirmarPresenca3);
+            PainelEventos.Controls.Add(LabelEvento2);
+            PainelEventos.Controls.Add(BtnRetirarPresenca2);
+            PainelEventos.Controls.Add(BtnConfirmarPresenca2);
+            PainelEventos.Controls.Add(pictureBox3);
+            PainelEventos.Controls.Add(LabelEvento1);
+            PainelEventos.Controls.Add(pictureBox2);
+            PainelEventos.Controls.Add(BtnRetirarPresenca1);
+            PainelEventos.Controls.Add(pictureBox1);
+            PainelEventos.Controls.Add(BtnConfirmarPresenca1);
+            PainelEventos.Location = new Point(763, 259);
+            PainelEventos.Name = "PainelEventos";
+            PainelEventos.Size = new Size(612, 360);
+            PainelEventos.TabIndex = 14;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(242, 242, 242);
+            label9.Location = new Point(415, 219);
+            label9.Name = "label9";
+            label9.Size = new Size(56, 14);
+            label9.TabIndex = 28;
+            label9.Text = "Data Fim:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.FromArgb(242, 242, 242);
+            label10.Location = new Point(406, 195);
+            label10.Name = "label10";
+            label10.Size = new Size(65, 14);
+            label10.TabIndex = 27;
+            label10.Text = "Data Inicio:";
+            // 
+            // DataFim3
+            // 
+            DataFim3.AutoSize = true;
+            DataFim3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DataFim3.ForeColor = Color.FromArgb(242, 242, 242);
+            DataFim3.Location = new Point(477, 219);
+            DataFim3.Name = "DataFim3";
+            DataFim3.Size = new Size(38, 14);
+            DataFim3.TabIndex = 26;
+            DataFim3.Text = "label3";
+            // 
+            // DataInicio3
+            // 
+            DataInicio3.AutoSize = true;
+            DataInicio3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DataInicio3.ForeColor = Color.FromArgb(242, 242, 242);
+            DataInicio3.Location = new Point(477, 195);
+            DataInicio3.Name = "DataInicio3";
+            DataInicio3.Size = new Size(38, 14);
+            DataInicio3.TabIndex = 25;
+            DataInicio3.Text = "label3";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(242, 242, 242);
+            label5.Location = new Point(223, 219);
+            label5.Name = "label5";
+            label5.Size = new Size(56, 14);
+            label5.TabIndex = 24;
+            label5.Text = "Data Fim:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.FromArgb(242, 242, 242);
+            label6.Location = new Point(214, 195);
+            label6.Name = "label6";
+            label6.Size = new Size(65, 14);
+            label6.TabIndex = 23;
+            label6.Text = "Data Inicio:";
+            // 
+            // DataFim2
+            // 
+            DataFim2.AutoSize = true;
+            DataFim2.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DataFim2.ForeColor = Color.FromArgb(242, 242, 242);
+            DataFim2.Location = new Point(285, 219);
+            DataFim2.Name = "DataFim2";
+            DataFim2.Size = new Size(38, 14);
+            DataFim2.TabIndex = 22;
+            DataFim2.Text = "label3";
+            // 
+            // DataInicio2
+            // 
+            DataInicio2.AutoSize = true;
+            DataInicio2.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DataInicio2.ForeColor = Color.FromArgb(242, 242, 242);
+            DataInicio2.Location = new Point(285, 195);
+            DataInicio2.Name = "DataInicio2";
+            DataInicio2.Size = new Size(38, 14);
+            DataInicio2.TabIndex = 21;
+            DataInicio2.Text = "label3";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(242, 242, 242);
+            label4.Location = new Point(33, 219);
+            label4.Name = "label4";
+            label4.Size = new Size(56, 14);
+            label4.TabIndex = 20;
+            label4.Text = "Data Fim:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(242, 242, 242);
+            label3.Location = new Point(24, 195);
+            label3.Name = "label3";
+            label3.Size = new Size(65, 14);
+            label3.TabIndex = 19;
+            label3.Text = "Data Inicio:";
+            // 
+            // DataFim1
+            // 
+            DataFim1.AutoSize = true;
+            DataFim1.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DataFim1.ForeColor = Color.FromArgb(242, 242, 242);
+            DataFim1.Location = new Point(95, 219);
+            DataFim1.Name = "DataFim1";
+            DataFim1.Size = new Size(38, 14);
+            DataFim1.TabIndex = 17;
+            DataFim1.Text = "label3";
+            // 
+            // DataInicio1
+            // 
+            DataInicio1.AutoSize = true;
+            DataInicio1.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DataInicio1.ForeColor = Color.FromArgb(242, 242, 242);
+            DataInicio1.Location = new Point(95, 195);
+            DataInicio1.Name = "DataInicio1";
+            DataInicio1.Size = new Size(38, 14);
+            DataInicio1.TabIndex = 16;
+            DataInicio1.Text = "label3";
+            // 
+            // Evento3
+            // 
+            Evento3.AutoSize = true;
+            Evento3.Location = new Point(475, 30);
+            Evento3.Name = "Evento3";
+            Evento3.Size = new Size(38, 15);
+            Evento3.TabIndex = 15;
+            Evento3.Text = "label3";
+            // 
+            // Evento2
+            // 
+            Evento2.AutoSize = true;
+            Evento2.Location = new Point(283, 30);
+            Evento2.Name = "Evento2";
+            Evento2.Size = new Size(38, 15);
+            Evento2.TabIndex = 13;
+            Evento2.Text = "label3";
+            // 
+            // Evento1
+            // 
+            Evento1.AutoSize = true;
+            Evento1.Location = new Point(94, 30);
+            Evento1.Name = "Evento1";
+            Evento1.Size = new Size(38, 15);
+            Evento1.TabIndex = 12;
+            Evento1.Text = "label3";
+            // 
+            // LabelEvento3
+            // 
+            LabelEvento3.AutoSize = true;
+            LabelEvento3.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LabelEvento3.ForeColor = Color.FromArgb(242, 242, 242);
+            LabelEvento3.Location = new Point(415, 30);
+            LabelEvento3.Name = "LabelEvento3";
+            LabelEvento3.Size = new Size(159, 19);
+            LabelEvento3.TabIndex = 11;
+            LabelEvento3.Text = "Campeonato de bilhar";
+            // 
+            // BtnRetirarPresenca3
+            // 
+            BtnRetirarPresenca3.FlatStyle = FlatStyle.Flat;
+            BtnRetirarPresenca3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnRetirarPresenca3.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnRetirarPresenca3.IconChar = FontAwesome.Sharp.IconChar.X;
+            BtnRetirarPresenca3.IconColor = Color.FromArgb(242, 242, 242);
+            BtnRetirarPresenca3.IconFont = FontAwesome.Sharp.IconFont.Brands;
+            BtnRetirarPresenca3.IconSize = 35;
+            BtnRetirarPresenca3.Location = new Point(502, 264);
+            BtnRetirarPresenca3.Name = "BtnRetirarPresenca3";
+            BtnRetirarPresenca3.Size = new Size(49, 44);
+            BtnRetirarPresenca3.TabIndex = 10;
+            BtnRetirarPresenca3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnRetirarPresenca3.UseVisualStyleBackColor = true;
+            BtnRetirarPresenca3.Click += BtnRetirarPresenca3_Click;
+            // 
+            // BtnConfirmarPresenca3
+            // 
+            BtnConfirmarPresenca3.FlatStyle = FlatStyle.Flat;
+            BtnConfirmarPresenca3.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnConfirmarPresenca3.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnConfirmarPresenca3.IconChar = FontAwesome.Sharp.IconChar.Check;
+            BtnConfirmarPresenca3.IconColor = Color.FromArgb(242, 242, 242);
+            BtnConfirmarPresenca3.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            BtnConfirmarPresenca3.IconSize = 40;
+            BtnConfirmarPresenca3.Location = new Point(447, 264);
+            BtnConfirmarPresenca3.Name = "BtnConfirmarPresenca3";
+            BtnConfirmarPresenca3.Size = new Size(49, 44);
+            BtnConfirmarPresenca3.TabIndex = 9;
+            BtnConfirmarPresenca3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnConfirmarPresenca3.UseVisualStyleBackColor = true;
+            BtnConfirmarPresenca3.Click += BtnConfirmarPresenca3_Click;
+            // 
+            // LabelEvento2
+            // 
+            LabelEvento2.AutoSize = true;
+            LabelEvento2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LabelEvento2.ForeColor = Color.FromArgb(242, 242, 242);
+            LabelEvento2.Location = new Point(224, 30);
+            LabelEvento2.Name = "LabelEvento2";
+            LabelEvento2.Size = new Size(153, 19);
+            LabelEvento2.TabIndex = 8;
+            LabelEvento2.Text = "Campeonato de tenis";
+            // 
+            // BtnRetirarPresenca2
+            // 
+            BtnRetirarPresenca2.FlatStyle = FlatStyle.Flat;
+            BtnRetirarPresenca2.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnRetirarPresenca2.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnRetirarPresenca2.IconChar = FontAwesome.Sharp.IconChar.X;
+            BtnRetirarPresenca2.IconColor = Color.FromArgb(242, 242, 242);
+            BtnRetirarPresenca2.IconFont = FontAwesome.Sharp.IconFont.Brands;
+            BtnRetirarPresenca2.IconSize = 35;
+            BtnRetirarPresenca2.Location = new Point(309, 264);
+            BtnRetirarPresenca2.Name = "BtnRetirarPresenca2";
+            BtnRetirarPresenca2.Size = new Size(49, 44);
+            BtnRetirarPresenca2.TabIndex = 7;
+            BtnRetirarPresenca2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnRetirarPresenca2.UseVisualStyleBackColor = true;
+            BtnRetirarPresenca2.Click += BtnRetirarPresenca2_Click;
+            // 
+            // BtnConfirmarPresenca2
+            // 
+            BtnConfirmarPresenca2.FlatStyle = FlatStyle.Flat;
+            BtnConfirmarPresenca2.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnConfirmarPresenca2.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnConfirmarPresenca2.IconChar = FontAwesome.Sharp.IconChar.Check;
+            BtnConfirmarPresenca2.IconColor = Color.FromArgb(242, 242, 242);
+            BtnConfirmarPresenca2.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            BtnConfirmarPresenca2.IconSize = 40;
+            BtnConfirmarPresenca2.Location = new Point(254, 264);
+            BtnConfirmarPresenca2.Name = "BtnConfirmarPresenca2";
+            BtnConfirmarPresenca2.Size = new Size(49, 44);
+            BtnConfirmarPresenca2.TabIndex = 6;
+            BtnConfirmarPresenca2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnConfirmarPresenca2.UseVisualStyleBackColor = true;
+            BtnConfirmarPresenca2.Click += BtnConfirmarPresenca2_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources._1ae784973b4ce9f015821247252870d3_00_4;
+            pictureBox3.Location = new Point(417, 61);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(165, 119);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
+            // 
+            // LabelEvento1
+            // 
+            LabelEvento1.AutoSize = true;
+            LabelEvento1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LabelEvento1.ForeColor = Color.FromArgb(242, 242, 242);
+            LabelEvento1.Location = new Point(24, 30);
+            LabelEvento1.Name = "LabelEvento1";
+            LabelEvento1.Size = new Size(169, 19);
+            LabelEvento1.TabIndex = 4;
+            LabelEvento1.Text = "Campeonato futebol JP";
+            LabelEvento1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.download__1_;
+            pictureBox2.Location = new Point(224, 61);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(165, 119);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
+            // 
+            // BtnRetirarPresenca1
+            // 
+            BtnRetirarPresenca1.FlatStyle = FlatStyle.Flat;
+            BtnRetirarPresenca1.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnRetirarPresenca1.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnRetirarPresenca1.IconChar = FontAwesome.Sharp.IconChar.X;
+            BtnRetirarPresenca1.IconColor = Color.FromArgb(242, 242, 242);
+            BtnRetirarPresenca1.IconFont = FontAwesome.Sharp.IconFont.Brands;
+            BtnRetirarPresenca1.IconSize = 35;
+            BtnRetirarPresenca1.Location = new Point(112, 264);
+            BtnRetirarPresenca1.Name = "BtnRetirarPresenca1";
+            BtnRetirarPresenca1.Size = new Size(49, 44);
+            BtnRetirarPresenca1.TabIndex = 2;
+            BtnRetirarPresenca1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnRetirarPresenca1.UseVisualStyleBackColor = true;
+            BtnRetirarPresenca1.Click += BtnRetirarPresenca1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.futebolPI;
+            pictureBox1.Location = new Point(28, 61);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(165, 119);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // BtnConfirmarPresenca1
+            // 
+            BtnConfirmarPresenca1.FlatStyle = FlatStyle.Flat;
+            BtnConfirmarPresenca1.Font = new Font("Candara", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnConfirmarPresenca1.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnConfirmarPresenca1.IconChar = FontAwesome.Sharp.IconChar.Check;
+            BtnConfirmarPresenca1.IconColor = Color.FromArgb(242, 242, 242);
+            BtnConfirmarPresenca1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            BtnConfirmarPresenca1.IconSize = 40;
+            BtnConfirmarPresenca1.Location = new Point(57, 264);
+            BtnConfirmarPresenca1.Name = "BtnConfirmarPresenca1";
+            BtnConfirmarPresenca1.Size = new Size(49, 44);
+            BtnConfirmarPresenca1.TabIndex = 0;
+            BtnConfirmarPresenca1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnConfirmarPresenca1.UseVisualStyleBackColor = true;
+            BtnConfirmarPresenca1.Click += BtnConfirmarPresenca1_Click;
+            // 
             // PainelBarraTitulo
             // 
             PainelBarraTitulo.BackColor = Color.FromArgb(6, 7, 33);
@@ -908,7 +910,6 @@
             iconPictureBox5.Size = new Size(44, 48);
             iconPictureBox5.TabIndex = 5;
             iconPictureBox5.TabStop = false;
-            iconPictureBox5.Click += iconPictureBox5_Click;
             // 
             // label2
             // 
@@ -942,7 +943,6 @@
             LabelIdUsuario.Size = new Size(34, 13);
             LabelIdUsuario.TabIndex = 2;
             LabelIdUsuario.Text = "label1";
-            LabelIdUsuario.Click += LabelIdUsuario_Click;
             // 
             // LabelNomeUsuario
             // 
@@ -1027,10 +1027,35 @@
             PainelExame.Controls.Add(label12);
             PainelExame.Controls.Add(label11);
             PainelExame.Controls.Add(label8);
-            PainelExame.Location = new Point(552, 329);
+            PainelExame.Location = new Point(717, 273);
             PainelExame.Name = "PainelExame";
             PainelExame.Size = new Size(612, 360);
             PainelExame.TabIndex = 6;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.ForeColor = Color.FromArgb(242, 242, 242);
+            label18.Location = new Point(117, 35);
+            label18.Name = "label18";
+            label18.Size = new Size(146, 23);
+            label18.TabIndex = 10;
+            label18.Text = "Exame Periódico";
+            // 
+            // iconPictureBox6
+            // 
+            iconPictureBox6.BackColor = Color.FromArgb(6, 7, 45);
+            iconPictureBox6.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+            iconPictureBox6.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox6.IconSize = 53;
+            iconPictureBox6.Location = new Point(46, 18);
+            iconPictureBox6.Name = "iconPictureBox6";
+            iconPictureBox6.Size = new Size(60, 53);
+            iconPictureBox6.TabIndex = 9;
+            iconPictureBox6.TabStop = false;
             // 
             // BtnCadastrarExame
             // 
@@ -1091,7 +1116,6 @@
             LabelNome.Size = new Size(103, 23);
             LabelNome.TabIndex = 4;
             LabelNome.Text = "LabelNome";
-            LabelNome.Click += LabelNome_Click;
             // 
             // label13
             // 
@@ -1139,8 +1163,11 @@
             // 
             // PainelFatura
             // 
+            PainelFatura.BackColor = Color.FromArgb(6, 7, 55);
+            PainelFatura.Controls.Add(iconPictureBox9);
+            PainelFatura.Controls.Add(iconPictureBox8);
+            PainelFatura.Controls.Add(iconPictureBox7);
             PainelFatura.Controls.Add(confirmarPgto3);
-            PainelFatura.Controls.Add(PainelExame);
             PainelFatura.Controls.Add(confirmarPgto2);
             PainelFatura.Controls.Add(confirmarPgto1);
             PainelFatura.Controls.Add(imprimirFatura3);
@@ -1162,13 +1189,50 @@
             PainelFatura.Controls.Add(label16);
             PainelFatura.Controls.Add(label15);
             PainelFatura.Controls.Add(label14);
-            PainelFatura.Dock = DockStyle.Fill;
             PainelFatura.Font = new Font("Candara", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            PainelFatura.Location = new Point(188, 90);
+            PainelFatura.Location = new Point(635, 350);
             PainelFatura.Name = "PainelFatura";
             PainelFatura.Size = new Size(612, 360);
             PainelFatura.TabIndex = 7;
-            PainelFatura.Paint += PainelFatura_Paint;
+            // 
+            // iconPictureBox9
+            // 
+            iconPictureBox9.BackColor = Color.FromArgb(6, 7, 55);
+            iconPictureBox9.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.BrazilianRealSign;
+            iconPictureBox9.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox9.Location = new Point(107, 208);
+            iconPictureBox9.Name = "iconPictureBox9";
+            iconPictureBox9.Size = new Size(32, 32);
+            iconPictureBox9.TabIndex = 24;
+            iconPictureBox9.TabStop = false;
+            // 
+            // iconPictureBox8
+            // 
+            iconPictureBox8.BackColor = Color.FromArgb(6, 7, 55);
+            iconPictureBox8.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.BrazilianRealSign;
+            iconPictureBox8.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox8.Location = new Point(107, 148);
+            iconPictureBox8.Name = "iconPictureBox8";
+            iconPictureBox8.Size = new Size(32, 32);
+            iconPictureBox8.TabIndex = 23;
+            iconPictureBox8.TabStop = false;
+            // 
+            // iconPictureBox7
+            // 
+            iconPictureBox7.BackColor = Color.FromArgb(6, 7, 55);
+            iconPictureBox7.ForeColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.BrazilianRealSign;
+            iconPictureBox7.IconColor = Color.FromArgb(242, 242, 242);
+            iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox7.Location = new Point(107, 88);
+            iconPictureBox7.Name = "iconPictureBox7";
+            iconPictureBox7.Size = new Size(32, 32);
+            iconPictureBox7.TabIndex = 22;
+            iconPictureBox7.TabStop = false;
             // 
             // confirmarPgto3
             // 
@@ -1184,6 +1248,7 @@
             confirmarPgto3.Size = new Size(48, 43);
             confirmarPgto3.TabIndex = 21;
             confirmarPgto3.UseVisualStyleBackColor = true;
+            confirmarPgto3.Click += confirmarPgto3_Click;
             // 
             // confirmarPgto2
             // 
@@ -1199,6 +1264,7 @@
             confirmarPgto2.Size = new Size(48, 43);
             confirmarPgto2.TabIndex = 20;
             confirmarPgto2.UseVisualStyleBackColor = true;
+            confirmarPgto2.Click += confirmarPgto2_Click;
             // 
             // confirmarPgto1
             // 
@@ -1214,6 +1280,7 @@
             confirmarPgto1.Size = new Size(48, 43);
             confirmarPgto1.TabIndex = 19;
             confirmarPgto1.UseVisualStyleBackColor = true;
+            confirmarPgto1.Click += confirmarPgto1_Click;
             // 
             // imprimirFatura3
             // 
@@ -1229,6 +1296,7 @@
             imprimirFatura3.Size = new Size(48, 43);
             imprimirFatura3.TabIndex = 18;
             imprimirFatura3.UseVisualStyleBackColor = true;
+            imprimirFatura3.Click += imprimirFatura3_Click;
             // 
             // imprimirFatura2
             // 
@@ -1244,6 +1312,7 @@
             imprimirFatura2.Size = new Size(48, 43);
             imprimirFatura2.TabIndex = 17;
             imprimirFatura2.UseVisualStyleBackColor = true;
+            imprimirFatura2.Click += imprimirFatura2_Click;
             // 
             // imprimirFatura1
             // 
@@ -1259,6 +1328,7 @@
             imprimirFatura1.Size = new Size(48, 43);
             imprimirFatura1.TabIndex = 16;
             imprimirFatura1.UseVisualStyleBackColor = true;
+            imprimirFatura1.Click += imprimirFatura1_Click;
             // 
             // situacaoFatura3
             // 
@@ -1289,9 +1359,9 @@
             valorFatura3.ForeColor = Color.FromArgb(242, 242, 242);
             valorFatura3.Location = new Point(145, 217);
             valorFatura3.Name = "valorFatura3";
-            valorFatura3.Size = new Size(69, 18);
+            valorFatura3.Size = new Size(27, 18);
             valorFatura3.TabIndex = 13;
-            valorFatura3.Text = "Descrição";
+            valorFatura3.Text = "-- --";
             // 
             // descFatura3
             // 
@@ -1333,9 +1403,9 @@
             valorFatura2.ForeColor = Color.FromArgb(242, 242, 242);
             valorFatura2.Location = new Point(145, 157);
             valorFatura2.Name = "valorFatura2";
-            valorFatura2.Size = new Size(69, 18);
+            valorFatura2.Size = new Size(27, 18);
             valorFatura2.TabIndex = 9;
-            valorFatura2.Text = "Descrição";
+            valorFatura2.Text = "-- --";
             // 
             // descFatura2
             // 
@@ -1377,9 +1447,9 @@
             valorFatura1.ForeColor = Color.FromArgb(242, 242, 242);
             valorFatura1.Location = new Point(145, 97);
             valorFatura1.Name = "valorFatura1";
-            valorFatura1.Size = new Size(69, 18);
+            valorFatura1.Size = new Size(27, 18);
             valorFatura1.TabIndex = 5;
-            valorFatura1.Text = "Descrição";
+            valorFatura1.Text = "-- --";
             // 
             // descFatura1
             // 
@@ -1436,31 +1506,6 @@
             label14.TabIndex = 0;
             label14.Text = "Descrição";
             // 
-            // iconPictureBox6
-            // 
-            iconPictureBox6.BackColor = Color.FromArgb(6, 7, 45);
-            iconPictureBox6.ForeColor = Color.FromArgb(242, 242, 242);
-            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.UserMd;
-            iconPictureBox6.IconColor = Color.FromArgb(242, 242, 242);
-            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox6.IconSize = 53;
-            iconPictureBox6.Location = new Point(46, 18);
-            iconPictureBox6.Name = "iconPictureBox6";
-            iconPictureBox6.Size = new Size(60, 53);
-            iconPictureBox6.TabIndex = 9;
-            iconPictureBox6.TabStop = false;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.ForeColor = Color.FromArgb(242, 242, 242);
-            label18.Location = new Point(117, 35);
-            label18.Name = "label18";
-            label18.Size = new Size(146, 23);
-            label18.TabIndex = 10;
-            label18.Text = "Exame Periódico";
-            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1468,11 +1513,13 @@
             BackColor = Color.FromArgb(6, 7, 45);
             ClientSize = new Size(800, 450);
             Controls.Add(PainelFatura);
+            Controls.Add(PainelEventos);
             Controls.Add(pictureBox5);
-            Controls.Add(label7);
             Controls.Add(PainelUsuario);
+            Controls.Add(label7);
             Controls.Add(labelClock);
             Controls.Add(PainelBarraTitulo);
+            Controls.Add(PainelExame);
             Controls.Add(PainelMenuLateral);
             Name = "TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1483,16 +1530,16 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             PainelUsuario.ResumeLayout(false);
             PainelUsuario.PerformLayout();
-            PainelEventos.ResumeLayout(false);
-            PainelEventos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            PainelEventos.ResumeLayout(false);
+            PainelEventos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PainelBarraTitulo.ResumeLayout(false);
             PainelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
@@ -1500,9 +1547,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             PainelExame.ResumeLayout(false);
             PainelExame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             PainelFatura.ResumeLayout(false);
             PainelFatura.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1608,5 +1658,9 @@
         private Label LabelHome;
         private Label label18;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
     }
 }

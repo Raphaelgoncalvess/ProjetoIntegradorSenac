@@ -238,7 +238,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(6, 7, 33);
+            BackColor = Color.FromArgb(6, 7, 55);
             ClientSize = new Size(378, 451);
             Controls.Add(labelReceberCpf);
             Controls.Add(comboBoxParentesco);

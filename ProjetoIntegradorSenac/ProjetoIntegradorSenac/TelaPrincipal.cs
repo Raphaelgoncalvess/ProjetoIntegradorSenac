@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Drawing.Printing;
 
 namespace ProjetoIntegradorSenac
 {
@@ -42,6 +43,8 @@ namespace ProjetoIntegradorSenac
             FormBorderStyle = FormBorderStyle.None;
             PainelUsuario.Visible = false;
             PainelEventos.Visible = false;
+            PainelExame.Visible = false;
+            PainelFatura.Visible = false;
 
 
             //VALIDAÇÃO SE É TITULAR OU DEPENDENTE
@@ -125,10 +128,20 @@ namespace ProjetoIntegradorSenac
 
             /*PAINEL FATURAS*/
             usuario.IdTitular = db.BuscarIdTitularFatura(idUsuario);
-            descFatura1.Text = db.BuscarNomeFatura(usuario);
-            valorFatura1.Text = db.BuscarValorFatura(usuario);
-            dataVencFatura1.Text = db.BuscarDataVencimentoFatura(usuario);
-            situacaoFatura1.Text = db.BuscarSituacaoFatura(usuario);
+            descFatura1.Text = db.BuscarNomePrimeiraFatura(usuario);
+            valorFatura1.Text = db.BuscarValorPrimeiraFatura(usuario);
+            dataVencFatura1.Text = db.BuscarDataVencimentoPrimeiraFatura(usuario);
+            situacaoFatura1.Text = db.BuscarSituacaoPrimeiraFatura(usuario);
+
+            descFatura2.Text = db.BuscarNomeSegundaFatura(usuario);
+            valorFatura2.Text = db.BuscarValorSegundaFatura(usuario);
+            dataVencFatura2.Text = db.BuscarDataVencimentoSegundaFatura(usuario);
+            situacaoFatura2.Text = db.BuscarSituacaoSegundaFatura(usuario);
+
+            descFatura3.Text = db.BuscarNomeTerceiraFatura(usuario);
+            valorFatura3.Text = db.BuscarValorTerceiraFatura(usuario);
+            dataVencFatura3.Text = db.BuscarDataVencimentoTerceiraFatura(usuario);
+            situacaoFatura3.Text = db.BuscarSituacaoTerceiraFatura(usuario);
         }
 
         //Structs botoões
@@ -147,7 +160,7 @@ namespace ProjetoIntegradorSenac
             {
                 DesativarBotao();
                 BtnAtual = (IconButton)senderBtn;
-                BtnAtual.BackColor = Color.FromArgb(6, 7, 45);
+                BtnAtual.BackColor = Color.FromArgb(6, 7, 55);
                 BtnAtual.ForeColor = cor;
                 BtnAtual.TextAlign = ContentAlignment.MiddleCenter;
                 BtnAtual.IconColor = cor;
@@ -177,10 +190,6 @@ namespace ProjetoIntegradorSenac
                 BtnAtual.ImageAlign = ContentAlignment.MiddleCenter;
             }
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         //Valida se é titular ou não e abre a tela de cadastro de usuário conforme sua permissão
         private void TelaPrincipal_Load(object sender, EventArgs e)
@@ -195,6 +204,8 @@ namespace ProjetoIntegradorSenac
             PainelUsuario.Visible = true;
             PainelUsuario.BringToFront();
             PainelEventos.Visible = false;
+            PainelExame.Visible = false;
+            PainelFatura.Visible = false;
         }
 
         private void BtnEventos_Click(object sender, EventArgs e)
@@ -205,6 +216,7 @@ namespace ProjetoIntegradorSenac
             PainelEventos.BringToFront();
             PainelUsuario.Visible = false;
             PainelExame.Visible = false;
+            PainelFatura.Visible = false;
         }
 
         private void BtnExame_Click(object sender, EventArgs e)
@@ -212,16 +224,21 @@ namespace ProjetoIntegradorSenac
             AtivarBotao(sender, CoresRgb.cor2);
             PainelExame.Dock = DockStyle.Fill;
             PainelExame.Visible = true;
+            PainelExame.BringToFront();
+            PainelUsuario.Visible = false;
+            PainelEventos.Visible = false;
+            PainelFatura.Visible = false;
         }
 
         private void BtnFatura_Click(object sender, EventArgs e)
         {
             AtivarBotao(sender, CoresRgb.cor4);
-        }
-
-        private void LabelIdUsuario_Click(object sender, EventArgs e)
-        {
-
+            PainelFatura.Dock = DockStyle.Fill;
+            PainelFatura.Visible = true;
+            PainelFatura.BringToFront();
+            PainelUsuario.Visible = false;
+            PainelEventos.Visible = false;
+            PainelExame.Visible = false;
         }
 
         private void BtnLogout_Click(object sender, EventArgs e)
@@ -252,6 +269,7 @@ namespace ProjetoIntegradorSenac
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
+            this.Refresh();
             ResetarBtns();
             PainelUsuario.Visible = false;
             PainelExame.Visible = false;
@@ -270,11 +288,6 @@ namespace ProjetoIntegradorSenac
         private void timer1_Tick(object sender, EventArgs e)
         {
             labelClock.Text = DateTime.Now.ToString("HH:mm:ss");
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void BtnConfirmarPresenca1_Click(object sender, EventArgs e)
@@ -349,28 +362,6 @@ namespace ProjetoIntegradorSenac
             MessageBox.Show("Presença retirada com sucesso!");
         }
 
-        private void LabelEvento1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataInicio1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void LabelNome_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnCadastrarExame_Click(object sender, EventArgs e)
         {
@@ -381,15 +372,6 @@ namespace ProjetoIntegradorSenac
             MessageBox.Show("Exame realizado com sucesso!");
         }
 
-        private void PainelFatura_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnFechar_Click(object sender, EventArgs e)
         {
@@ -406,6 +388,131 @@ namespace ProjetoIntegradorSenac
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void imprimirFatura1_Click(object sender, EventArgs e)
+        {
+            // Cria o diálogo de impressão
+            PrintDialog printDialog = new PrintDialog();
+
+            // Define o objeto PrintDocument para o diálogo
+            printDialog.Document = printDocument1;
+
+            // Exibe o diálogo de impressão e verifica se o usuário pressionou "OK"
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Inicia o processo de impressão
+                printDocument1.Print();
+            }
+        }
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // Define o conteúdo a ser impresso
+            string texto = "Exemplo de impressão no WinForms.";
+
+            // Define a fonte e a posição do texto
+            Font fonte = new Font("Arial", 12);
+            PointF ponto = new PointF(100, 100);
+
+            // Desenha o texto na página
+            e.Graphics.DrawString(texto, fonte, Brushes.Black, ponto);
+        }
+
+        private void imprimirFatura2_Click(object sender, EventArgs e)
+        {
+            // Cria o diálogo de impressão
+            PrintDialog printDialog = new PrintDialog();
+
+            // Define o objeto PrintDocument para o diálogo
+            printDialog.Document = printDocument1;
+
+            // Exibe o diálogo de impressão e verifica se o usuário pressionou "OK"
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Inicia o processo de impressão
+                printDocument1.Print();
+            }
+        }
+
+        private void imprimirFatura3_Click(object sender, EventArgs e)
+        {
+            // Cria o diálogo de impressão
+            PrintDialog printDialog = new PrintDialog();
+
+            // Define o objeto PrintDocument para o diálogo
+            printDialog.Document = printDocument1;
+
+            // Exibe o diálogo de impressão e verifica se o usuário pressionou "OK"
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Inicia o processo de impressão
+                printDocument1.Print();
+            }
+        }
+
+        private void confirmarPgto1_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            db.Conectar();
+            Usuario usuario = new Usuario();
+
+            usuario.IdTitular = db.BuscarIdTitularFatura(idUsuarioLogado);
+
+            db.PagarPrimeiraFatura(usuario.IdTitular);
+            MessageBox.Show("Pagamento realizado com sucesso!");
+            this.Refresh();
+        }
+
+        private void confirmarPgto2_Click(object sender, EventArgs e)
+        {
+            if (situacaoFatura1.Text == "Pendente")
+            {
+                MessageBox.Show("A fatura anterior ainda não foi paga!");
+            }
+            else
+            {
+                Conexao db = new Conexao();
+                db.Conectar();
+                Usuario usuario = new Usuario();
+
+                usuario.IdTitular = db.BuscarIdTitularFatura(idUsuarioLogado);
+
+                db.PagarSegundaFatura(usuario.IdTitular);
+                MessageBox.Show("Pagamento realizado com sucesso!");
+
+            }
+            this.Refresh();
+        }
+
+        private void confirmarPgto3_Click(object sender, EventArgs e)
+        {
+            if (situacaoFatura2.Text == "Pendente")
+            {
+                MessageBox.Show("A fatura anterior ainda não foi paga!");
+            }
+            else
+            {
+                Conexao db = new Conexao();
+                db.Conectar();
+                Usuario usuario = new Usuario();
+
+                usuario.IdTitular = db.BuscarIdTitularFatura(idUsuarioLogado);
+
+                db.PagarSegundaFatura(usuario.IdTitular);
+                MessageBox.Show("Pagamento realizado com sucesso!");
+
+            }
+            this.Refresh();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
+            ResetarBtns();
+            PainelUsuario.Visible = false;
+            PainelExame.Visible = false;
+            PainelEventos.Visible = false;
+            PainelFatura.Visible = false;
         }
     }
 }
