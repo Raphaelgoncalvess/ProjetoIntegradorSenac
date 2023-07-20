@@ -100,6 +100,26 @@
             label12 = new Label();
             label11 = new Label();
             label8 = new Label();
+            PainelFatura = new Panel();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            descFatura1 = new Label();
+            valorFatura1 = new Label();
+            dataVencFatura1 = new Label();
+            situacaoFatura1 = new Label();
+            situacaoFatura2 = new Label();
+            dataVencFatura2 = new Label();
+            valorFatura2 = new Label();
+            descFatura2 = new Label();
+            situacaoFatura3 = new Label();
+            dataVencFatura3 = new Label();
+            valorFatura3 = new Label();
+            descFatura3 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             PainelMenuLateral.SuspendLayout();
             PainelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -117,6 +137,7 @@
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             PainelExame.SuspendLayout();
+            PainelFatura.SuspendLayout();
             SuspendLayout();
             // 
             // PainelMenuLateral
@@ -949,7 +970,7 @@
             PainelExame.Controls.Add(label12);
             PainelExame.Controls.Add(label11);
             PainelExame.Controls.Add(label8);
-            PainelExame.Location = new Point(188, 90);
+            PainelExame.Location = new Point(740, 383);
             PainelExame.Name = "PainelExame";
             PainelExame.Size = new Size(612, 360);
             PainelExame.TabIndex = 6;
@@ -1057,12 +1078,262 @@
             label8.TabIndex = 0;
             label8.Text = "Nome:";
             // 
+            // PainelFatura
+            // 
+            PainelFatura.Controls.Add(iconButton3);
+            PainelFatura.Controls.Add(iconButton2);
+            PainelFatura.Controls.Add(iconButton1);
+            PainelFatura.Controls.Add(situacaoFatura3);
+            PainelFatura.Controls.Add(dataVencFatura3);
+            PainelFatura.Controls.Add(valorFatura3);
+            PainelFatura.Controls.Add(descFatura3);
+            PainelFatura.Controls.Add(situacaoFatura2);
+            PainelFatura.Controls.Add(dataVencFatura2);
+            PainelFatura.Controls.Add(valorFatura2);
+            PainelFatura.Controls.Add(descFatura2);
+            PainelFatura.Controls.Add(situacaoFatura1);
+            PainelFatura.Controls.Add(dataVencFatura1);
+            PainelFatura.Controls.Add(valorFatura1);
+            PainelFatura.Controls.Add(descFatura1);
+            PainelFatura.Controls.Add(label17);
+            PainelFatura.Controls.Add(label16);
+            PainelFatura.Controls.Add(label15);
+            PainelFatura.Controls.Add(label14);
+            PainelFatura.Dock = DockStyle.Fill;
+            PainelFatura.Location = new Point(188, 90);
+            PainelFatura.Name = "PainelFatura";
+            PainelFatura.Size = new Size(612, 360);
+            PainelFatura.TabIndex = 7;
+            PainelFatura.Paint += PainelFatura_Paint;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.FromArgb(242, 242, 242);
+            label14.Location = new Point(22, 37);
+            label14.Name = "label14";
+            label14.Size = new Size(89, 23);
+            label14.TabIndex = 0;
+            label14.Text = "Descrição";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.FromArgb(242, 242, 242);
+            label15.Location = new Point(161, 37);
+            label15.Name = "label15";
+            label15.Size = new Size(52, 23);
+            label15.TabIndex = 1;
+            label15.Text = "Valor";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.ForeColor = Color.FromArgb(242, 242, 242);
+            label16.Location = new Point(242, 37);
+            label16.Name = "label16";
+            label16.Size = new Size(149, 23);
+            label16.TabIndex = 2;
+            label16.Text = "Data/Vencimento";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.ForeColor = Color.FromArgb(242, 242, 242);
+            label17.Location = new Point(415, 37);
+            label17.Name = "label17";
+            label17.Size = new Size(79, 23);
+            label17.TabIndex = 3;
+            label17.Text = "Situação";
+            // 
+            // descFatura1
+            // 
+            descFatura1.AutoSize = true;
+            descFatura1.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            descFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            descFatura1.Location = new Point(22, 97);
+            descFatura1.Name = "descFatura1";
+            descFatura1.Size = new Size(89, 23);
+            descFatura1.TabIndex = 4;
+            descFatura1.Text = "Descrição";
+            // 
+            // valorFatura1
+            // 
+            valorFatura1.AutoSize = true;
+            valorFatura1.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            valorFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            valorFatura1.Location = new Point(161, 97);
+            valorFatura1.Name = "valorFatura1";
+            valorFatura1.Size = new Size(89, 23);
+            valorFatura1.TabIndex = 5;
+            valorFatura1.Text = "Descrição";
+            // 
+            // dataVencFatura1
+            // 
+            dataVencFatura1.AutoSize = true;
+            dataVencFatura1.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataVencFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            dataVencFatura1.Location = new Point(242, 97);
+            dataVencFatura1.Name = "dataVencFatura1";
+            dataVencFatura1.Size = new Size(89, 23);
+            dataVencFatura1.TabIndex = 6;
+            dataVencFatura1.Text = "Descrição";
+            // 
+            // situacaoFatura1
+            // 
+            situacaoFatura1.AutoSize = true;
+            situacaoFatura1.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            situacaoFatura1.ForeColor = Color.FromArgb(242, 242, 242);
+            situacaoFatura1.Location = new Point(415, 97);
+            situacaoFatura1.Name = "situacaoFatura1";
+            situacaoFatura1.Size = new Size(89, 23);
+            situacaoFatura1.TabIndex = 7;
+            situacaoFatura1.Text = "Descrição";
+            // 
+            // situacaoFatura2
+            // 
+            situacaoFatura2.AutoSize = true;
+            situacaoFatura2.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            situacaoFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            situacaoFatura2.Location = new Point(415, 157);
+            situacaoFatura2.Name = "situacaoFatura2";
+            situacaoFatura2.Size = new Size(89, 23);
+            situacaoFatura2.TabIndex = 11;
+            situacaoFatura2.Text = "Descrição";
+            // 
+            // dataVencFatura2
+            // 
+            dataVencFatura2.AutoSize = true;
+            dataVencFatura2.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataVencFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            dataVencFatura2.Location = new Point(242, 157);
+            dataVencFatura2.Name = "dataVencFatura2";
+            dataVencFatura2.Size = new Size(89, 23);
+            dataVencFatura2.TabIndex = 10;
+            dataVencFatura2.Text = "Descrição";
+            // 
+            // valorFatura2
+            // 
+            valorFatura2.AutoSize = true;
+            valorFatura2.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            valorFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            valorFatura2.Location = new Point(161, 157);
+            valorFatura2.Name = "valorFatura2";
+            valorFatura2.Size = new Size(89, 23);
+            valorFatura2.TabIndex = 9;
+            valorFatura2.Text = "Descrição";
+            // 
+            // descFatura2
+            // 
+            descFatura2.AutoSize = true;
+            descFatura2.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            descFatura2.ForeColor = Color.FromArgb(242, 242, 242);
+            descFatura2.Location = new Point(22, 157);
+            descFatura2.Name = "descFatura2";
+            descFatura2.Size = new Size(89, 23);
+            descFatura2.TabIndex = 8;
+            descFatura2.Text = "Descrição";
+            // 
+            // situacaoFatura3
+            // 
+            situacaoFatura3.AutoSize = true;
+            situacaoFatura3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            situacaoFatura3.ForeColor = Color.FromArgb(242, 242, 242);
+            situacaoFatura3.Location = new Point(415, 217);
+            situacaoFatura3.Name = "situacaoFatura3";
+            situacaoFatura3.Size = new Size(89, 23);
+            situacaoFatura3.TabIndex = 15;
+            situacaoFatura3.Text = "Descrição";
+            // 
+            // dataVencFatura3
+            // 
+            dataVencFatura3.AutoSize = true;
+            dataVencFatura3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataVencFatura3.ForeColor = Color.FromArgb(242, 242, 242);
+            dataVencFatura3.Location = new Point(242, 217);
+            dataVencFatura3.Name = "dataVencFatura3";
+            dataVencFatura3.Size = new Size(89, 23);
+            dataVencFatura3.TabIndex = 14;
+            dataVencFatura3.Text = "Descrição";
+            // 
+            // valorFatura3
+            // 
+            valorFatura3.AutoSize = true;
+            valorFatura3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            valorFatura3.ForeColor = Color.FromArgb(242, 242, 242);
+            valorFatura3.Location = new Point(161, 217);
+            valorFatura3.Name = "valorFatura3";
+            valorFatura3.Size = new Size(89, 23);
+            valorFatura3.TabIndex = 13;
+            valorFatura3.Text = "Descrição";
+            // 
+            // descFatura3
+            // 
+            descFatura3.AutoSize = true;
+            descFatura3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            descFatura3.ForeColor = Color.FromArgb(242, 242, 242);
+            descFatura3.Location = new Point(22, 217);
+            descFatura3.Name = "descFatura3";
+            descFatura3.Size = new Size(89, 23);
+            descFatura3.TabIndex = 12;
+            descFatura3.Text = "Descrição";
+            // 
+            // iconButton1
+            // 
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.ForeColor = Color.FromArgb(242, 242, 242);
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Print;
+            iconButton1.IconColor = Color.FromArgb(242, 242, 242);
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 36;
+            iconButton1.Location = new Point(540, 88);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(60, 42);
+            iconButton1.TabIndex = 16;
+            iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton2
+            // 
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton2.ForeColor = Color.FromArgb(242, 242, 242);
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Print;
+            iconButton2.IconColor = Color.FromArgb(242, 242, 242);
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 36;
+            iconButton2.Location = new Point(540, 148);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(60, 42);
+            iconButton2.TabIndex = 17;
+            iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // iconButton3
+            // 
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton3.ForeColor = Color.FromArgb(242, 242, 242);
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Print;
+            iconButton3.IconColor = Color.FromArgb(242, 242, 242);
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 36;
+            iconButton3.Location = new Point(540, 208);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(60, 42);
+            iconButton3.TabIndex = 18;
+            iconButton3.UseVisualStyleBackColor = true;
+            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(6, 7, 45);
             ClientSize = new Size(800, 450);
+            Controls.Add(PainelFatura);
             Controls.Add(PainelExame);
             Controls.Add(pictureBox5);
             Controls.Add(label7);
@@ -1095,6 +1366,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             PainelExame.ResumeLayout(false);
             PainelExame.PerformLayout();
+            PainelFatura.ResumeLayout(false);
+            PainelFatura.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1172,5 +1445,25 @@
         private Label LabelDataVencimento;
         private Label LabelDataEfetuado;
         private Label LabelNome;
+        private Panel PainelFatura;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label situacaoFatura1;
+        private Label dataVencFatura1;
+        private Label valorFatura1;
+        private Label descFatura1;
+        private Label label17;
+        private Label situacaoFatura3;
+        private Label dataVencFatura3;
+        private Label valorFatura3;
+        private Label descFatura3;
+        private Label situacaoFatura2;
+        private Label dataVencFatura2;
+        private Label valorFatura2;
+        private Label descFatura2;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

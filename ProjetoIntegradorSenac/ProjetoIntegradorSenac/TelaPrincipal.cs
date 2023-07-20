@@ -61,6 +61,8 @@ namespace ProjetoIntegradorSenac
             Usuario usuario = new Usuario();
             db.Conectar();
 
+            
+
             usuario.Nome = db.BuscarUsuario(idUsuario);
             usuario.Email = db.BuscarEmail(idUsuario);
             usuario.Cpf = db.BuscarCpf(idUsuario);
@@ -104,6 +106,14 @@ namespace ProjetoIntegradorSenac
             LabelDataEfetuado.Text = exame.DataEfetuado;
             LabelDataVencimento.Text = exame.DataVencimento;
             LabelSituacao.Text = exame.Situacao;
+
+
+            /*PAINEL FATURAS*/
+            usuario.IdTitular = db.BuscarIdTitularFatura(idUsuario);
+            descFatura1.Text = db.BuscarNomeFatura(usuario);
+            valorFatura1.Text = db.BuscarValorFatura(usuario);
+            dataVencFatura1.Text = db.BuscarDataVencimentoFatura(usuario);
+            situacaoFatura1.Text = db.BuscarSituacaoFatura(usuario);
         }
 
 
@@ -294,6 +304,11 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
             db.AtualizarDadosExame(idUsuarioLogado);
             MessageBox.Show("Exame realizado com sucesso!");
+        }
+
+        private void PainelFatura_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

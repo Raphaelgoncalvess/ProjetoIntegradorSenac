@@ -313,5 +313,54 @@ namespace ProjetoIntegradorSenac
             comando.ExecuteNonQuery();
         }
         #endregion
+        #region FATURAS
+
+        public int BuscarIdTitularFatura(int idUsuario)
+        {
+            /*Faz um SELECT para buscar o Id do Usuario*/
+            string sql = $"SELECT id FROM TitularPI WHERE idUsuario = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            var IdTitular = Convert.ToInt32(comando.ExecuteScalar());
+            return IdTitular;
+        }
+
+        public string BuscarNomeFatura(Usuario usuario)
+        {
+            string sql = $"SELECT TOP 1 descricao FROM MensalidadePI WHERE idTitular = '{usuario.IdTitular}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string nomeFatura = comando.ExecuteScalar().ToString();
+            return nomeFatura;
+        }
+        public string BuscarValorFatura(Usuario usuario)
+        {
+            string sql = $"SELECT TOP 1 valor FROM MensalidadePI WHERE idTitular = '{usuario.IdTitular}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string valorFatura = comando.ExecuteScalar().ToString();
+            return valorFatura;
+        }
+        public string BuscarDataVencimentoFatura(Usuario usuario)
+        {
+            string sql = $"SELECT TOP 1 dataVencimento FROM MensalidadePI WHERE idTitular = '{usuario.IdTitular}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string dataVencimentoFatura = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy");
+            return dataVencimentoFatura;
+        }
+        public string BuscarSituacaoFatura(Usuario usuario)
+        {
+            string sql = $"SELECT TOP 1 taPaga FROM MensalidadePI WHERE idTitular = '{usuario.IdTitular}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string situacaoFatura = comando.ExecuteScalar().ToString();
+            if(situacaoFatura == "False")
+            {
+                situacaoFatura = "Pendente";
+            }
+            else 
+            { 
+                situacaoFatura = "Pago";
+            }
+            return situacaoFatura;
+        }
+
+        #endregion
     }
 }
