@@ -57,6 +57,7 @@ namespace ProjetoIntegradorSenac
 
             MessageBox.Show("Usuario Cadastrado com sucesso!");
             this.Close();
+            
         }
 
         private void CadastrarDependente_Load(object sender, EventArgs e)

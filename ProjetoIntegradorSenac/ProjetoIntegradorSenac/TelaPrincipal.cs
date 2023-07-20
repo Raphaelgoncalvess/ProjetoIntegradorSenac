@@ -25,6 +25,38 @@ namespace ProjetoIntegradorSenac
             ehTitularLogado = ehTitular;
             idUsuarioLogado = idUsuario;
 
+
+            PainelUsuario.Visible = false;
+            PainelEventos.Visible = false;
+
+            //VALIDAÇÃO SE É TITULAR OU DEPENDENTE
+
+            if (ehTitular == true)
+            {
+                BtnCadastrarDependente.Visible = true;
+                BtnExcluirDependente.Visible = true;
+                BtnEventos.Visible = true;
+                BtnExame.Visible = true;
+                BtnFatura.Visible = true;
+                BtnMenuUsuario.Visible = true;
+                dataGridView1.Visible = true;
+                BtnRedefinirSenha.Visible = true;
+
+            }
+            else
+            {
+                BtnCadastrarDependente.Visible = false;
+                BtnExcluirDependente.Visible = false;
+                BtnEventos.Visible = true;
+                BtnExame.Visible = false;
+                BtnFatura.Visible = false;
+                BtnMenuUsuario.Visible = true;
+                dataGridView1.Visible = false;
+                BtnRedefinirSenha.Visible = true;
+                LblDependentes.Visible = false;
+            }
+
+
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
             db.Conectar();
@@ -47,6 +79,20 @@ namespace ProjetoIntegradorSenac
 
             var listaDependentes = db.BuscarDependentes(idUsuario);
             dataGridView1.DataSource = listaDependentes;
+
+            //PAINEL Eventos
+            Evento1.Visible = false;
+            Evento2.Visible = false;
+            Evento3.Visible = false;
+            Evento1.Text = "3";
+
+            DataInicio1.Text = db.BuscarEventoInicio(Evento1.Text);
+            DataFim1.Text = db.BuscarEventoFim(Evento1.Text);
+            DataInicio2.Text = db.BuscarEventoInicio(Evento1.Text);
+            DataFim2.Text = db.BuscarEventoFim(Evento1.Text);
+            DataInicio3.Text = db.BuscarEventoInicio(Evento1.Text);
+            DataFim3.Text = db.BuscarEventoFim(Evento1.Text);
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -62,13 +108,18 @@ namespace ProjetoIntegradorSenac
 
         private void BtnMenuUsuario_Click(object sender, EventArgs e)
         {
+            PainelUsuario.Dock = DockStyle.Fill;
             PainelUsuario.Visible = true;
             PainelUsuario.BringToFront();
+            PainelEventos.Visible = false;
         }
 
         private void BtnEventos_Click(object sender, EventArgs e)
         {
-
+            PainelEventos.Dock = DockStyle.Fill;
+            PainelEventos.Visible = true;
+            PainelEventos.BringToFront();
+            PainelUsuario.Visible = false;
         }
 
         private void BtnExame_Click(object sender, EventArgs e)
@@ -88,7 +139,7 @@ namespace ProjetoIntegradorSenac
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Restart();
         }
 
         private void BtnRedefinirSenha_Click(object sender, EventArgs e)
@@ -110,6 +161,111 @@ namespace ProjetoIntegradorSenac
         {
             DeletarDependente telaDeletarDependente = new DeletarDependente();
             telaDeletarDependente.ShowDialog();
+        }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            PainelUsuario.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelClock.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnConfirmarPresenca1_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = idUsuarioLogado;
+            Evento1.Text = "3";
+
+            db.Conectar();
+            db.InserirPresencaEvento(usuario, Evento1.Text);
+            MessageBox.Show("Presença confirmada com sucesso!");
+        }
+
+        private void BtnRetirarPresenca1_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = idUsuarioLogado;
+            Evento1.Text = "3";
+
+            db.Conectar();
+            db.RetirarPresencaEvento(usuario, Evento1.Text);
+            MessageBox.Show("Presença retirada com sucesso!");
+        }
+
+        private void BtnConfirmarPresenca2_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = idUsuarioLogado;
+            Evento1.Text = "4";
+
+            db.Conectar();
+            db.InserirPresencaEvento(usuario, Evento1.Text);
+            MessageBox.Show("Presença confirmada com sucesso!");
+        }
+
+        private void BtnRetirarPresenca2_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = idUsuarioLogado;
+            Evento1.Text = "4";
+
+            db.Conectar();
+            db.RetirarPresencaEvento(usuario, Evento1.Text);
+            MessageBox.Show("Presença retirada com sucesso!");
+        }
+
+        private void BtnConfirmarPresenca3_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = idUsuarioLogado;
+            Evento1.Text = "5";
+
+            db.Conectar();
+            db.RetirarPresencaEvento(usuario, Evento1.Text);
+            MessageBox.Show("Presença retirada com sucesso!");
+        }
+
+        private void BtnRetirarPresenca3_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = idUsuarioLogado;
+            Evento1.Text = "5";
+
+            db.Conectar();
+            db.RetirarPresencaEvento(usuario, Evento1.Text);
+            MessageBox.Show("Presença retirada com sucesso!");
+        }
+
+        private void LabelEvento1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataInicio1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
         }
     }
 }

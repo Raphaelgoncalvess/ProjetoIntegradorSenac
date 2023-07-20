@@ -181,7 +181,7 @@ namespace ProjetoIntegradorSenac
 
         public List<Dependente> BuscarDependentes(int idTitular)
         {
-            string sql = $"SELECT nome, descricao FROM DependentePI\r\nINNER JOIN UsuarioPI ON DependentePI.idUsuario = UsuarioPI.id\r\n INNER JOIN TitularPI ON DependentePI.idTitular = TitularPI.id\r\n WHERE TitularPI.idUsuario = '{idTitular}'";
+            string sql = $"SELECT nome, descricao, cpf FROM DependentePI\r\nINNER JOIN UsuarioPI ON DependentePI.idUsuario = UsuarioPI.id\r\n INNER JOIN TitularPI ON DependentePI.idTitular = TitularPI.id\r\n WHERE TitularPI.idUsuario = '{idTitular}'";
             SqlCommand comando = new SqlCommand(sql, conn);
 
             List<Dependente> dependente = new List<Dependente>();
@@ -192,12 +192,14 @@ namespace ProjetoIntegradorSenac
                 { 
                     var nomeDependenteDb = reader.GetString(reader.GetOrdinal("nome"));
                     var descricaoDependenteDb = reader.GetString(reader.GetOrdinal("descricao"));
+                    var cpfDependenteDb = reader.GetString(reader.GetOrdinal("cpf"));
 
 
                     dependente.Add(new Dependente()
                     {
                         Nome = nomeDependenteDb,
-                        Parentesco = descricaoDependenteDb
+                        Parentesco = descricaoDependenteDb,
+                        Cpf = cpfDependenteDb
 
                     }); ;
                 }
@@ -243,6 +245,36 @@ namespace ProjetoIntegradorSenac
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
         }
-        #endregion    
+        #endregion
+
+        #region EVENTOS
+
+        public string BuscarEventoInicio(string idEvento)
+        {
+            string sql = $"SELECT dataHoraInicio FROM EventoPI WHERE id = {idEvento}";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string dataHoraInicio = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy HH:mm:ss");
+            return dataHoraInicio;
+        }
+        public string BuscarEventoFim(string idEvento)
+        {
+            string sql = $"SELECT dataHoraFim FROM EventoPI WHERE id = {idEvento}";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string dataHoraFim = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy HH:mm:ss");
+            return dataHoraFim;
+        }
+        public void InserirPresencaEvento(Usuario usuario, string idEvento)
+        {
+            string sql = $"INSERT INTO PresencaEventoPI (idUsuario, idEvento) VALUES ({usuario.IdUsuario}, {idEvento})";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
+        public void RetirarPresencaEvento(Usuario usuario, string idEvento)
+        {
+            string sql = $"DELETE FROM PresencaEventoPI WHERE idUsuario = {usuario.IdUsuario} AND idEvento = {idEvento}";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
+        #endregion
     }
 }

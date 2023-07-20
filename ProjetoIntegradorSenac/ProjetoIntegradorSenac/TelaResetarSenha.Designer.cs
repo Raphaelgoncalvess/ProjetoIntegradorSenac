@@ -34,6 +34,7 @@
             TextBoxNovaSenha = new TextBox();
             IconButtonTrocarSenha = new FontAwesome.Sharp.IconButton();
             TextBoxCPF = new MaskedTextBox();
+            BtnVoltar = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
             // LabelDefinirNovaSenha
@@ -41,7 +42,7 @@
             LabelDefinirNovaSenha.AutoSize = true;
             LabelDefinirNovaSenha.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             LabelDefinirNovaSenha.ForeColor = Color.FromArgb(242, 242, 242);
-            LabelDefinirNovaSenha.Location = new Point(113, 82);
+            LabelDefinirNovaSenha.Location = new Point(72, 30);
             LabelDefinirNovaSenha.Name = "LabelDefinirNovaSenha";
             LabelDefinirNovaSenha.Size = new Size(242, 36);
             LabelDefinirNovaSenha.TabIndex = 0;
@@ -52,7 +53,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(242, 242, 242);
-            label1.Location = new Point(85, 167);
+            label1.Location = new Point(67, 139);
             label1.Name = "label1";
             label1.Size = new Size(39, 19);
             label1.TabIndex = 1;
@@ -63,7 +64,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(242, 242, 242);
-            label2.Location = new Point(30, 243);
+            label2.Location = new Point(12, 212);
             label2.Name = "label2";
             label2.Size = new Size(94, 19);
             label2.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             TextBoxNovaSenha.BackColor = Color.FromArgb(242, 242, 242);
             TextBoxNovaSenha.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TextBoxNovaSenha.Location = new Point(130, 240);
+            TextBoxNovaSenha.Location = new Point(120, 204);
             TextBoxNovaSenha.Name = "TextBoxNovaSenha";
             TextBoxNovaSenha.Size = new Size(208, 27);
             TextBoxNovaSenha.TabIndex = 4;
@@ -82,15 +83,20 @@
             // 
             // IconButtonTrocarSenha
             // 
+            IconButtonTrocarSenha.FlatAppearance.BorderColor = Color.FromArgb(242, 242, 242);
+            IconButtonTrocarSenha.FlatStyle = FlatStyle.Flat;
             IconButtonTrocarSenha.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            IconButtonTrocarSenha.IconChar = FontAwesome.Sharp.IconChar.None;
-            IconButtonTrocarSenha.IconColor = Color.Black;
+            IconButtonTrocarSenha.ForeColor = Color.FromArgb(242, 242, 242);
+            IconButtonTrocarSenha.IconChar = FontAwesome.Sharp.IconChar.UserLock;
+            IconButtonTrocarSenha.IconColor = Color.FromArgb(242, 242, 242);
             IconButtonTrocarSenha.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            IconButtonTrocarSenha.Location = new Point(175, 307);
+            IconButtonTrocarSenha.IconSize = 40;
+            IconButtonTrocarSenha.Location = new Point(192, 300);
             IconButtonTrocarSenha.Name = "IconButtonTrocarSenha";
-            IconButtonTrocarSenha.Size = new Size(111, 28);
+            IconButtonTrocarSenha.Size = new Size(136, 50);
             IconButtonTrocarSenha.TabIndex = 5;
-            IconButtonTrocarSenha.Text = "Trocar senha!";
+            IconButtonTrocarSenha.Text = "Trocar senha";
+            IconButtonTrocarSenha.TextImageRelation = TextImageRelation.TextBeforeImage;
             IconButtonTrocarSenha.UseVisualStyleBackColor = true;
             IconButtonTrocarSenha.Click += IconButtonTrocarSenha_Click;
             // 
@@ -98,18 +104,39 @@
             // 
             TextBoxCPF.BackColor = Color.FromArgb(242, 242, 242);
             TextBoxCPF.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TextBoxCPF.Location = new Point(130, 164);
+            TextBoxCPF.Location = new Point(120, 136);
             TextBoxCPF.Mask = "000,000,000-00";
             TextBoxCPF.Name = "TextBoxCPF";
             TextBoxCPF.Size = new Size(208, 27);
             TextBoxCPF.TabIndex = 6;
+            // 
+            // BtnVoltar
+            // 
+            BtnVoltar.FlatAppearance.BorderColor = Color.FromArgb(242, 242, 242);
+            BtnVoltar.FlatStyle = FlatStyle.Flat;
+            BtnVoltar.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnVoltar.ForeColor = Color.FromArgb(242, 242, 242);
+            BtnVoltar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateBackward;
+            BtnVoltar.IconColor = Color.FromArgb(242, 242, 242);
+            BtnVoltar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnVoltar.IconSize = 40;
+            BtnVoltar.ImageAlign = ContentAlignment.MiddleRight;
+            BtnVoltar.Location = new Point(50, 299);
+            BtnVoltar.Name = "BtnVoltar";
+            BtnVoltar.Size = new Size(136, 50);
+            BtnVoltar.TabIndex = 7;
+            BtnVoltar.Text = "Voltar";
+            BtnVoltar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnVoltar.UseVisualStyleBackColor = true;
+            BtnVoltar.Click += BtnVoltar_Click;
             // 
             // TelaResetarSenha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(6, 7, 33);
-            ClientSize = new Size(445, 450);
+            ClientSize = new Size(378, 451);
+            Controls.Add(BtnVoltar);
             Controls.Add(TextBoxCPF);
             Controls.Add(IconButtonTrocarSenha);
             Controls.Add(TextBoxNovaSenha);
@@ -131,5 +158,6 @@
         private TextBox TextBoxNovaSenha;
         private FontAwesome.Sharp.IconButton IconButtonTrocarSenha;
         private MaskedTextBox TextBoxCPF;
+        private FontAwesome.Sharp.IconButton BtnVoltar;
     }
 }

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjetoIntegradorSenac
 {
-    public class Dependente
+    public class Evento
     {
         public string Nome { get; set; }
-        public string  Parentesco { get; set; }
-        public string Cpf { get; set; }
+        public string DataInicio { get; set; }
+        public string DataFim { get; set; }
+        public string Descricao { get; set; }
     }
 }
