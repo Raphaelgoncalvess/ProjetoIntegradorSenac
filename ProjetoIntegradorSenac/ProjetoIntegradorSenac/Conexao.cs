@@ -104,9 +104,9 @@ namespace ProjetoIntegradorSenac
         {
             string sql = $"INSERT MensalidadePI (descricao, valor, dataEmissao, dataVencimento, taPaga, idTitular)\r\n"
                        + $"VALUES ('Plano JP', '89.90', '2023-07-17', '2023-08-15', 0, '{usuario.IdTitular}'),\r\n"
-                       + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-09-15', 0, '{usuario.IdTitular}'),\r\n"
-                       + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-10-15', 0, '{usuario.IdTitular}'),\r\n"
-                       + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-11-15', 0, '{usuario.IdTitular}');";
+                       + $"('Plano JP', '89.90', '2023-07-17', '2023-09-15', 0, '{usuario.IdTitular}'),\r\n"
+                       + $"('Plano JP', '89.90', '2023-07-17', '2023-10-15', 0, '{usuario.IdTitular}'),\r\n"
+                       + $"('Plano JP', '89.90', '2023-07-17', '2023-11-15', 0, '{usuario.IdTitular}');";
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
         }
