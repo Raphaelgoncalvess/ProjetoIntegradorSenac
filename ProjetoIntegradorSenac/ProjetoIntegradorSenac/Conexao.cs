@@ -103,7 +103,7 @@ namespace ProjetoIntegradorSenac
         public void InserirMensalidade(Usuario usuario)
         {
             string sql = $"INSERT MensalidadePI (descricao, valor, dataEmissao, dataVencimento, taPaga, idTitular)\r\n"
-                       + $"VALUES ('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-08-15', 0, '{usuario.IdTitular}'),\r\n"
+                       + $"VALUES ('Plano JP', '89.90', '2023-07-17', '2023-08-15', 0, '{usuario.IdTitular}'),\r\n"
                        + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-09-15', 0, '{usuario.IdTitular}'),\r\n"
                        + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-10-15', 0, '{usuario.IdTitular}'),\r\n"
                        + $"('Mensalidade Plano Sócio JP', '89.90', '2023-07-17', '2023-11-15', 0, '{usuario.IdTitular}');";
@@ -114,7 +114,7 @@ namespace ProjetoIntegradorSenac
         public void InserirExame(Usuario usuario)
         {
             string sql = $"INSERT INTO ExamePI (nome, descricao, estaApto, situacao, dataEfetuado, dataVencimento IdUsuario) "
-                       + $"VALUES ('Exame Dermatológico', 'Exame para entrar na piscina do clube',0,'Pendente','0000-00-00','0000-00-00' '{usuario.IdUsuario}')";
+                       + $"VALUES ('Exame Dermatológico', 'Exame para entrar na piscina do clube',0,'Pendente','1000-01-01','1000-01-01' '{usuario.IdUsuario}')";
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
 
