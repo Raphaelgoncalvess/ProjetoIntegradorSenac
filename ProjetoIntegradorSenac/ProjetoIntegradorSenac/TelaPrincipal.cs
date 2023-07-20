@@ -46,6 +46,10 @@ namespace ProjetoIntegradorSenac
             PainelExame.Visible = false;
             PainelFatura.Visible = false;
 
+            Conexao db = new Conexao();
+            Usuario usuario = new Usuario();
+            db.Conectar();
+
 
             //VALIDAÇÃO SE É TITULAR OU DEPENDENTE
 
@@ -59,6 +63,36 @@ namespace ProjetoIntegradorSenac
                 BtnMenuUsuario.Visible = true;
                 dataGridView1.Visible = true;
                 BtnRedefinirSenha.Visible = true;
+
+                //PAINEL EXAMES
+                Exame exame = new Exame();
+                exame.Nome = db.BuscarNomeExame(idUsuario);
+                exame.DataEfetuado = db.BuscarDataEfetuadoExame(idUsuario);
+                exame.DataVencimento = db.BuscarDataVencimentoExame(idUsuario);
+                exame.Situacao = db.BuscarSituacaoExame(idUsuario);
+
+                LabelNome.Text = exame.Nome;
+                LabelDataEfetuado.Text = exame.DataEfetuado;
+                LabelDataVencimento.Text = exame.DataVencimento;
+                LabelSituacao.Text = exame.Situacao;
+
+
+                /*PAINEL FATURAS*/
+                usuario.IdTitular = db.BuscarIdTitularFatura(idUsuario);
+                descFatura1.Text = db.BuscarNomePrimeiraFatura(usuario);
+                valorFatura1.Text = db.BuscarValorPrimeiraFatura(usuario);
+                dataVencFatura1.Text = db.BuscarDataVencimentoPrimeiraFatura(usuario);
+                situacaoFatura1.Text = db.BuscarSituacaoPrimeiraFatura(usuario);
+
+                descFatura2.Text = db.BuscarNomeSegundaFatura(usuario);
+                valorFatura2.Text = db.BuscarValorSegundaFatura(usuario);
+                dataVencFatura2.Text = db.BuscarDataVencimentoSegundaFatura(usuario);
+                situacaoFatura2.Text = db.BuscarSituacaoSegundaFatura(usuario);
+
+                descFatura3.Text = db.BuscarNomeTerceiraFatura(usuario);
+                valorFatura3.Text = db.BuscarValorTerceiraFatura(usuario);
+                dataVencFatura3.Text = db.BuscarDataVencimentoTerceiraFatura(usuario);
+                situacaoFatura3.Text = db.BuscarSituacaoTerceiraFatura(usuario);
 
             }
             else
@@ -75,12 +109,6 @@ namespace ProjetoIntegradorSenac
             }
 
 
-            Conexao db = new Conexao();
-            Usuario usuario = new Usuario();
-            db.Conectar();
-
-
-
             usuario.Nome = db.BuscarUsuario(idUsuario);
             usuario.Email = db.BuscarEmail(idUsuario);
             usuario.Cpf = db.BuscarCpf(idUsuario);
@@ -95,6 +123,7 @@ namespace ProjetoIntegradorSenac
             LabelIdUsuario.Text = idUsuario.ToString();
 
             db.Desconectar();
+            
             db.Conectar();
 
             var listaDependentes = db.BuscarDependentes(idUsuario);
@@ -113,35 +142,7 @@ namespace ProjetoIntegradorSenac
             DataInicio3.Text = db.BuscarEventoInicio(Evento1.Text);
             DataFim3.Text = db.BuscarEventoFim(Evento1.Text);
 
-            //PAINEL EXAMES
-            Exame exame = new Exame();
-            exame.Nome = db.BuscarNomeExame(idUsuario);
-            exame.DataEfetuado = db.BuscarDataEfetuadoExame(idUsuario);
-            exame.DataVencimento = db.BuscarDataVencimentoExame(idUsuario);
-            exame.Situacao = db.BuscarSituacaoExame(idUsuario);
-
-            LabelNome.Text = exame.Nome;
-            LabelDataEfetuado.Text = exame.DataEfetuado;
-            LabelDataVencimento.Text = exame.DataVencimento;
-            LabelSituacao.Text = exame.Situacao;
-
-
-            /*PAINEL FATURAS*/
-            usuario.IdTitular = db.BuscarIdTitularFatura(idUsuario);
-            descFatura1.Text = db.BuscarNomePrimeiraFatura(usuario);
-            valorFatura1.Text = db.BuscarValorPrimeiraFatura(usuario);
-            dataVencFatura1.Text = db.BuscarDataVencimentoPrimeiraFatura(usuario);
-            situacaoFatura1.Text = db.BuscarSituacaoPrimeiraFatura(usuario);
-
-            descFatura2.Text = db.BuscarNomeSegundaFatura(usuario);
-            valorFatura2.Text = db.BuscarValorSegundaFatura(usuario);
-            dataVencFatura2.Text = db.BuscarDataVencimentoSegundaFatura(usuario);
-            situacaoFatura2.Text = db.BuscarSituacaoSegundaFatura(usuario);
-
-            descFatura3.Text = db.BuscarNomeTerceiraFatura(usuario);
-            valorFatura3.Text = db.BuscarValorTerceiraFatura(usuario);
-            dataVencFatura3.Text = db.BuscarDataVencimentoTerceiraFatura(usuario);
-            situacaoFatura3.Text = db.BuscarSituacaoTerceiraFatura(usuario);
+            
         }
 
         //Structs botoões
