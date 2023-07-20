@@ -128,6 +128,7 @@ namespace ProjetoIntegradorSenac
 
             var listaDependentes = db.BuscarDependentes(idUsuario);
             dataGridView1.DataSource = listaDependentes;
+            dataGridView1.Update();
 
             //PAINEL Eventos
             Evento1.Visible = false;
@@ -276,6 +277,7 @@ namespace ProjetoIntegradorSenac
             PainelExame.Visible = false;
             PainelEventos.Visible = false;
             PainelFatura.Visible = false;
+ 
         }
         private void ResetarBtns()
         {

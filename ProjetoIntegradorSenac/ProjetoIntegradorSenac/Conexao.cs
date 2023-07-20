@@ -113,8 +113,8 @@ namespace ProjetoIntegradorSenac
         //CRIAR MÉTODO QUE INSERE DADOS NA TABELA EXAMES
         public void InserirExame(Usuario usuario)
         {
-            string sql = $"INSERT INTO ExamePI (nome, descricao, estaApto, situacao, dataEfetuado, dataVencimento IdUsuario) "
-                       + $"VALUES ('Exame Dermatológico', 'Exame para entrar na piscina do clube',0,'Pendente','1000-01-01','1000-01-01' '{usuario.IdUsuario}')";
+            string sql = $"INSERT INTO ExamePI (nome, descricao, estaApto, situacao, dataEfetuado, dataVencimento, idUsuario) "
+                       + $"VALUES ('Exame Dermatológico', 'Exame para entrar na piscina do clube',0,'Pendente','1000-01-01','1000-01-01', '{usuario.IdUsuario}')";
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
 
