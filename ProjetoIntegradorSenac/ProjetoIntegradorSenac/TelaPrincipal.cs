@@ -132,6 +132,7 @@ namespace ProjetoIntegradorSenac
             PainelEventos.Visible = true;
             PainelEventos.BringToFront();
             PainelUsuario.Visible = false;
+            PainelExame.Visible = false;
         }
 
         private void BtnExame_Click(object sender, EventArgs e)
@@ -289,7 +290,7 @@ namespace ProjetoIntegradorSenac
         private void BtnCadastrarExame_Click(object sender, EventArgs e)
         {
             Conexao db = new Conexao();
-            
+
             db.Conectar();
             db.AtualizarDadosExame(idUsuarioLogado);
             MessageBox.Show("Exame realizado com sucesso!");

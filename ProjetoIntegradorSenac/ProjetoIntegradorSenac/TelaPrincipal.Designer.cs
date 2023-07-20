@@ -949,7 +949,6 @@
             PainelExame.Controls.Add(label12);
             PainelExame.Controls.Add(label11);
             PainelExame.Controls.Add(label8);
-            PainelExame.Dock = DockStyle.Fill;
             PainelExame.Location = new Point(188, 90);
             PainelExame.Name = "PainelExame";
             PainelExame.Size = new Size(612, 360);
