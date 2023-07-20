@@ -93,7 +93,19 @@ namespace ProjetoIntegradorSenac
             DataInicio3.Text = db.BuscarEventoInicio(Evento1.Text);
             DataFim3.Text = db.BuscarEventoFim(Evento1.Text);
 
+            //PAINEL EXAMES
+            Exame exame = new Exame();
+            exame.Nome = db.BuscarNomeExame(idUsuario);
+            exame.DataEfetuado = db.BuscarDataEfetuadoExame(idUsuario);
+            exame.DataVencimento = db.BuscarDataVencimentoExame(idUsuario);
+            exame.Situacao = db.BuscarSituacaoExame(idUsuario);
+
+            LabelNome.Text = exame.Nome;
+            LabelDataEfetuado.Text = exame.DataEfetuado;
+            LabelDataVencimento.Text = exame.DataVencimento;
+            LabelSituacao.Text = exame.Situacao;
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -124,7 +136,8 @@ namespace ProjetoIntegradorSenac
 
         private void BtnExame_Click(object sender, EventArgs e)
         {
-
+            PainelExame.Dock = DockStyle.Fill;
+            PainelExame.Visible = true;
         }
 
         private void BtnFatura_Click(object sender, EventArgs e)
@@ -266,6 +279,20 @@ namespace ProjetoIntegradorSenac
 
         private void label4_Click(object sender, EventArgs e)
         {
+        }
+
+        private void LabelNome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCadastrarExame_Click(object sender, EventArgs e)
+        {
+            Conexao db = new Conexao();
+            
+            db.Conectar();
+            db.AtualizarDadosExame(idUsuarioLogado);
+            MessageBox.Show("Exame realizado com sucesso!");
         }
     }
 }

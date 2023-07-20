@@ -213,6 +213,43 @@ namespace ProjetoIntegradorSenac
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteReader();
         }
+        public string BuscarNomeExame(int idUsuario)
+        {
+            string sql = $"SELECT nome FROM ExamePI WHERE idUsuario = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string nomeExame = comando.ExecuteScalar().ToString();
+            return nomeExame;
+        }
+        public string BuscarSituacaoExame(int idUsuario)
+        {
+            string sql = $"SELECT situacao FROM ExamePI WHERE idUsuario = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string situacaoExame = comando.ExecuteScalar().ToString();
+            return situacaoExame;
+        }
+        public string BuscarDataEfetuadoExame(int idUsuario)
+        {
+            string sql = $"SELECT dataEfetuado FROM ExamePI WHERE idUsuario = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string dataEfetuadoExame = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy");
+            return dataEfetuadoExame;
+        }
+        public string BuscarDataVencimentoExame(int idUsuario)
+        {
+            string sql = $"SELECT dataVencimento FROM ExamePI WHERE idUsuario = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            string dataVencimentoExame = Convert.ToDateTime(comando.ExecuteScalar()).ToString("dd/MM/yyyy");
+            return dataVencimentoExame;
+        }
+        public void AtualizarDadosExame(int idUsuario)
+        {
+            var dataAtual = DateTime.Now.ToString("yyyy-MM-dd");
+            var dataVencimento = DateTime.Now.AddMonths(6).ToString("yyyy-MM-dd");
+            string sql = $"UPDATE ExamePI SET situacao = 'Realizado', dataEfetuado = '{dataAtual}', dataVencimento = '{dataVencimento}' WHERE idUsuario = '{idUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteReader();
+        }
+
         #region MÉTODOS RELACIONADOS AO DEPENDENTE
         public void CadastroDependente(Usuario usuario)
         {
