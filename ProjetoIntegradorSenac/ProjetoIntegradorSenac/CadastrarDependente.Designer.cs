@@ -63,62 +63,62 @@
             // 
             label2.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(242, 242, 242);
-            label2.Location = new Point(73, 82);
+            label2.Location = new Point(70, 80);
             label2.Name = "label2";
-            label2.Size = new Size(50, 23);
+            label2.Size = new Size(90, 23);
             label2.TabIndex = 1;
-            label2.Text = "Nome";
+            label2.Text = "Nome *";
             // 
             // label3
             // 
             label3.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(242, 242, 242);
-            label3.Location = new Point(73, 156);
+            label3.Location = new Point(70, 150);
             label3.Name = "label3";
-            label3.Size = new Size(66, 23);
+            label3.Size = new Size(90, 23);
             label3.TabIndex = 2;
-            label3.Text = "Senha";
+            label3.Text = "Senha *";
             // 
             // label4
             // 
             label4.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(242, 242, 242);
-            label4.Location = new Point(73, 236);
+            label4.Location = new Point(70, 220);
             label4.Name = "label4";
-            label4.Size = new Size(35, 23);
+            label4.Size = new Size(90, 23);
             label4.TabIndex = 3;
-            label4.Text = "CPF";
+            label4.Text = "CPF *";
             // 
             // label5
             // 
             label5.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(242, 242, 242);
-            label5.Location = new Point(73, 195);
+            label5.Location = new Point(70, 185);
             label5.Name = "label5";
-            label5.Size = new Size(45, 23);
+            label5.Size = new Size(90, 23);
             label5.TabIndex = 4;
-            label5.Text = "Email";
+            label5.Text = "Email *";
             // 
             // label6
             // 
             label6.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(242, 242, 242);
-            label6.Location = new Point(73, 275);
+            label6.Location = new Point(70, 255);
             label6.Name = "label6";
-            label6.Size = new Size(59, 23);
+            label6.Size = new Size(90, 23);
             label6.TabIndex = 5;
-            label6.Text = "Genero";
+            label6.Text = "Genero *";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(242, 242, 242);
-            label7.Location = new Point(73, 313);
+            label7.Location = new Point(70, 290);
             label7.Name = "label7";
-            label7.Size = new Size(81, 19);
+            label7.Size = new Size(92, 19);
             label7.TabIndex = 6;
-            label7.Text = "Data Nasc.";
+            label7.Text = "Data Nasc. *";
             // 
             // iconButtonCadastrar
             // 
@@ -140,49 +140,49 @@
             // 
             // textBoxNome
             // 
-            textBoxNome.Location = new Point(175, 78);
+            textBoxNome.Location = new Point(180, 80);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(95, 23);
-            textBoxNome.TabIndex = 8;
+            textBoxNome.TabIndex = 1;
             // 
             // textBoxSenha
             // 
-            textBoxSenha.Location = new Point(175, 152);
+            textBoxSenha.Location = new Point(180, 150);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.Size = new Size(95, 23);
-            textBoxSenha.TabIndex = 9;
+            textBoxSenha.TabIndex = 3;
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(175, 191);
+            textBoxEmail.Location = new Point(180, 185);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(95, 23);
-            textBoxEmail.TabIndex = 10;
+            textBoxEmail.TabIndex = 4;
             // 
             // comboBoxGenero
             // 
             comboBoxGenero.FormattingEnabled = true;
             comboBoxGenero.Items.AddRange(new object[] { "Masculino", "Feminino", "Prefiro não informar", "Outros" });
-            comboBoxGenero.Location = new Point(175, 271);
+            comboBoxGenero.Location = new Point(180, 255);
             comboBoxGenero.Name = "comboBoxGenero";
             comboBoxGenero.Size = new Size(121, 23);
-            comboBoxGenero.TabIndex = 12;
+            comboBoxGenero.TabIndex = 6;
             comboBoxGenero.Text = "Selecione...";
             // 
             // dateTimePickerDataNascimento
             // 
-            dateTimePickerDataNascimento.Location = new Point(175, 309);
+            dateTimePickerDataNascimento.Location = new Point(180, 287);
             dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
             dateTimePickerDataNascimento.Size = new Size(136, 23);
-            dateTimePickerDataNascimento.TabIndex = 13;
+            dateTimePickerDataNascimento.TabIndex = 7;
             // 
             // textBoxCpf
             // 
-            textBoxCpf.Location = new Point(175, 232);
+            textBoxCpf.Location = new Point(180, 220);
             textBoxCpf.Mask = "000,000,000-00";
             textBoxCpf.Name = "textBoxCpf";
             textBoxCpf.Size = new Size(100, 23);
-            textBoxCpf.TabIndex = 14;
+            textBoxCpf.TabIndex = 5;
             // 
             // iconButtonVoltar
             // 
@@ -206,20 +206,20 @@
             // 
             label8.Font = new Font("Candara", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(242, 242, 242);
-            label8.Location = new Point(73, 117);
+            label8.Location = new Point(70, 115);
             label8.Name = "label8";
-            label8.Size = new Size(87, 23);
+            label8.Size = new Size(90, 23);
             label8.TabIndex = 16;
-            label8.Text = "Parentesco";
+            label8.Text = "Parentesco *";
             // 
             // comboBoxParentesco
             // 
             comboBoxParentesco.FormattingEnabled = true;
             comboBoxParentesco.Items.AddRange(new object[] { "Filho(a)", "Sobrinho(a)", "Cônjuge" });
-            comboBoxParentesco.Location = new Point(175, 107);
+            comboBoxParentesco.Location = new Point(180, 115);
             comboBoxParentesco.Name = "comboBoxParentesco";
             comboBoxParentesco.Size = new Size(121, 23);
-            comboBoxParentesco.TabIndex = 17;
+            comboBoxParentesco.TabIndex = 2;
             comboBoxParentesco.Text = "Selecione...";
             // 
             // labelReceberCpf

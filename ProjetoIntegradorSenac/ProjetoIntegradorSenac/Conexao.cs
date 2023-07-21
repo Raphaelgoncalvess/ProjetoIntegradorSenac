@@ -18,13 +18,19 @@ namespace ProjetoIntegradorSenac
 
         public void CadastroTitular(Usuario usuario, Endereco endereco)
         {
-            CadastrarUsuario(usuario);
-            BuscarIdUsuario(usuario);
-            CadastrarEnderecoUsuario(endereco, usuario);
-            InserirExame(usuario);
-            InserirTitular(usuario);
-            BuscarIdTitular(usuario);
-            InserirMensalidade(usuario);
+            try 
+            { 
+                CadastrarUsuario(usuario);
+                BuscarIdUsuario(usuario);
+                CadastrarEnderecoUsuario(endereco, usuario);
+                InserirExame(usuario);
+                InserirTitular(usuario);
+                BuscarIdTitular(usuario);
+                InserirMensalidade(usuario);
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Confira os dados inseridos!\n Lembre-se de preencher os campos obrigatórios '*'.");
+            }
         }
 
         /*Método para validar o LOGIN*/

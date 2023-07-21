@@ -910,6 +910,7 @@
             iconPictureBox5.Size = new Size(44, 48);
             iconPictureBox5.TabIndex = 5;
             iconPictureBox5.TabStop = false;
+            iconPictureBox5.Click += iconPictureBox5_Click;
             // 
             // label2
             // 

@@ -75,7 +75,16 @@ namespace ProjetoIntegradorSenac
                 LabelDataEfetuado.Text = exame.DataEfetuado;
                 LabelDataVencimento.Text = exame.DataVencimento;
                 LabelSituacao.Text = exame.Situacao;
-
+                if (LabelDataEfetuado.Text == "1000-01-01")
+                {
+                    LabelDataEfetuado.Text = "";
+                }
+                else { }
+                if (LabelDataVencimento.Text == "1000-01-01")
+                {
+                    LabelDataVencimento.Text = "";
+                }
+                else { }
 
                 /*PAINEL FATURAS*/
                 usuario.IdTitular = db.BuscarIdTitularFatura(idUsuario);
@@ -123,7 +132,7 @@ namespace ProjetoIntegradorSenac
             LabelIdUsuario.Text = idUsuario.ToString();
 
             db.Desconectar();
-            
+
             db.Conectar();
 
             var listaDependentes = db.BuscarDependentes(idUsuario);
@@ -143,7 +152,8 @@ namespace ProjetoIntegradorSenac
             DataInicio3.Text = db.BuscarEventoInicio(Evento1.Text);
             DataFim3.Text = db.BuscarEventoFim(Evento1.Text);
 
-            
+
+            //if(LabelDataEfetuado == "")
         }
 
         //Structs botoões
@@ -277,7 +287,7 @@ namespace ProjetoIntegradorSenac
             PainelExame.Visible = false;
             PainelEventos.Visible = false;
             PainelFatura.Visible = false;
- 
+
         }
         private void ResetarBtns()
         {
@@ -298,7 +308,7 @@ namespace ProjetoIntegradorSenac
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
             usuario.IdUsuario = idUsuarioLogado;
-            Evento1.Text = "3";
+            Evento1.Text = "1";
 
             db.Conectar();
             db.InserirPresencaEvento(usuario, Evento1.Text);
@@ -310,7 +320,7 @@ namespace ProjetoIntegradorSenac
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
             usuario.IdUsuario = idUsuarioLogado;
-            Evento1.Text = "3";
+            Evento1.Text = "1";
 
             db.Conectar();
             db.RetirarPresencaEvento(usuario, Evento1.Text);
@@ -322,7 +332,7 @@ namespace ProjetoIntegradorSenac
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
             usuario.IdUsuario = idUsuarioLogado;
-            Evento1.Text = "4";
+            Evento1.Text = "2";
 
             db.Conectar();
             db.InserirPresencaEvento(usuario, Evento1.Text);
@@ -334,7 +344,7 @@ namespace ProjetoIntegradorSenac
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
             usuario.IdUsuario = idUsuarioLogado;
-            Evento1.Text = "4";
+            Evento1.Text = "2";
 
             db.Conectar();
             db.RetirarPresencaEvento(usuario, Evento1.Text);
@@ -346,7 +356,7 @@ namespace ProjetoIntegradorSenac
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
             usuario.IdUsuario = idUsuarioLogado;
-            Evento1.Text = "5";
+            Evento1.Text = "3";
 
             db.Conectar();
             db.RetirarPresencaEvento(usuario, Evento1.Text);
@@ -358,7 +368,7 @@ namespace ProjetoIntegradorSenac
             Conexao db = new Conexao();
             Usuario usuario = new Usuario();
             usuario.IdUsuario = idUsuarioLogado;
-            Evento1.Text = "5";
+            Evento1.Text = "3";
 
             db.Conectar();
             db.RetirarPresencaEvento(usuario, Evento1.Text);
@@ -516,6 +526,17 @@ namespace ProjetoIntegradorSenac
             PainelExame.Visible = false;
             PainelEventos.Visible = false;
             PainelFatura.Visible = false;
+
+        }
+
+        private void iconPictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelDataEfetuado_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

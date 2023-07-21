@@ -77,9 +77,9 @@
             LabelNome.ForeColor = Color.FromArgb(242, 242, 242);
             LabelNome.Location = new Point(112, 94);
             LabelNome.Name = "LabelNome";
-            LabelNome.Size = new Size(50, 19);
+            LabelNome.Size = new Size(61, 19);
             LabelNome.TabIndex = 1;
-            LabelNome.Text = "Nome";
+            LabelNome.Text = "Nome *";
             // 
             // LabelCpf
             // 
@@ -88,9 +88,9 @@
             LabelCpf.ForeColor = Color.FromArgb(242, 242, 242);
             LabelCpf.Location = new Point(112, 136);
             LabelCpf.Name = "LabelCpf";
-            LabelCpf.Size = new Size(35, 19);
+            LabelCpf.Size = new Size(46, 19);
             LabelCpf.TabIndex = 2;
-            LabelCpf.Text = "CPF";
+            LabelCpf.Text = "CPF *";
             // 
             // LabelGenero
             // 
@@ -99,9 +99,9 @@
             LabelGenero.ForeColor = Color.FromArgb(242, 242, 242);
             LabelGenero.Location = new Point(112, 177);
             LabelGenero.Name = "LabelGenero";
-            LabelGenero.Size = new Size(59, 19);
+            LabelGenero.Size = new Size(73, 19);
             LabelGenero.TabIndex = 3;
-            LabelGenero.Text = "Genero";
+            LabelGenero.Text = "Genero  *";
             // 
             // LabelDataNascimento
             // 
@@ -110,9 +110,9 @@
             LabelDataNascimento.ForeColor = Color.FromArgb(242, 242, 242);
             LabelDataNascimento.Location = new Point(112, 217);
             LabelDataNascimento.Name = "LabelDataNascimento";
-            LabelDataNascimento.Size = new Size(101, 19);
+            LabelDataNascimento.Size = new Size(109, 19);
             LabelDataNascimento.TabIndex = 4;
-            LabelDataNascimento.Text = "Data de Nasc.";
+            LabelDataNascimento.Text = "Data de Nasc.*";
             LabelDataNascimento.Click += label3_Click;
             // 
             // LabelEmail
@@ -122,9 +122,9 @@
             LabelEmail.ForeColor = Color.FromArgb(242, 242, 242);
             LabelEmail.Location = new Point(112, 259);
             LabelEmail.Name = "LabelEmail";
-            LabelEmail.Size = new Size(45, 19);
+            LabelEmail.Size = new Size(56, 19);
             LabelEmail.TabIndex = 5;
-            LabelEmail.Text = "Email";
+            LabelEmail.Text = "Email *";
             LabelEmail.Click += LabelEmail_Click;
             // 
             // LabelSenha
@@ -134,9 +134,9 @@
             LabelSenha.ForeColor = Color.FromArgb(242, 242, 242);
             LabelSenha.Location = new Point(112, 301);
             LabelSenha.Name = "LabelSenha";
-            LabelSenha.Size = new Size(51, 19);
+            LabelSenha.Size = new Size(62, 19);
             LabelSenha.TabIndex = 6;
-            LabelSenha.Text = "Senha";
+            LabelSenha.Text = "Senha *";
             // 
             // textBoxNome
             // 
@@ -145,7 +145,7 @@
             textBoxNome.Location = new Point(219, 90);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(183, 23);
-            textBoxNome.TabIndex = 7;
+            textBoxNome.TabIndex = 1;
             // 
             // textBoxEmail
             // 
@@ -154,7 +154,7 @@
             textBoxEmail.Location = new Point(219, 255);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(183, 23);
-            textBoxEmail.TabIndex = 8;
+            textBoxEmail.TabIndex = 5;
             // 
             // textBoxSenha
             // 
@@ -163,7 +163,7 @@
             textBoxSenha.Location = new Point(219, 297);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.Size = new Size(183, 23);
-            textBoxSenha.TabIndex = 9;
+            textBoxSenha.TabIndex = 6;
             // 
             // textBoxCpf
             // 
@@ -172,7 +172,7 @@
             textBoxCpf.Mask = "000,000,000-00";
             textBoxCpf.Name = "textBoxCpf";
             textBoxCpf.Size = new Size(183, 23);
-            textBoxCpf.TabIndex = 10;
+            textBoxCpf.TabIndex = 2;
             // 
             // comboBoxGenero
             // 
@@ -182,7 +182,7 @@
             comboBoxGenero.Location = new Point(219, 173);
             comboBoxGenero.Name = "comboBoxGenero";
             comboBoxGenero.Size = new Size(183, 23);
-            comboBoxGenero.TabIndex = 11;
+            comboBoxGenero.TabIndex = 3;
             comboBoxGenero.Text = "Selecione...";
             comboBoxGenero.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -234,7 +234,7 @@
             textBoxCep.Mask = "00000-000";
             textBoxCep.Name = "textBoxCep";
             textBoxCep.Size = new Size(194, 27);
-            textBoxCep.TabIndex = 28;
+            textBoxCep.TabIndex = 10;
             // 
             // BtnVoltar
             // 
@@ -281,7 +281,7 @@
             textBoxBairro.Location = new Point(192, 193);
             textBoxBairro.Name = "textBoxBairro";
             textBoxBairro.Size = new Size(195, 27);
-            textBoxBairro.TabIndex = 24;
+            textBoxBairro.TabIndex = 9;
             // 
             // textBoxNumero
             // 
@@ -290,7 +290,7 @@
             textBoxNumero.Location = new Point(192, 141);
             textBoxNumero.Name = "textBoxNumero";
             textBoxNumero.Size = new Size(52, 27);
-            textBoxNumero.TabIndex = 23;
+            textBoxNumero.TabIndex = 8;
             // 
             // textBoxComplemento
             // 
@@ -299,7 +299,7 @@
             textBoxComplemento.Location = new Point(193, 297);
             textBoxComplemento.Name = "textBoxComplemento";
             textBoxComplemento.Size = new Size(195, 27);
-            textBoxComplemento.TabIndex = 22;
+            textBoxComplemento.TabIndex = 11;
             // 
             // textBoxRua
             // 
@@ -308,7 +308,7 @@
             textBoxRua.Location = new Point(192, 89);
             textBoxRua.Name = "textBoxRua";
             textBoxRua.Size = new Size(195, 27);
-            textBoxRua.TabIndex = 21;
+            textBoxRua.TabIndex = 7;
             // 
             // LabelCep
             // 
@@ -317,9 +317,9 @@
             LabelCep.ForeColor = Color.FromArgb(242, 242, 242);
             LabelCep.Location = new Point(193, 223);
             LabelCep.Name = "LabelCep";
-            LabelCep.Size = new Size(35, 19);
+            LabelCep.Size = new Size(46, 19);
             LabelCep.TabIndex = 20;
-            LabelCep.Text = "CEP";
+            LabelCep.Text = "CEP *";
             // 
             // LabelComplemento
             // 
@@ -339,9 +339,9 @@
             LabelNúmero.ForeColor = Color.FromArgb(242, 242, 242);
             LabelNúmero.Location = new Point(192, 119);
             LabelNúmero.Name = "LabelNúmero";
-            LabelNúmero.Size = new Size(25, 19);
+            LabelNúmero.Size = new Size(36, 19);
             LabelNúmero.TabIndex = 18;
-            LabelNúmero.Text = "Nº";
+            LabelNúmero.Text = "Nº *";
             // 
             // LabelBairro
             // 
@@ -350,9 +350,9 @@
             LabelBairro.ForeColor = Color.FromArgb(242, 242, 242);
             LabelBairro.Location = new Point(192, 171);
             LabelBairro.Name = "LabelBairro";
-            LabelBairro.Size = new Size(50, 19);
+            LabelBairro.Size = new Size(61, 19);
             LabelBairro.TabIndex = 17;
-            LabelBairro.Text = "Bairro";
+            LabelBairro.Text = "Bairro *";
             // 
             // LabelRua
             // 
@@ -361,9 +361,9 @@
             LabelRua.ForeColor = Color.FromArgb(242, 242, 242);
             LabelRua.Location = new Point(192, 67);
             LabelRua.Name = "LabelRua";
-            LabelRua.Size = new Size(36, 19);
+            LabelRua.Size = new Size(47, 19);
             LabelRua.TabIndex = 16;
-            LabelRua.Text = "Rua";
+            LabelRua.Text = "Rua *";
             // 
             // labelEndereco
             // 
@@ -382,7 +382,7 @@
             dateTimePicker1.Location = new Point(219, 217);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(183, 23);
-            dateTimePicker1.TabIndex = 15;
+            dateTimePicker1.TabIndex = 4;
             // 
             // FormFilhoCadastro
             // 

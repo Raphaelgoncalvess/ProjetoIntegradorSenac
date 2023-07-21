@@ -81,7 +81,14 @@ namespace ProjetoIntegradorSenac
             //Cadastra o usuário conforme os dados nas entradas do forms
             usuario.Nome = textBoxNome.Text;
             usuario.Cpf = textBoxCpf.Text;
-            usuario.Genero = comboBoxGenero.SelectedItem.ToString();
+            if (comboBoxGenero.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um campo em  'gênero'");
+            }
+            else
+            {
+                usuario.Genero = comboBoxGenero.SelectedItem.ToString();
+            }
             DateTime data = dateTimePicker1.Value;
             usuario.DataNascimento = data.ToString("yyyy-MM-dd");
             usuario.Email = textBoxEmail.Text;
@@ -97,7 +104,14 @@ namespace ProjetoIntegradorSenac
 
             //Cadastra o endereço conforme os dados nas entradas do forms
             endereco.Rua = textBoxRua.Text;
-            endereco.Numero = int.Parse(textBoxNumero.Text);
+            if (textBoxNumero.Text == "")
+            {
+                MessageBox.Show("Campo 'Nº' não pode estar vazio");
+            }
+            else
+            {
+                endereco.Numero = int.Parse(textBoxNumero.Text);
+            }
             endereco.Bairro = textBoxBairro.Text;
             endereco.Cep = textBoxCep.Text;
             endereco.Complemento = textBoxComplemento.Text;
@@ -105,10 +119,20 @@ namespace ProjetoIntegradorSenac
             //Chama o método que realiza o INSERT no banco de dados na tabela de Endereço
             //db.CadastrarEnderecoUsuario(endereco, usuario);
 
-            db.CadastroTitular(usuario, endereco);
-
-            MessageBox.Show("Cadastro realizado com sucesso!");
-            this.Close();
+            if (textBoxNome.Text == "" || textBoxNome.Text == null || textBoxCpf.Text == "" || textBoxCpf.Text == null ||
+               comboBoxGenero.SelectedItem == "" || comboBoxGenero.SelectedItem == null || textBoxEmail.Text == "" || textBoxEmail.Text == null ||
+               textBoxSenha.Text == "" || textBoxSenha.Text == null || textBoxRua.Text == "" || textBoxRua.Text == null ||
+               textBoxNumero.Text == "" || textBoxNumero.Text == null || textBoxBairro.Text == "" || textBoxBairro.Text == null ||
+               textBoxCep.Text == "" || textBoxCep.Text == null)
+            {
+                MessageBox.Show("Confira os dados inseridos!\n Lembre-se de preencher os campos obrigatórios '*'.");
+            }
+            else
+            {
+                db.CadastroTitular(usuario, endereco);
+                MessageBox.Show("Cadastro realizado com sucesso!");
+                this.Close();
+            }
 
         }
 

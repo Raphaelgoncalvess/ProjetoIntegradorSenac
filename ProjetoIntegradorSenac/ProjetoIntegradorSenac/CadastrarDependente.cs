@@ -54,11 +54,20 @@ namespace ProjetoIntegradorSenac
             DateTime DataNascimento = dateTimePickerDataNascimento.Value;
             usuario.DataNascimento = DataNascimento.ToString("yyyy-MM-dd");
             usuario.EhTitular = false;
-            db.CadastroDependente(usuario);
 
-            MessageBox.Show("Usuario Cadastrado com sucesso!");
-            this.Close();
+            if (textBoxNome.Text == "" || textBoxNome.Text == null || textBoxCpf.Text == "" || textBoxCpf.Text == null ||
+               comboBoxGenero.SelectedItem == "" || comboBoxGenero.SelectedItem == null || textBoxEmail.Text == "" || textBoxEmail.Text == null ||
+               textBoxSenha.Text == "" || textBoxSenha.Text == null)
+            {
+                MessageBox.Show("Confira os dados inseridos!\n Lembre-se de preencher os campos obrigatórios '*'.");
+            }
+            else
+            {
+                db.CadastroDependente(usuario);
 
+                MessageBox.Show("Usuario Cadastrado com sucesso!");
+                this.Close();
+            }
         }
 
         private void CadastrarDependente_Load(object sender, EventArgs e)
