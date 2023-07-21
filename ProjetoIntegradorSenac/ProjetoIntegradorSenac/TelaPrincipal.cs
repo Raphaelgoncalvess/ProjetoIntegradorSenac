@@ -238,16 +238,16 @@ namespace ProjetoIntegradorSenac
                 LabelDataEfetuado.Text = exame.DataEfetuado;
                 LabelDataVencimento.Text = exame.DataVencimento;
                 LabelSituacao.Text = exame.Situacao;
-                //if (LabelDataEfetuado.Text == "1000-01-01")
-                //{
-                //    LabelDataEfetuado.Text = "";
-                //}
-                //else { }
-                //if (LabelDataVencimento.Text == "1000-01-01")
-                //{
-                //    LabelDataVencimento.Text = "";
-                //}
-                //else { }
+                if (LabelDataEfetuado.Text == "1000-01-01")
+                {
+                    LabelDataEfetuado.Text = "";
+                }
+                else { }
+                if (LabelDataVencimento.Text == "1000-01-01")
+                {
+                    LabelDataVencimento.Text = "";
+                }
+                else { }
 
                 /*PAINEL FATURAS*/
                 usuario.IdTitular = db.BuscarIdTitularFatura(idUsuario);
@@ -377,6 +377,7 @@ namespace ProjetoIntegradorSenac
             usuario.IdUsuario = idUsuarioLogado;
             CadastrarDependente telaCadastrarDependente = new CadastrarDependente(idUsuarioLogado);
             telaCadastrarDependente.ShowDialog();
+            TelaPrincipal_Load(sender, e);
 
         }
 
@@ -384,6 +385,7 @@ namespace ProjetoIntegradorSenac
         {
             DeletarDependente telaDeletarDependente = new DeletarDependente();
             telaDeletarDependente.ShowDialog();
+            TelaPrincipal_Load(sender, e);
         }
 
         private void BtnHome_Click(object sender, EventArgs e)
@@ -421,6 +423,7 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
             db.InserirPresencaEvento(usuario, Evento1.Text);
             MessageBox.Show("Presença confirmada com sucesso!");
+            TelaPrincipal_Load(sender, e);
         }
 
         private void BtnRetirarPresenca1_Click(object sender, EventArgs e)
@@ -433,6 +436,7 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
             db.RetirarPresencaEvento(usuario, Evento1.Text);
             MessageBox.Show("Presença retirada com sucesso!");
+            TelaPrincipal_Load(sender, e);
         }
 
         private void BtnConfirmarPresenca2_Click(object sender, EventArgs e)
@@ -445,6 +449,7 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
             db.InserirPresencaEvento(usuario, Evento1.Text);
             MessageBox.Show("Presença confirmada com sucesso!");
+            TelaPrincipal_Load(sender, e);
         }
 
         private void BtnRetirarPresenca2_Click(object sender, EventArgs e)
@@ -457,6 +462,7 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
             db.RetirarPresencaEvento(usuario, Evento1.Text);
             MessageBox.Show("Presença retirada com sucesso!");
+            TelaPrincipal_Load(sender, e);
         }
 
         private void BtnConfirmarPresenca3_Click(object sender, EventArgs e)
@@ -469,6 +475,7 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
             db.InserirPresencaEvento(usuario, Evento1.Text);
             MessageBox.Show("Presença confirmada com sucesso!");
+            TelaPrincipal_Load(sender, e);
         }
 
         private void BtnRetirarPresenca3_Click(object sender, EventArgs e)
@@ -481,6 +488,7 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
             db.RetirarPresencaEvento(usuario, Evento1.Text);
             MessageBox.Show("Presença retirada com sucesso!");
+            TelaPrincipal_Load(sender, e);
         }
 
 
@@ -491,6 +499,7 @@ namespace ProjetoIntegradorSenac
             db.Conectar();
             db.AtualizarDadosExame(idUsuarioLogado);
             MessageBox.Show("Exame realizado com sucesso!");
+            TelaPrincipal_Load(sender, e);
         }
 
 
@@ -581,6 +590,7 @@ namespace ProjetoIntegradorSenac
 
             db.PagarPrimeiraFatura(usuario.IdTitular);
             MessageBox.Show("Pagamento realizado com sucesso!");
+            TelaPrincipal_Load(sender, e);
             this.Refresh();
         }
 
@@ -600,8 +610,9 @@ namespace ProjetoIntegradorSenac
 
                 db.PagarSegundaFatura(usuario.IdTitular);
                 MessageBox.Show("Pagamento realizado com sucesso!");
-
+                TelaPrincipal_Load(sender, e);
             }
+
             this.Refresh();
         }
 
@@ -621,7 +632,7 @@ namespace ProjetoIntegradorSenac
 
                 db.PagarTerceiraFatura(usuario.IdTitular);
                 MessageBox.Show("Pagamento realizado com sucesso!");
-
+                TelaPrincipal_Load(sender, e);
             }
             this.Refresh();
         }
