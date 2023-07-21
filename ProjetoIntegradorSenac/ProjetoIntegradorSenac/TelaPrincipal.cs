@@ -152,8 +152,6 @@ namespace ProjetoIntegradorSenac
             DataInicio3.Text = db.BuscarEventoInicio(Evento1.Text);
             DataFim3.Text = db.BuscarEventoFim(Evento1.Text);
 
-
-            //if(LabelDataEfetuado == "")
         }
 
         //Structs botoões
@@ -207,6 +205,115 @@ namespace ProjetoIntegradorSenac
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
 
+            var nomeLogin = nomeLoginLogado;
+            var ehTitular = ehTitularLogado;
+            var idUsuario = idUsuarioLogado;
+
+
+            Conexao db = new Conexao();
+            Usuario usuario = new Usuario();
+            db.Conectar();
+
+            //VALIDAÇÃO SE É TITULAR OU DEPENDENTE
+
+            if (ehTitular == true)
+            {
+                BtnCadastrarDependente.Visible = true;
+                BtnExcluirDependente.Visible = true;
+                BtnEventos.Visible = true;
+                BtnExame.Visible = true;
+                BtnFatura.Visible = true;
+                BtnMenuUsuario.Visible = true;
+                dataGridView1.Visible = true;
+                BtnRedefinirSenha.Visible = true;
+
+                //PAINEL EXAMES
+                Exame exame = new Exame();
+                exame.Nome = db.BuscarNomeExame(idUsuario);
+                exame.DataEfetuado = db.BuscarDataEfetuadoExame(idUsuario);
+                exame.DataVencimento = db.BuscarDataVencimentoExame(idUsuario);
+                exame.Situacao = db.BuscarSituacaoExame(idUsuario);
+
+                LabelNome.Text = exame.Nome;
+                LabelDataEfetuado.Text = exame.DataEfetuado;
+                LabelDataVencimento.Text = exame.DataVencimento;
+                LabelSituacao.Text = exame.Situacao;
+                //if (LabelDataEfetuado.Text == "1000-01-01")
+                //{
+                //    LabelDataEfetuado.Text = "";
+                //}
+                //else { }
+                //if (LabelDataVencimento.Text == "1000-01-01")
+                //{
+                //    LabelDataVencimento.Text = "";
+                //}
+                //else { }
+
+                /*PAINEL FATURAS*/
+                usuario.IdTitular = db.BuscarIdTitularFatura(idUsuario);
+                descFatura1.Text = db.BuscarNomePrimeiraFatura(usuario);
+                valorFatura1.Text = db.BuscarValorPrimeiraFatura(usuario);
+                dataVencFatura1.Text = db.BuscarDataVencimentoPrimeiraFatura(usuario);
+                situacaoFatura1.Text = db.BuscarSituacaoPrimeiraFatura(usuario);
+
+                descFatura2.Text = db.BuscarNomeSegundaFatura(usuario);
+                valorFatura2.Text = db.BuscarValorSegundaFatura(usuario);
+                dataVencFatura2.Text = db.BuscarDataVencimentoSegundaFatura(usuario);
+                situacaoFatura2.Text = db.BuscarSituacaoSegundaFatura(usuario);
+
+                descFatura3.Text = db.BuscarNomeTerceiraFatura(usuario);
+                valorFatura3.Text = db.BuscarValorTerceiraFatura(usuario);
+                dataVencFatura3.Text = db.BuscarDataVencimentoTerceiraFatura(usuario);
+                situacaoFatura3.Text = db.BuscarSituacaoTerceiraFatura(usuario);
+
+            }
+            else
+            {
+                BtnCadastrarDependente.Visible = false;
+                BtnExcluirDependente.Visible = false;
+                BtnEventos.Visible = true;
+                BtnExame.Visible = false;
+                BtnFatura.Visible = false;
+                BtnMenuUsuario.Visible = true;
+                dataGridView1.Visible = false;
+                BtnRedefinirSenha.Visible = true;
+                LblDependentes.Visible = false;
+            }
+
+
+            usuario.Nome = db.BuscarUsuario(idUsuario);
+            usuario.Email = db.BuscarEmail(idUsuario);
+            usuario.Cpf = db.BuscarCpf(idUsuario);
+            usuario.DataNascimento = db.BuscarDataNascimento(idUsuario);
+            usuario.Genero = db.BuscarGenero(idUsuario);
+
+            LabelNomeUsuario.Text = usuario.Nome;
+            LabelEmail.Text = usuario.Email;
+            LabelCpf.Text = usuario.Cpf;
+            LabelDataNascimento.Text = usuario.DataNascimento;
+            LabelGenero.Text = usuario.Genero;
+            LabelIdUsuario.Text = idUsuario.ToString();
+
+            db.Desconectar();
+
+            db.Conectar();
+
+            var listaDependentes = db.BuscarDependentes(idUsuario);
+            dataGridView1.DataSource = listaDependentes;
+            dataGridView1.Update();
+
+            //PAINEL Eventos
+            Evento1.Visible = false;
+            Evento2.Visible = false;
+            Evento3.Visible = false;
+            Evento1.Text = "3";
+
+            DataInicio1.Text = db.BuscarEventoInicio(Evento1.Text);
+            DataFim1.Text = db.BuscarEventoFim(Evento1.Text);
+            DataInicio2.Text = db.BuscarEventoInicio(Evento1.Text);
+            DataFim2.Text = db.BuscarEventoFim(Evento1.Text);
+            DataInicio3.Text = db.BuscarEventoInicio(Evento1.Text);
+            DataFim3.Text = db.BuscarEventoFim(Evento1.Text);
         }
 
         private void BtnMenuUsuario_Click(object sender, EventArgs e)
@@ -287,6 +394,7 @@ namespace ProjetoIntegradorSenac
             PainelExame.Visible = false;
             PainelEventos.Visible = false;
             PainelFatura.Visible = false;
+            TelaPrincipal_Load(sender, e);
 
         }
         private void ResetarBtns()
@@ -511,7 +619,7 @@ namespace ProjetoIntegradorSenac
 
                 usuario.IdTitular = db.BuscarIdTitularFatura(idUsuarioLogado);
 
-                db.PagarSegundaFatura(usuario.IdTitular);
+                db.PagarTerceiraFatura(usuario.IdTitular);
                 MessageBox.Show("Pagamento realizado com sucesso!");
 
             }
