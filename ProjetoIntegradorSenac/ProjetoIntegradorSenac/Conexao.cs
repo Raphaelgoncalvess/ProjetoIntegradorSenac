@@ -268,6 +268,7 @@ namespace ProjetoIntegradorSenac
         public void DeletarDependente(Usuario usuario)
         {
             BuscarIdUsuario(usuario);
+            DeletarTabelaPresencaEvento(usuario);
             DeletarTabelaDependente(usuario);
             DeletarTabelaUsuario(usuario);
         }
@@ -290,6 +291,13 @@ namespace ProjetoIntegradorSenac
             SqlCommand comando = new SqlCommand(sql, conn);
             comando.ExecuteNonQuery();
         }
+        public void DeletarTabelaPresencaEvento(Usuario usuario)
+        {
+            string sql = $"DELETE FROM PresencaEventoPI WHERE idUsuario = '{usuario.IdUsuario}'";
+            SqlCommand comando = new SqlCommand(sql, conn);
+            comando.ExecuteNonQuery();
+        }
+
         #endregion
 
         #region EVENTOS
