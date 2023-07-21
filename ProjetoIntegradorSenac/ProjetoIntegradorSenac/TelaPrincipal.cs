@@ -75,16 +75,16 @@ namespace ProjetoIntegradorSenac
                 LabelDataEfetuado.Text = exame.DataEfetuado;
                 LabelDataVencimento.Text = exame.DataVencimento;
                 LabelSituacao.Text = exame.Situacao;
-                if (LabelDataEfetuado.Text == "1000-01-01")
-                {
-                    LabelDataEfetuado.Text = "";
-                }
-                else { }
-                if (LabelDataVencimento.Text == "1000-01-01")
-                {
-                    LabelDataVencimento.Text = "";
-                }
-                else { }
+                //if (LabelDataEfetuado.Text == "1000-01-01")
+                //{
+                //    LabelDataEfetuado.Text = "";
+                //}
+                //else { }
+                //if (LabelDataVencimento.Text == "1000-01-01")
+                //{
+                //    LabelDataVencimento.Text = "";
+                //}
+                //else { }
 
                 /*PAINEL FATURAS*/
                 usuario.IdTitular = db.BuscarIdTitularFatura(idUsuario);
@@ -359,8 +359,8 @@ namespace ProjetoIntegradorSenac
             Evento1.Text = "3";
 
             db.Conectar();
-            db.RetirarPresencaEvento(usuario, Evento1.Text);
-            MessageBox.Show("Presença retirada com sucesso!");
+            db.InserirPresencaEvento(usuario, Evento1.Text);
+            MessageBox.Show("Presença confirmada com sucesso!");
         }
 
         private void BtnRetirarPresenca3_Click(object sender, EventArgs e)
